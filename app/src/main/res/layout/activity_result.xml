@@ -1,6 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/perfect_word"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="52dp"
+        android:text="Perfect"
+        app:layout_constraintBottom_toTopOf="@+id/excellent_word"
+        tools:layout_editor_absoluteX="26dp" />
+
+    <TextView
+        android:id="@+id/excellent_word"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="52dp"
+        android:text="Excellent"
+        app:layout_constraintBottom_toTopOf="@+id/great_word"
+        tools:layout_editor_absoluteX="26dp" />
+
+    <TextView
+        android:id="@+id/great_word"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="52dp"
+        android:text="Great"
+        app:layout_constraintBottom_toTopOf="@+id/miss_word"
+        tools:layout_editor_absoluteX="26dp" />
+
+    <TextView
+        android:id="@+id/miss_word"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:text="Miss"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="422dp" />
+
+    <TextView
+        android:id="@+id/percentage"
+        android:layout_width="103dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="0.0%"
+        app:layout_constraintEnd_toStartOf="@+id/perfect_number"
+        app:layout_constraintStart_toEndOf="@+id/perfect_word"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <TextView
+        android:id="@+id/perfect_number"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginBottom="52dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/excellent_number"
+        app:layout_constraintStart_toEndOf="@+id/perfect_word" />
+
+    <TextView
+        android:id="@+id/excellent_number"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginBottom="52dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/great_number"
+        app:layout_constraintStart_toEndOf="@+id/excellent_word" />
+
+    <TextView
+        android:id="@+id/great_number"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginBottom="52dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/miss_number"
+        app:layout_constraintStart_toEndOf="@+id/great_word" />
+
+    <TextView
+        android:id="@+id/miss_number"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/miss_word"
+        tools:layout_editor_absoluteY="422dp" />
 </android.support.constraint.ConstraintLayout>
