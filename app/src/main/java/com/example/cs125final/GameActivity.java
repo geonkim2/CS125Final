@@ -24,7 +24,7 @@ public class GameActivity extends AppCompatActivity {
         down.setEnabled(true);
         down.setOnClickListener((v) -> nextScreen());
 
-        // im trying to make it change screens after a small delay
+        // it changes screens after a small delay
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
@@ -32,7 +32,8 @@ public class GameActivity extends AppCompatActivity {
                 GameActivity.this.startActivity(intent);
                 GameActivity.this.finish();
             }
-        }, 400);
+            // add three zeros to however seconds you want to make it
+        }, 10000);
     }
     public void nextScreen() {
         setContentView(R.layout.activity_result);

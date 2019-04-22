@@ -1,5 +1,6 @@
 package com.example.cs125final;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -71,16 +72,24 @@ public class MainActivity extends AppCompatActivity {
      * for now, it just brings people to the game activity screen */
     protected void playMusic(String song) {
         if (song.equals(first)) {
-            setContentView(R.layout.activity_game);
+            Intent setupIntent = new Intent(this, GameActivity.class);
+            startActivity(setupIntent);
+            finish();
         }
         if (song.equals(second)) {
-            setContentView(R.layout.activity_game);
+            Intent setupIntent = new Intent(this, GameActivity.class);
+            startActivity(setupIntent);
+            finish();
         }
         if (song.equals(third)) {
-            setContentView(R.layout.activity_game);
+            Intent setupIntent = new Intent(this, GameActivity.class);
+            startActivity(setupIntent);
+            finish();
         }
         if (song.equals(fourth)) {
-            setContentView(R.layout.activity_game);
+            Intent setupIntent = new Intent(this, GameActivity.class);
+            startActivity(setupIntent);
+            finish();
         }
     }
 }
