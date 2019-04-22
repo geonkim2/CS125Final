@@ -20,7 +20,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //I'm just making title text work
         titleText = findViewById(R.id.title);
         titleText.bringToFront();
+        int white = getResources().getColor(R.color.white);
+        titleText.setTextColor(white);
     }
 }

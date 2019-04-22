@@ -72,7 +72,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="434dp"
+        android:layout_width="432dp"
         android:layout_height="737dp"
         android:adjustViewBounds="true"
         app:layout_constraintStart_toStartOf="parent"
