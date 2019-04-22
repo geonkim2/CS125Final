@@ -8,9 +8,11 @@ import android.os.Bundle;
  * So I just copied and pasted lmao
  * We can just delete everything not being used later ;-; */
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
 
     TextView titleText;
 
@@ -23,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     String second = "second";
     String third = "third";
     String fourth = "fourth";
+
+    RelativeLayout mainActivity;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
         song4 = findViewById(R.id.song_4);
         song4.bringToFront();
         song4.setOnClickListener((v) -> playMusic(fourth));
-
     }
+
 
     /** eventually, this will play the music that the person chose
      * for now, it just brings people to the game activity screen */

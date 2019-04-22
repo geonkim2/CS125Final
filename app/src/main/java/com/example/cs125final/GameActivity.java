@@ -33,7 +33,7 @@ public class GameActivity extends AppCompatActivity {
                 GameActivity.this.finish();
             }
             // add three zeros to however seconds you want to make it
-        }, 10000);
+        }, 4000);
     }
     public void nextScreen() {
         setContentView(R.layout.activity_result);

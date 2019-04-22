@@ -1,13 +1,68 @@
 package com.example.cs125final;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
+
+    Button titleReturn;
+    TextView nice;
+    TextView score;
+    TextView wordFantastic;
+    TextView fantasticNumber;
+    TextView wordExcellent;
+    TextView excellentNumber;
+    TextView wordGreat;
+    TextView greatNumber;
+    TextView wordMiss;
+    TextView missNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+        // makes it possible to return to title
+        titleReturn = findViewById(R.id.return_to_title);
+        titleReturn.setOnClickListener((v -> returnToTitle()));
+
+        nice = findViewById(R.id.nice);
+        score = findViewById(R.id.grade);
+
+        wordFantastic = findViewById(R.id.fantastic_word);
+        fantasticNumber = findViewById(R.id.fantastic_number);
+        wordExcellent = findViewById(R.id.excellent_word);
+        excellentNumber = findViewById(R.id.excellent_number);
+        wordGreat = findViewById(R.id.great_word);
+        greatNumber = findViewById(R.id.great_number);
+        wordMiss = findViewById(R.id.miss_word);
+        missNumber = findViewById(R.id.miss_number);
+
+        wordFantastic.bringToFront();
+        fantasticNumber.bringToFront();
+        wordExcellent.bringToFront();
+        excellentNumber.bringToFront();
+        wordGreat.bringToFront();
+        greatNumber.bringToFront();
+        wordMiss.bringToFront();
+        missNumber.bringToFront();
+
+        score.setTextSize(60);
+        wordFantastic.setTextSize(20);
+        fantasticNumber.setTextSize(20);
+        wordExcellent.setTextSize(20);
+        excellentNumber.setTextSize(20);
+        wordGreat.setTextSize(20);
+        greatNumber.setTextSize(20);
+        wordMiss.setTextSize(20);
+        missNumber.setTextSize(20);
+    }
+    public void returnToTitle() {
+        Intent setupIntent = new Intent(this, MainActivity.class);
+        startActivity(setupIntent);
+        finish();
     }
 }
