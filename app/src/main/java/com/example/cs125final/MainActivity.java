@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-/**This is everything they imported on the mp's
- * So I just copied and pasted lmao
- * We can just delete everything not being used later ;-; */
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -34,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /** I'm just making title text work */
+        // I'm just making title text work
         titleText = findViewById(R.id.title);
         titleText.bringToFront();
         int white = getResources().getColor(R.color.white);

@@ -42,6 +42,8 @@ public class ResultActivity extends AppCompatActivity {
         wordMiss = findViewById(R.id.miss_word);
         missNumber = findViewById(R.id.miss_number);
 
+        score.bringToFront();
+        nice.bringToFront();
         wordFantastic.bringToFront();
         fantasticNumber.bringToFront();
         wordExcellent.bringToFront();
@@ -60,6 +62,18 @@ public class ResultActivity extends AppCompatActivity {
         greatNumber.setTextSize(20);
         wordMiss.setTextSize(20);
         missNumber.setTextSize(20);
+
+        int white = getResources().getColor(R.color.white);
+        score.setTextColor(white);
+        nice.setTextColor(white);
+        wordFantastic.setTextColor(white);
+        fantasticNumber.setTextColor(white);
+        wordExcellent.setTextColor(white);
+        excellentNumber.setTextColor(white);
+        wordGreat.setTextColor(white);
+        greatNumber.setTextColor(white);
+        wordMiss.setTextColor(white);
+        missNumber.setTextColor(white);
 
         isNice();
     }

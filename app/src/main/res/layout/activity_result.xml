@@ -143,10 +143,10 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="414dp"
-        android:layout_height="731dp"
+        android:layout_width="412dp"
+        android:layout_height="733dp"
         app:srcCompat="@drawable/results_background"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="1dp" />
+        tools:layout_editor_absoluteY="0dp" />
 
 </android.support.constraint.ConstraintLayout>
