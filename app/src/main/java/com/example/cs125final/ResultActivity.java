@@ -3,6 +3,7 @@ package com.example.cs125final;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -59,10 +60,24 @@ public class ResultActivity extends AppCompatActivity {
         greatNumber.setTextSize(20);
         wordMiss.setTextSize(20);
         missNumber.setTextSize(20);
+
+        isNice();
     }
     public void returnToTitle() {
         Intent setupIntent = new Intent(this, MainActivity.class);
         startActivity(setupIntent);
         finish();
+    }
+    public void isNice() {
+        CharSequence first = fantasticNumber.getText();
+        CharSequence second = excellentNumber.getText();
+        CharSequence third = greatNumber.getText();
+        CharSequence fourth = missNumber.getText();
+        if (first.toString().contains("69") || second.toString().contains("69")
+            || third.toString().contains("69") || fourth.toString().contains("69")){
+            nice.setVisibility(View.VISIBLE);
+        } else {
+            nice.setVisibility(View.GONE);
+        }
     }
 }
