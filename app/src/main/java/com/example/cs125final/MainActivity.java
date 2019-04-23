@@ -23,9 +23,6 @@ public class MainActivity extends AppCompatActivity {
     String third = "third";
     String fourth = "fourth";
 
-    RelativeLayout mainActivity;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

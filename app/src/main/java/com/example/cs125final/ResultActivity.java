@@ -32,7 +32,6 @@ public class ResultActivity extends AppCompatActivity {
 
         nice = findViewById(R.id.nice);
         score = findViewById(R.id.grade);
-
         wordFantastic = findViewById(R.id.fantastic_word);
         fantasticNumber = findViewById(R.id.fantastic_number);
         wordExcellent = findViewById(R.id.excellent_word);
