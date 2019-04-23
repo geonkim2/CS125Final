@@ -9,10 +9,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 
-/**
- * MediaPlayer ring= MediaPlayer.create(MainActivity.this,R.raw.ring);
- *         ring.start(); */
-
 /** we'll want to use MEDIAPLAYER and use OBJECTANIMATOR
  * MediaPlayer allows you to mess with audio
  * includes a nice function called isPlaying()
@@ -32,12 +28,22 @@ public class GameActivity extends AppCompatActivity {
     Button up;
     Button right;
 
+    String songName;
+    MediaPlayer marionette;
+
     public boolean onScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        songName = MainActivity.getSong();
+        if (songName.equals("marionette")) {
+            marionette = MediaPlayer.create(GameActivity.this, R.raw.marionette);
+            marionette.start();
+        }
+
 
         onScreen = true;
 
@@ -80,6 +86,9 @@ public class GameActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(GameActivity.this, ResultActivity.class);
                 if (onScreen) {
+                    if (songName.equals("marionette")) {
+                        marionette.pause();
+                    }
                     GameActivity.this.startActivity(intent);
                     GameActivity.this.finish();
                 }
@@ -89,6 +98,9 @@ public class GameActivity extends AppCompatActivity {
     }
     public void nextScreen() {
         onScreen = false;
+        if (songName.equals("marionette")) {
+            marionette.pause();
+        }
         Intent setupIntent = new Intent(this, ResultActivity.class);
         startActivity(setupIntent);
         finish();

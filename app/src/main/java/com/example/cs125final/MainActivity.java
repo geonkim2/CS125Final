@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     String third = "third";
     String fourth = "fourth";
 
+    static String songName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,24 +73,13 @@ public class MainActivity extends AppCompatActivity {
      * for now, it just brings people to the game activity screen */
     protected void playMusic(String song) {
         if (song.equals(first)) {
-            Intent setupIntent = new Intent(this, GameActivity.class);
-            startActivity(setupIntent);
-            finish();
+            songName = "marionette";
         }
-        if (song.equals(second)) {
-            Intent setupIntent = new Intent(this, GameActivity.class);
-            startActivity(setupIntent);
-            finish();
-        }
-        if (song.equals(third)) {
-            Intent setupIntent = new Intent(this, GameActivity.class);
-            startActivity(setupIntent);
-            finish();
-        }
-        if (song.equals(fourth)) {
-            Intent setupIntent = new Intent(this, GameActivity.class);
-            startActivity(setupIntent);
-            finish();
-        }
+        Intent setupIntent = new Intent(this, GameActivity.class);
+        startActivity(setupIntent);
+        finish();
+    }
+    public static String getSong() {
+        return songName;
     }
 }

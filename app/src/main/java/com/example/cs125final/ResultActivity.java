@@ -1,6 +1,7 @@
 package com.example.cs125final;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +27,6 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        // makes it possible to return to title
         titleReturn = findViewById(R.id.return_to_title);
         titleReturn.setOnClickListener((v -> returnToTitle()));
 
