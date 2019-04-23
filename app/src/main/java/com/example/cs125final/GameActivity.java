@@ -1,6 +1,8 @@
 package com.example.cs125final;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.animation.ObjectAnimator;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +11,13 @@ import android.widget.ImageView;
 
 /**
  * MediaPlayer ring= MediaPlayer.create(MainActivity.this,R.raw.ring);
- *         ring.start();
+ *         ring.start(); */
+
+/** we'll want to use MEDIAPLAYER and use OBJECTANIMATOR
+ * MediaPlayer allows you to mess with audio
+ * includes a nice function called isPlaying()
+ * ObjectAnimator allwos you to move an object a specific amount per second
+ * doesn't blind from place to place
  */
 public class GameActivity extends AppCompatActivity {
 
@@ -24,10 +32,14 @@ public class GameActivity extends AppCompatActivity {
     Button up;
     Button right;
 
+    public boolean onScreen;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        onScreen = true;
 
         leftArrow = findViewById(R.id.left_image);
         leftArrow.bringToFront();
@@ -67,13 +79,16 @@ public class GameActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             public void run() {
                 Intent intent = new Intent(GameActivity.this, ResultActivity.class);
-                GameActivity.this.startActivity(intent);
-                GameActivity.this.finish();
+                if (onScreen) {
+                    GameActivity.this.startActivity(intent);
+                    GameActivity.this.finish();
+                }
             }
             // add three zeros to however seconds x you want to make it
         }, 4000);
     }
     public void nextScreen() {
+        onScreen = false;
         Intent setupIntent = new Intent(this, ResultActivity.class);
         startActivity(setupIntent);
         finish();
