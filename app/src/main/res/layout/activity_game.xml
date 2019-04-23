@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/gameActivityXMLFile"
+    android:id="@+id/gameActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -25,8 +25,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="172dp"
         android:layout_marginRight="172dp"
-        android:visibility="visible"
         android:background="@android:color/transparent"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.993"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,5 +137,14 @@
         android:text="Quit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="442dp"
+        android:layout_height="788dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/black_background"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </android.support.constraint.ConstraintLayout>
