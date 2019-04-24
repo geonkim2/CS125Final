@@ -139,12 +139,34 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/background"
-        android:layout_width="442dp"
-        android:layout_height="788dp"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/black_background"
+        android:id="@+id/marionetteImage"
+        android:layout_width="410dp"
+        android:layout_height="734dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/marionette"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/yellowDown"
+        android:layout_width="103dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginRight="156dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_down_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowRight"
+        android:layout_width="104dp"
+        android:layout_height="103dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginRight="87dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_right_arrow" />
 
 </android.support.constraint.ConstraintLayout>

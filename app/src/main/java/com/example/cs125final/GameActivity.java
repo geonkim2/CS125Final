@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -29,9 +30,12 @@ public class GameActivity extends AppCompatActivity {
     Button right;
 
     String songName;
-    MediaPlayer marionette;
+    MediaPlayer currentlyPlaying;
+
+    ImageView background;
 
     public boolean onScreen;
+    ImageView yellow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +44,25 @@ public class GameActivity extends AppCompatActivity {
 
         songName = MainActivity.getSong();
         if (songName.equals("marionette")) {
-            marionette = MediaPlayer.create(GameActivity.this, R.raw.marionette);
-            marionette.start();
+            background = findViewById(R.id.marionetteImage);
+            background.setVisibility(View.VISIBLE);
+            downArrow = findViewById(R.id.yellowDown);
+            rightArrow = findViewById(R.id.yellowRight);
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
+        } else {
+            downArrow = findViewById(R.id.down_image);
+            rightArrow = findViewById(R.id.right_image);
         }
-
-
+        if (songName.equals("quaoar")) {
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
+        }
+        if (songName.equals("queen bee")) {
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
+        }
+        if (songName.equals("???")) {
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.rickroll);
+        }
+        currentlyPlaying.start();
         onScreen = true;
 
         leftArrow = findViewById(R.id.left_image);
@@ -59,14 +77,12 @@ public class GameActivity extends AppCompatActivity {
         up.setEnabled(true);
         up.bringToFront();
 
-        rightArrow = findViewById(R.id.right_image);
-        rightArrow.bringToFront();
         right = findViewById(R.id.right_button);
         right.setEnabled(true);
         right.bringToFront();
 
-        downArrow = findViewById(R.id.down_image);
         downArrow.bringToFront();
+        rightArrow.bringToFront();
 
         /** this is here for DEBUGGING PURPOSES*/
         down = findViewById(R.id.down_button);
@@ -86,21 +102,17 @@ public class GameActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(GameActivity.this, ResultActivity.class);
                 if (onScreen) {
-                    if (songName.equals("marionette")) {
-                        marionette.pause();
-                    }
+                    currentlyPlaying.stop();
                     GameActivity.this.startActivity(intent);
                     GameActivity.this.finish();
                 }
             }
             // add three zeros to however seconds x you want to make it
-        }, 4000);
+        }, 40000);
     }
     public void nextScreen() {
         onScreen = false;
-        if (songName.equals("marionette")) {
-            marionette.pause();
-        }
+        currentlyPlaying.stop();
         Intent setupIntent = new Intent(this, ResultActivity.class);
         startActivity(setupIntent);
         finish();

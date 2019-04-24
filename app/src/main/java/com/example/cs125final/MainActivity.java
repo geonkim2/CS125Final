@@ -75,6 +75,15 @@ public class MainActivity extends AppCompatActivity {
         if (song.equals(first)) {
             songName = "marionette";
         }
+        if (song.equals(second)) {
+            songName = "quaoar";
+        }
+        if (song.equals(third)) {
+            songName = "queen bee";
+        }
+        if (song.equals(fourth)) {
+            songName = "???";
+        }
         Intent setupIntent = new Intent(this, GameActivity.class);
         startActivity(setupIntent);
         finish();
