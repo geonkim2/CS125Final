@@ -35,43 +35,55 @@ public class GameActivity extends AppCompatActivity {
     ImageView background;
 
     public boolean onScreen;
-    ImageView yellow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        quit = findViewById(R.id.quit);
         songName = MainActivity.getSong();
         if (songName.equals("marionette")) {
+            int yellow = getResources().getColor(R.color.yellow);
+            quit.setBackgroundColor(yellow);
             background = findViewById(R.id.marionetteImage);
             background.setVisibility(View.VISIBLE);
             downArrow = findViewById(R.id.yellowDown);
             rightArrow = findViewById(R.id.yellowRight);
+            leftArrow = findViewById(R.id.yellowLeft);
+            upArrow = findViewById(R.id.yellowUp);
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
         } else {
+            int green = getResources().getColor(R.color.green);
+            quit.setBackgroundColor(green);
             downArrow = findViewById(R.id.down_image);
             rightArrow = findViewById(R.id.right_image);
+            upArrow = findViewById(R.id.up_image);
+            leftArrow = findViewById(R.id.left_image);
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
         }
         if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
+            background = findViewById(R.id.queenBeeBackground);
+            background.setVisibility(View.VISIBLE);
         }
         if (songName.equals("???")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.rickroll);
         }
-        currentlyPlaying.start();
         onScreen = true;
 
-        leftArrow = findViewById(R.id.left_image);
+        upArrow.setVisibility(View.VISIBLE);
+        leftArrow.setVisibility(View.VISIBLE);
+        rightArrow.setVisibility(View.VISIBLE);
+        downArrow.setVisibility(View.VISIBLE);
+
         leftArrow.bringToFront();
         left = findViewById(R.id.left_button);
         left.setEnabled(true);
         left.bringToFront();
 
-        upArrow = findViewById(R.id.up_image);
         upArrow.bringToFront();
         up = findViewById(R.id.up_button);
         up.setEnabled(true);
@@ -80,8 +92,6 @@ public class GameActivity extends AppCompatActivity {
         right = findViewById(R.id.right_button);
         right.setEnabled(true);
         right.bringToFront();
-
-        downArrow.bringToFront();
         rightArrow.bringToFront();
 
         /** this is here for DEBUGGING PURPOSES*/
@@ -89,12 +99,12 @@ public class GameActivity extends AppCompatActivity {
         down.setEnabled(true);
         down.bringToFront();
         down.setOnClickListener((v) -> nextScreen());
+        downArrow.bringToFront();
 
-        quit = findViewById(R.id.quit);
         quit.setEnabled(true);
-        int green = getResources().getColor(R.color.green);
-        quit.setBackgroundColor(green);
         quit.setOnClickListener((v) -> nextScreen());
+
+        currentlyPlaying.start();
 
         // it changes screens after a small delay
         final Handler handler = new Handler();

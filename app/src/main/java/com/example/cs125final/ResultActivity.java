@@ -41,6 +41,17 @@ public class ResultActivity extends AppCompatActivity {
         wordMiss = findViewById(R.id.miss_word);
         missNumber = findViewById(R.id.miss_number);
 
+        bringToFront();
+        makeWhite();
+        textSize();
+        isNice();
+    }
+    public void returnToTitle() {
+        Intent setupIntent = new Intent(this, MainActivity.class);
+        startActivity(setupIntent);
+        finish();
+    }
+    public void bringToFront() {
         score.bringToFront();
         nice.bringToFront();
         wordFantastic.bringToFront();
@@ -51,7 +62,8 @@ public class ResultActivity extends AppCompatActivity {
         greatNumber.bringToFront();
         wordMiss.bringToFront();
         missNumber.bringToFront();
-
+    }
+    public void textSize() {
         score.setTextSize(60);
         wordFantastic.setTextSize(20);
         fantasticNumber.setTextSize(20);
@@ -61,7 +73,8 @@ public class ResultActivity extends AppCompatActivity {
         greatNumber.setTextSize(20);
         wordMiss.setTextSize(20);
         missNumber.setTextSize(20);
-
+    }
+    public void makeWhite() {
         int white = getResources().getColor(R.color.white);
         score.setTextColor(white);
         nice.setTextColor(white);
@@ -73,13 +86,6 @@ public class ResultActivity extends AppCompatActivity {
         greatNumber.setTextColor(white);
         wordMiss.setTextColor(white);
         missNumber.setTextColor(white);
-
-        isNice();
-    }
-    public void returnToTitle() {
-        Intent setupIntent = new Intent(this, MainActivity.class);
-        startActivity(setupIntent);
-        finish();
     }
     public void isNice() {
         CharSequence first = fantasticNumber.getText();
