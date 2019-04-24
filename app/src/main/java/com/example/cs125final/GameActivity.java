@@ -53,15 +53,21 @@ public class GameActivity extends AppCompatActivity {
             leftArrow = findViewById(R.id.yellowLeft);
             upArrow = findViewById(R.id.yellowUp);
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
-        } else if (songName.equals("queen bee")) {
+        } if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
+            int greyish = getResources().getColor(R.color.greyish);
+            quit.setBackgroundColor(greyish);
             background = findViewById(R.id.queenBeeBackground);
             background.setVisibility(View.VISIBLE);
             downArrow = findViewById(R.id.greyishDown);
-            rightArrow = findViewById(R.id.right_image);
-            upArrow = findViewById(R.id.up_image);
-            leftArrow = findViewById(R.id.left_image);
-        } else {
+            rightArrow = findViewById(R.id.greyishRight);
+            upArrow = findViewById(R.id.greyishUp);
+            leftArrow = findViewById(R.id.greyishLeft);
+        }
+        if (songName.equals("quaoar")) {
+            background = findViewById(R.id.quaoarBackground);
+            background.setVisibility(View.VISIBLE);
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
             int green = getResources().getColor(R.color.green);
             quit.setBackgroundColor(green);
             downArrow = findViewById(R.id.down_image);
@@ -69,11 +75,14 @@ public class GameActivity extends AppCompatActivity {
             upArrow = findViewById(R.id.up_image);
             leftArrow = findViewById(R.id.left_image);
         }
-        if (songName.equals("quaoar")) {
-            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
-        }
         if (songName.equals("???")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.rickroll);
+            int green = getResources().getColor(R.color.green);
+            quit.setBackgroundColor(green);
+            downArrow = findViewById(R.id.down_image);
+            rightArrow = findViewById(R.id.right_image);
+            upArrow = findViewById(R.id.up_image);
+            leftArrow = findViewById(R.id.left_image);
         }
         onScreen = true;
 
