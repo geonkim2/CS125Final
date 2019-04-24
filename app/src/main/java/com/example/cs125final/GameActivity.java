@@ -35,6 +35,7 @@ public class GameActivity extends AppCompatActivity {
     MediaPlayer currentlyPlaying;
     ImageView background;
     public boolean onScreen;
+    int songLength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +90,7 @@ public class GameActivity extends AppCompatActivity {
             rightOutline = findViewById(R.id.whiteRightOutline);
         }
         if (songName.equals("???")) {
-            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.rickroll);
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.finalbossii);
             int green = getResources().getColor(R.color.green);
             quit.setBackgroundColor(green);
             downArrow = findViewById(R.id.down_image);
@@ -102,6 +103,7 @@ public class GameActivity extends AppCompatActivity {
             rightOutline = findViewById(R.id.blackRightOutline);
         }
         onScreen = true;
+        songLength = currentlyPlaying.getDuration();
 
         leftOutline.setVisibility(View.VISIBLE);
         leftOutline.bringToFront();
@@ -156,7 +158,7 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
             // add three zeros to however seconds x you want to make it
-        }, 10000);
+        }, songLength);
     }
     public void nextScreen() {
         onScreen = false;
