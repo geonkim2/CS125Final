@@ -64,6 +64,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="32dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.29"
@@ -78,6 +79,7 @@
         android:layout_marginLeft="88dp"
         android:layout_marginBottom="100dp"
         android:background="@null"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/left_arrow" />
@@ -91,6 +93,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="164dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.298"
@@ -104,6 +107,7 @@
         android:layout_marginEnd="88dp"
         android:layout_marginRight="88dp"
         android:layout_marginBottom="100dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/right_arrow" />
@@ -266,6 +270,7 @@
         android:layout_marginStart="153dp"
         android:layout_marginLeft="153dp"
         android:layout_marginBottom="31dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/quoar_down_arrow" />
@@ -277,6 +282,7 @@
         android:layout_marginStart="86dp"
         android:layout_marginLeft="86dp"
         android:layout_marginBottom="100dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/quaoar_left_arrow" />
@@ -288,6 +294,7 @@
         android:layout_marginEnd="88dp"
         android:layout_marginRight="88dp"
         android:layout_marginBottom="100dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/quaoar_right_arrow" />
@@ -299,8 +306,90 @@
         android:layout_marginEnd="152dp"
         android:layout_marginRight="152dp"
         android:layout_marginBottom="164dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/quaoar_up_arrow" />
+
+    <ImageView
+        android:id="@+id/blackLeftOutline"
+        android:layout_width="123dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/black_left_outline" />
+
+    <ImageView
+        android:id="@+id/whiteLeftOutline"
+        android:layout_width="123dp"
+        android:layout_height="126dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/white_left_outline" />
+
+    <ImageView
+        android:id="@+id/blackDownOutline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="93dp"
+        android:layout_marginLeft="93dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/whiteLeftOutline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/black_down_outline" />
+
+    <ImageView
+        android:id="@+id/blackUpOutline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/black_up_outline" />
+
+    <ImageView
+        android:id="@+id/blackRightOutline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/black_right_outline" />
+
+    <ImageView
+        android:id="@+id/whiteDownOutline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="93dp"
+        android:layout_marginLeft="93dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/white_down_outline" />
+
+    <ImageView
+        android:id="@+id/whiteUpOutline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/white_up_outline" />
+
+    <ImageView
+        android:id="@+id/whiteRightOutline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/white_right_outline"
+        tools:layout_editor_absoluteX="411dp" />
 
 </android.support.constraint.ConstraintLayout>

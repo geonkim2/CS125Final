@@ -18,22 +18,22 @@ import android.widget.ImageView;
  */
 public class GameActivity extends AppCompatActivity {
 
-    Button down;
     Button quit;
-
     ImageView leftArrow;
     ImageView upArrow;
     ImageView downArrow;
     ImageView rightArrow;
+    ImageView leftOutline;
+    ImageView upOutline;
+    ImageView downOutline;
+    ImageView rightOutline;
     Button left;
     Button up;
+    Button down;
     Button right;
-
     String songName;
     MediaPlayer currentlyPlaying;
-
     ImageView background;
-
     public boolean onScreen;
 
     @Override
@@ -44,6 +44,7 @@ public class GameActivity extends AppCompatActivity {
         quit = findViewById(R.id.quit);
         songName = MainActivity.getSong();
         if (songName.equals("marionette")) {
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
             int yellow = getResources().getColor(R.color.yellow);
             quit.setBackgroundColor(yellow);
             background = findViewById(R.id.marionetteImage);
@@ -52,8 +53,12 @@ public class GameActivity extends AppCompatActivity {
             rightArrow = findViewById(R.id.yellowRight);
             leftArrow = findViewById(R.id.yellowLeft);
             upArrow = findViewById(R.id.yellowUp);
-            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
-        } if (songName.equals("queen bee")) {
+            leftOutline = findViewById(R.id.blackLeftOutline);
+            upOutline = findViewById(R.id.blackUpOutline);
+            downOutline = findViewById(R.id.blackDownOutline);
+            rightOutline = findViewById(R.id.blackRightOutline);
+        }
+        if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
             int greyish = getResources().getColor(R.color.greyish);
             quit.setBackgroundColor(greyish);
@@ -63,6 +68,10 @@ public class GameActivity extends AppCompatActivity {
             rightArrow = findViewById(R.id.greyishRight);
             upArrow = findViewById(R.id.greyishUp);
             leftArrow = findViewById(R.id.greyishLeft);
+            leftOutline = findViewById(R.id.whiteLeftOutline);
+            upOutline = findViewById(R.id.whiteUpOutline);
+            downOutline = findViewById(R.id.whiteDownOutline);
+            rightOutline = findViewById(R.id.whiteRightOutline);
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
@@ -74,6 +83,10 @@ public class GameActivity extends AppCompatActivity {
             rightArrow = findViewById(R.id.quaoarRight);
             upArrow = findViewById(R.id.quaoarUp);
             leftArrow = findViewById(R.id.quaoarLeft);
+            leftOutline = findViewById(R.id.whiteLeftOutline);
+            upOutline = findViewById(R.id.whiteUpOutline);
+            downOutline = findViewById(R.id.whiteDownOutline);
+            rightOutline = findViewById(R.id.whiteRightOutline);
         }
         if (songName.equals("???")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.rickroll);
@@ -83,8 +96,21 @@ public class GameActivity extends AppCompatActivity {
             rightArrow = findViewById(R.id.right_image);
             upArrow = findViewById(R.id.up_image);
             leftArrow = findViewById(R.id.left_image);
+            leftOutline = findViewById(R.id.blackLeftOutline);
+            upOutline = findViewById(R.id.blackUpOutline);
+            downOutline = findViewById(R.id.blackDownOutline);
+            rightOutline = findViewById(R.id.blackRightOutline);
         }
         onScreen = true;
+
+        leftOutline.setVisibility(View.VISIBLE);
+        leftOutline.bringToFront();
+        upOutline.setVisibility(View.VISIBLE);
+        upOutline.bringToFront();
+        downOutline.setVisibility(View.VISIBLE);
+        downOutline.bringToFront();
+        rightOutline.setVisibility(View.VISIBLE);
+        rightOutline.bringToFront();
 
         upArrow.setVisibility(View.VISIBLE);
         leftArrow.setVisibility(View.VISIBLE);
