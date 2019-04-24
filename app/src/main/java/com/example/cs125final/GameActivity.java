@@ -65,15 +65,15 @@ public class GameActivity extends AppCompatActivity {
             leftArrow = findViewById(R.id.greyishLeft);
         }
         if (songName.equals("quaoar")) {
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
             background = findViewById(R.id.quaoarBackground);
             background.setVisibility(View.VISIBLE);
-            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
-            int green = getResources().getColor(R.color.green);
-            quit.setBackgroundColor(green);
+            int quaoarBrown = getResources().getColor(R.color.quaoarBrown);
+            quit.setBackgroundColor(quaoarBrown);
             downArrow = findViewById(R.id.quaoarDown);
-            rightArrow = findViewById(R.id.right_image);
-            upArrow = findViewById(R.id.up_image);
-            leftArrow = findViewById(R.id.left_image);
+            rightArrow = findViewById(R.id.quaoarRight);
+            upArrow = findViewById(R.id.quaoarUp);
+            leftArrow = findViewById(R.id.quaoarLeft);
         }
         if (songName.equals("???")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.rickroll);
