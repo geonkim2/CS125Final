@@ -70,7 +70,7 @@ public class GameActivity extends AppCompatActivity {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
             int green = getResources().getColor(R.color.green);
             quit.setBackgroundColor(green);
-            downArrow = findViewById(R.id.down_image);
+            downArrow = findViewById(R.id.quaoarDown);
             rightArrow = findViewById(R.id.right_image);
             upArrow = findViewById(R.id.up_image);
             leftArrow = findViewById(R.id.left_image);
@@ -130,7 +130,7 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
             // add three zeros to however seconds x you want to make it
-        }, 40000);
+        }, 10000);
     }
     public void nextScreen() {
         onScreen = false;
