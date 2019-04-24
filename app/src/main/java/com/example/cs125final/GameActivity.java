@@ -53,6 +53,14 @@ public class GameActivity extends AppCompatActivity {
             leftArrow = findViewById(R.id.yellowLeft);
             upArrow = findViewById(R.id.yellowUp);
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
+        } else if (songName.equals("queen bee")) {
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
+            background = findViewById(R.id.queenBeeBackground);
+            background.setVisibility(View.VISIBLE);
+            downArrow = findViewById(R.id.greyishDown);
+            rightArrow = findViewById(R.id.right_image);
+            upArrow = findViewById(R.id.up_image);
+            leftArrow = findViewById(R.id.left_image);
         } else {
             int green = getResources().getColor(R.color.green);
             quit.setBackgroundColor(green);
@@ -63,11 +71,6 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
-        }
-        if (songName.equals("queen bee")) {
-            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
-            background = findViewById(R.id.queenBeeBackground);
-            background.setVisibility(View.VISIBLE);
         }
         if (songName.equals("???")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.rickroll);
