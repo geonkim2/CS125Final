@@ -44,7 +44,7 @@ public class MarionetteParsing extends AppCompatActivity {
         setFile();
         return file;
     }
-    // TODO: Have Geon check over my math.
+    // TODO: Have Geon check over my math. Also check if it's != or !.equals
     public void ParseNotes(){
         String toParse = getFile();
         String[] measures = toParse.split(",");
@@ -56,19 +56,19 @@ public class MarionetteParsing extends AppCompatActivity {
                 if (notes[j].length() != 5) {
                     continue;
                 }
-                if (notes[j].charAt(0) == 1) {
+                if (notes[j].charAt(0) != 0) {
                     direction.add("left");
                     beat.add(currentBeat);
                 }
-                if (notes[j].charAt(1) == 1) {
+                if (notes[j].charAt(1) != 0) {
                     direction.add("down");
                     beat.add(currentBeat);
                 }
-                if (notes[j].charAt(2) == 1) {
+                if (notes[j].charAt(2) != 0) {
                     direction.add("up");
                     beat.add(currentBeat);
                 }
-                if (notes[j].charAt(3) == 1) {
+                if (notes[j].charAt(3) != 0) {
                     direction.add("right");
                     beat.add(currentBeat);
                 }
