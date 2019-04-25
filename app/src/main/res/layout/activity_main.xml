@@ -27,43 +27,43 @@
 
     <Button
         android:id="@+id/song_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="132dp"
-        android:text="Marionette"
+        android:layout_width="147dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="130dp"
+        android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/song_2"
-        android:layout_width="108dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginBottom="332dp"
-        android:text="Quaoar"
+        android:layout_width="149dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginBottom="336dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/song_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:text="Queen Bee"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/song_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
         android:layout_marginBottom="336dp"
         android:text="uhhh ???"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,5 +77,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/maybe_background_idek_yet" />
+
+    <ImageView
+        android:id="@+id/marionetteBanner"
+        android:layout_width="150dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/marionettebanner" />
+
+    <ImageView
+        android:id="@+id/queenBeeBanner"
+        android:layout_width="151dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/queenbeebanner" />
+
+    <ImageView
+        android:id="@+id/quaoarBanner"
+        android:layout_width="152dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="336dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quaoarbanner" />
 
 </android.support.constraint.ConstraintLayout>

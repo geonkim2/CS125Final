@@ -8,18 +8,25 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class MarionetteParsing extends AppCompatActivity {
+public class ChartProperties extends AppCompatActivity {
 
     String file;
     ArrayList<String> direction;
     ArrayList<Double> beat;
-    double offset = 0.411182;
-    double BPM = 165;
+    String songName = MainActivity.getSong();
+    double offset;
+    double BPM;
 
     public double getOffset() {
+        if (songName.equals("marionette")) {
+            offset = 0.411182;
+        }
         return this.offset;
     }
     public double getBPM() {
+        if (songName.equals("marionette")) {
+            BPM = 165;
+        }
         return this.BPM;
     }
     public String convert(InputStream inputStream) throws IOException {
