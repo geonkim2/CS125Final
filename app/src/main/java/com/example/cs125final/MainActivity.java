@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+// TODO: create banners for each of the songs
+
 public class MainActivity extends AppCompatActivity {
 
 

@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+// TODO: animate the arrows
+// TODO: add parsing classes for the other three songs
+
 /** we'll want to use MEDIAPLAYER and use OBJECTANIMATOR
  * MediaPlayer allows you to mess with audio
  * includes a nice function called isPlaying()
