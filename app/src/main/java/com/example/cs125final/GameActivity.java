@@ -157,7 +157,6 @@ public class GameActivity extends AppCompatActivity {
                     GameActivity.this.finish();
                 }
             }
-            // add three zeros to however seconds x you want to make it
         }, songLength);
     }
     public void nextScreen() {
