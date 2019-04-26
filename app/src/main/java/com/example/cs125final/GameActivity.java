@@ -2,7 +2,6 @@ package com.example.cs125final;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.animation.ObjectAnimator;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -93,7 +92,7 @@ public class GameActivity extends AppCompatActivity {
             rightOutline = findViewById(R.id.whiteRightOutline);
         }
         if (songName.equals("???")) {
-            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.finalbossii);
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);
             int green = getResources().getColor(R.color.green);
             quit.setBackgroundColor(green);
             downArrow = findViewById(R.id.down_image);
