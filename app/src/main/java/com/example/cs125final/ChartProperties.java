@@ -58,8 +58,8 @@ public class ChartProperties extends AppCompatActivity {
         double currentBeat = 0;
         for (int i = 0; i < measures.length; i++) {
             String notes[] = measures[i].split(".");
-            currentBeat = i + (1 / notes.length);
             for (int j = 0; j < notes.length; j++) {
+                currentBeat = i + (j * (1.0 / notes.length));
                 if (notes[j].length() != 5) {
                     continue;
                 }
