@@ -66,6 +66,10 @@ public class GameActivity extends AppCompatActivity {
             upOutline = findViewById(R.id.blackUpOutline);
             downOutline = findViewById(R.id.blackDownOutline);
             rightOutline = findViewById(R.id.blackRightOutline);
+            leftMove = findViewById(R.id.metaLeftMove);
+            upMove = findViewById(R.id.metaUpMove);
+            downMove = findViewById(R.id.metaDownMove);
+            rightMove = findViewById(R.id.metaRightMove);
         }
         if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
@@ -82,6 +86,10 @@ public class GameActivity extends AppCompatActivity {
             upOutline = findViewById(R.id.whiteUpOutline);
             downOutline = findViewById(R.id.whiteDownOutline);
             rightOutline = findViewById(R.id.whiteRightOutline);
+            leftMove = findViewById(R.id.qbLeftMove);
+            upMove = findViewById(R.id.qbUpMove);
+            downMove = findViewById(R.id.qbDownMove);
+            rightMove = findViewById(R.id.qbRightMove);
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
@@ -98,6 +106,10 @@ public class GameActivity extends AppCompatActivity {
             upOutline = findViewById(R.id.whiteUpOutline);
             downOutline = findViewById(R.id.whiteDownOutline);
             rightOutline = findViewById(R.id.whiteRightOutline);
+            leftMove = findViewById(R.id.metaLeftMove);
+            upMove = findViewById(R.id.metaUpMove);
+            downMove = findViewById(R.id.metaDownMove);
+            rightMove = findViewById(R.id.metaRightMove);
         }
         if (songName.equals("metamorphosis")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);

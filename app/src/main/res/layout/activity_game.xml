@@ -486,6 +486,7 @@
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_marginBottom="200dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/meta_left_arrow"
         tools:layout_editor_absoluteX="0dp" />
@@ -497,6 +498,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginBottom="200dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/meta_down_arrow" />
@@ -506,6 +508,7 @@
         android:layout_width="105dp"
         android:layout_height="103dp"
         android:layout_marginBottom="200dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/meta_right_arrow"
         tools:layout_editor_absoluteX="306dp" />
@@ -517,8 +520,49 @@
         android:layout_marginEnd="104dp"
         android:layout_marginRight="104dp"
         android:layout_marginBottom="200dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/meta_up_arrow" />
+
+    <ImageView
+        android:id="@+id/qbLeftMove"
+        android:layout_width="99dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/greyish_left_arrow" />
+
+    <ImageView
+        android:id="@+id/qbDownMove"
+        android:layout_width="100dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/greyish_down_arrow" />
+
+    <ImageView
+        android:id="@+id/qbRightMove"
+        android:layout_width="100dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/greyish_right_arrow" />
+
+    <ImageView
+        android:id="@+id/qbUpMove"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/greyish_up_arrow" />
 
 </android.support.constraint.ConstraintLayout>
