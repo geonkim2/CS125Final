@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class ChartProperties extends AppCompatActivity {
 
     String file;
-    ArrayList<String> direction;
-    ArrayList<Double> beat;
+    static ArrayList<String> direction;
+    static ArrayList<Double> beat;
     String songName = TitleActivity.getSong();
     double offset;
     double BPM;
@@ -28,12 +28,6 @@ public class ChartProperties extends AppCompatActivity {
             BPM = 165;
         }
         return this.BPM;
-    }
-    public ArrayList<String> getDirection() {
-        return this.direction;
-    }
-    public ArrayList<Double> getBeat() {
-        return this.beat;
     }
     public String convert(InputStream inputStream) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
@@ -57,7 +51,7 @@ public class ChartProperties extends AppCompatActivity {
         setFile();
         return file;
     }
-    public void ParseNotes(){
+    public void parseNotes() {
         String toParse = getFile();
         String[] measures = toParse.split(",");
         double currentBeat;

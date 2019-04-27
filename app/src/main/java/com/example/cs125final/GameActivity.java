@@ -22,10 +22,10 @@ public class GameActivity extends AppCompatActivity {
 
     Button quit;
     ImageView box;
-    ImageView leftMove;
-    ImageView rightMove;
-    ImageView upMove;
-    ImageView downMove;
+    static ImageView leftMove;
+    static ImageView rightMove;
+    static ImageView upMove;
+    static ImageView downMove;
     ImageView leftArrow;
     ImageView upArrow;
     ImageView downArrow;
@@ -40,7 +40,7 @@ public class GameActivity extends AppCompatActivity {
     Button right;
     String songName;
     MediaPlayer currentlyPlaying;
-    ImageView background;
+    static ImageView background;
     public boolean onScreen;
     int songLength;
 
