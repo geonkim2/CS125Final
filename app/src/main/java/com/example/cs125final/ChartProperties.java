@@ -51,31 +51,30 @@ public class ChartProperties extends AppCompatActivity {
         setFile();
         return file;
     }
-    // TODO: Have Geon check over my math. Also check if it's != or !.equals
     public void ParseNotes(){
         String toParse = getFile();
         String[] measures = toParse.split(",");
-        double currentBeat = 0;
+        double currentBeat;
         for (int i = 0; i < measures.length; i++) {
             String notes[] = measures[i].split(".");
             for (int j = 0; j < notes.length; j++) {
-                currentBeat = i + (j * (1.0 / notes.length));
-                if (notes[j].length() != 5) {
+                currentBeat = 4 * (i + ((double) j / notes.length));
+                if (notes[j].length() != 4) {
                     continue;
                 }
-                if (notes[j].charAt(0) != 0) {
+                if (notes[j].charAt(0) != '0') {
                     direction.add("left");
                     beat.add(currentBeat);
                 }
-                if (notes[j].charAt(1) != 0) {
+                if (notes[j].charAt(1) != '0') {
                     direction.add("down");
                     beat.add(currentBeat);
                 }
-                if (notes[j].charAt(2) != 0) {
+                if (notes[j].charAt(2) != '0') {
                     direction.add("up");
                     beat.add(currentBeat);
                 }
-                if (notes[j].charAt(3) != 0) {
+                if (notes[j].charAt(3) != '0') {
                     direction.add("right");
                     beat.add(currentBeat);
                 }
