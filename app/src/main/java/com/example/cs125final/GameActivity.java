@@ -57,6 +57,7 @@ public class GameActivity extends AppCompatActivity {
     static ImageView background;
     public boolean onScreen;
     int songLength;
+    long delayLength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -239,15 +240,18 @@ public class GameActivity extends AppCompatActivity {
         }, 1000);
 
         final Handler animateHandler = new Handler();
-        for (int i = 0; i < direction.size(); i++) {
-            current = getCurrent(direction.get(i));
-//            delay = getDelay()
-            animateHandler.postDelayed(new Runnable() {
-                public void run() {
-                    move(current);
+//        for (int i = 0; i < direction.size(); i++) {
+//            current = getCurrent(direction.get(i));
+//            delayLength = (long) getDelay(beat.get(i));
+//        }
+        animateHandler.postDelayed(new Runnable() {
+            public void run() {
+                if (direction.get(0).equals("left") || direction.get(0).equals("down")
+                    || direction.get(0).equals("up") || direction.get(0).equals("right")) {
+                    move(leftMove);
                 }
-            }, 1000);
-        }
+            }
+        }, 1000);
 
         // it changes screens after a small delay
         final Handler handler = new Handler();
