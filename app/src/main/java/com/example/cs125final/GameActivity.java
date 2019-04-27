@@ -73,6 +73,7 @@ public class GameActivity extends AppCompatActivity {
             quit.setBackgroundColor(greyish);
             background = findViewById(R.id.queenBeeBackground);
             background.setVisibility(View.VISIBLE);
+            box = findViewById(R.id.queenBeeBox);
             downArrow = findViewById(R.id.greyishDown);
             rightArrow = findViewById(R.id.greyishRight);
             upArrow = findViewById(R.id.greyishUp);
