@@ -467,8 +467,17 @@
         android:id="@+id/metaBox"
         android:layout_width="417dp"
         android:layout_height="280dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/metamorphosisbox" />
+
+    <ImageView
+        android:id="@+id/quaoarBox"
+        android:layout_width="415dp"
+        android:layout_height="276dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quaoarbox" />
 
 </android.support.constraint.ConstraintLayout>

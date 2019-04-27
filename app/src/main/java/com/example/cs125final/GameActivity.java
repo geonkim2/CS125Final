@@ -87,6 +87,7 @@ public class GameActivity extends AppCompatActivity {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
             background = findViewById(R.id.quaoarBackground);
             background.setVisibility(View.VISIBLE);
+            box = findViewById(R.id.quaoarBox);
             int quaoarBrown = getResources().getColor(R.color.quaoarBrown);
             quit.setBackgroundColor(quaoarBrown);
             downArrow = findViewById(R.id.quaoarDown);
