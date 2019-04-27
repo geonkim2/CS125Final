@@ -574,7 +574,7 @@
         android:layout_width="103dp"
         android:layout_height="102dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/yellow_left_arrow" />
@@ -586,7 +586,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/yellow_down_arrow" />
@@ -596,7 +596,7 @@
         android:layout_width="108dp"
         android:layout_height="107dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/yellow_right_arrow" />
@@ -608,7 +608,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/yellow_up_arrow" />
@@ -618,7 +618,7 @@
         android:layout_width="103dp"
         android:layout_height="102dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/yellow_left_arrow" />
@@ -630,7 +630,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/yellow_down_arrow" />
@@ -640,7 +640,7 @@
         android:layout_width="108dp"
         android:layout_height="107dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/yellow_right_arrow" />
@@ -652,7 +652,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/yellow_up_arrow" />
@@ -662,7 +662,7 @@
         android:layout_width="103dp"
         android:layout_height="102dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/yellow_left_arrow" />
@@ -674,7 +674,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/yellow_down_arrow" />
@@ -684,7 +684,7 @@
         android:layout_width="108dp"
         android:layout_height="107dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/yellow_right_arrow" />
@@ -696,7 +696,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/yellow_up_arrow" />
@@ -744,5 +744,93 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/quaoar_right_arrow" />
+    <ImageView
+        android:id="@+id/quaoarLeftMove1"
+        android:layout_width="105dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quaoar_left_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarDownMove1"
+        android:layout_width="103dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quoar_down_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarUpMove1"
+        android:layout_width="104dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_up_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarRightMove1"
+        android:layout_width="104dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_right_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarLeftMove2"
+        android:layout_width="105dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quaoar_left_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarDownMove2"
+        android:layout_width="103dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quoar_down_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarUpMove2"
+        android:layout_width="104dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_up_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarRightMove2"
+        android:layout_width="104dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_right_arrow" />
+
 
 </android.support.constraint.ConstraintLayout>

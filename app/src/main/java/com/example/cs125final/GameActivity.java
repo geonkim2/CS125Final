@@ -132,6 +132,14 @@ public class GameActivity extends AppCompatActivity {
             upMove = findViewById(R.id.quaoarUpMove);
             downMove = findViewById(R.id.quaoarDownMove);
             rightMove = findViewById(R.id.quaoarRightMove);
+            leftMove1 = findViewById(R.id.quaoarLeftMove1);
+            upMove1 = findViewById(R.id.quaoarUpMove1);
+            downMove1 = findViewById(R.id.quaoarDownMove1);
+            rightMove1 = findViewById(R.id.quaoarRightMove1);
+            leftMove2 = findViewById(R.id.quaoarLeftMove2);
+            upMove2 = findViewById(R.id.quaoarUpMove2);
+            downMove2 = findViewById(R.id.quaoarDownMove2);
+            rightMove2 = findViewById(R.id.quaoarRightMove2);
         }
         if (songName.equals("metamorphosis")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);
@@ -164,6 +172,22 @@ public class GameActivity extends AppCompatActivity {
         downMove.bringToFront();
         rightMove.setVisibility(View.VISIBLE);
         rightMove.bringToFront();
+        leftMove1.setVisibility(View.VISIBLE);
+        leftMove1.bringToFront();
+        upMove1.setVisibility(View.VISIBLE);
+        upMove1.bringToFront();
+        downMove1.setVisibility(View.VISIBLE);
+        downMove1.bringToFront();
+        rightMove1.setVisibility(View.VISIBLE);
+        rightMove1.bringToFront();
+        leftMove2.setVisibility(View.VISIBLE);
+        leftMove2.bringToFront();
+        upMove2.setVisibility(View.VISIBLE);
+        upMove2.bringToFront();
+        downMove2.setVisibility(View.VISIBLE);
+        downMove2.bringToFront();
+        rightMove2.setVisibility(View.VISIBLE);
+        rightMove2.bringToFront();
 
         box.setVisibility(View.GONE);
         box.bringToFront();
@@ -211,10 +235,19 @@ public class GameActivity extends AppCompatActivity {
         delayHandler.postDelayed(new Runnable() {
             public void run() {
                 currentlyPlaying.start();
-                current = getCurrent();
-                move(current);
             }
         }, 1000);
+
+        final Handler animateHandler = new Handler();
+        for (int i = 0; i < direction.size(); i++) {
+            current = getCurrent(direction.get(i));
+//            delay = getDelay()
+            animateHandler.postDelayed(new Runnable() {
+                public void run() {
+                    move(current);
+                }
+            }, 1000);
+        }
 
         // it changes screens after a small delay
         final Handler handler = new Handler();
@@ -253,68 +286,68 @@ public class GameActivity extends AppCompatActivity {
     int downCount = 0;
     int upCount = 0;
     int rightCount = 0;
-    public ImageView getCurrent() {
-        for (int i = 0; i < direction.size(); i++) {
-            if (direction.get(i).equals("left")) {
-                if (leftCount == 0) {
-                    leftCount++;
-                    return leftMove;
-                }
-                if (leftCount == 1) {
-                    leftCount++;
-                    return leftMove1;
-                }
-                if (leftCount == 2) {
-                    leftCount = 0;
-                    return leftMove2;
-                }
+    public ImageView getCurrent(String which) {
+        if (which.equals("left")) {
+            if (leftCount == 0) {
+                leftCount++;
+                return leftMove;
             }
-
-            if (direction.get(i).equals("down")) {
-                if (downCount == 0) {
-                    downCount++;
-                    return downMove;
-                }
-                if (downCount == 1) {
-                    downCount++;
-                    return downMove1;
-                }
-                if (downCount == 2) {
-                    downCount = 0;
-                    return downMove2;
-                }
+            if (leftCount == 1) {
+                leftCount++;
+                return leftMove1;
             }
-
-            if (direction.get(i).equals("up")) {
-                if (upCount == 0) {
-                    upCount++;
-                    return upMove;
-                }
-                if (upCount == 1) {
-                    upCount++;
-                    return upMove1;
-                }
-                if (upCount == 2) {
-                    upCount = 0;
-                    return upMove2;
-                }
+            if (leftCount == 2) {
+                leftCount = 0;
+                return leftMove2;
             }
-
-            if (direction.get(i).equals("right")) {
-                if (rightCount == 0) {
-                    rightCount++;
-                    return rightMove;
-                }
-                if (rightCount == 1) {
-                    rightCount++;
-                    return rightMove1;
-                }
-                if (rightCount == 2) {
-                    rightCount = 0;
-                    return rightMove2;
-                }
+        }
+        if (which.equals("down")) {
+            if (downCount == 0) {
+                downCount++;
+                return downMove;
+            }
+            if (downCount == 1) {
+                downCount++;
+                return downMove1;
+            }
+            if (downCount == 2) {
+                downCount = 0;
+                return downMove2;
+            }
+        }
+        if (which.equals("up")) {
+            if (upCount == 0) {
+                upCount++;
+                return upMove;
+            }
+            if (upCount == 1) {
+                upCount++;
+                return upMove1;
+            }
+            if (upCount == 2) {
+                upCount = 0;
+                return upMove2;
+            }
+        }
+        if (which.equals("right")) {
+            if (rightCount == 0) {
+                rightCount++;
+                return rightMove;
+            }
+            if (rightCount == 1) {
+                rightCount++;
+                return rightMove1;
+            }
+            if (rightCount == 2) {
+                rightCount = 0;
+                return rightMove2;
             }
         }
         return null;
+    }
+    public double getDelay(double currentBeat) {
+        double BPM = ChartProperties.getBPM();
+        double offset = ChartProperties.getOffset();
+        return 1000*((1/BPM) + offset + 1) * currentBeat;
     }
 }

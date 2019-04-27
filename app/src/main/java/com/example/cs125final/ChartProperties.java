@@ -13,21 +13,21 @@ public class ChartProperties extends AppCompatActivity {
     String file;
     static ArrayList<String> direction;
     static ArrayList<Double> beat;
-    String songName = TitleActivity.getSong();
-    double offset;
-    double BPM;
+    static String songName = TitleActivity.getSong();
+    static double offset;
+    static double BPM;
 
-    public double getOffset() {
+    public static double getOffset() {
         if (songName.equals("marionette")) {
             offset = 0.411182;
         }
-        return this.offset;
+        return offset;
     }
-    public double getBPM() {
+    public static double getBPM() {
         if (songName.equals("marionette")) {
             BPM = 165;
         }
-        return this.BPM;
+        return BPM;
     }
     public String convert(InputStream inputStream) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
