@@ -66,10 +66,10 @@ public class GameActivity extends AppCompatActivity {
             upOutline = findViewById(R.id.blackUpOutline);
             downOutline = findViewById(R.id.blackDownOutline);
             rightOutline = findViewById(R.id.blackRightOutline);
-            leftMove = findViewById(R.id.metaLeftMove);
-            upMove = findViewById(R.id.metaUpMove);
-            downMove = findViewById(R.id.metaDownMove);
-            rightMove = findViewById(R.id.metaRightMove);
+            leftMove = findViewById(R.id.yellowLeftMove);
+            upMove = findViewById(R.id.yellowUpMove);
+            downMove = findViewById(R.id.yellowDownMove);
+            rightMove = findViewById(R.id.yellowRightMove);
         }
         if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
@@ -106,10 +106,10 @@ public class GameActivity extends AppCompatActivity {
             upOutline = findViewById(R.id.whiteUpOutline);
             downOutline = findViewById(R.id.whiteDownOutline);
             rightOutline = findViewById(R.id.whiteRightOutline);
-            leftMove = findViewById(R.id.metaLeftMove);
-            upMove = findViewById(R.id.metaUpMove);
-            downMove = findViewById(R.id.metaDownMove);
-            rightMove = findViewById(R.id.metaRightMove);
+            leftMove = findViewById(R.id.quaoarLeftMove);
+            upMove = findViewById(R.id.quaoarUpMove);
+            downMove = findViewById(R.id.quaoarDownMove);
+            rightMove = findViewById(R.id.quaoarRightMove);
         }
         if (songName.equals("metamorphosis")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);
