@@ -1,6 +1,7 @@
 package com.example.cs125final;
 
 import android.content.Intent;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.app.Activity;
+import android.view.animation.AnimationUtils;
+import java.util.ArrayList;
+import android.view.animation.Animation;
+import java.lang.Cloneable;
 
 // TODO: animate the arrows
 // TODO: add parsing classes for the other three songs
@@ -26,6 +32,14 @@ public class GameActivity extends AppCompatActivity {
     static ImageView rightMove;
     static ImageView upMove;
     static ImageView downMove;
+    static ImageView leftMove1;
+    static ImageView rightMove1;
+    static ImageView upMove1;
+    static ImageView downMove1;
+    static ImageView leftMove2;
+    static ImageView rightMove2;
+    static ImageView upMove2;
+    static ImageView downMove2;
     ImageView leftArrow;
     ImageView upArrow;
     ImageView downArrow;
@@ -70,6 +84,14 @@ public class GameActivity extends AppCompatActivity {
             upMove = findViewById(R.id.yellowUpMove);
             downMove = findViewById(R.id.yellowDownMove);
             rightMove = findViewById(R.id.yellowRightMove);
+            leftMove1 = findViewById(R.id.yellowLeftMove1);
+            upMove1 = findViewById(R.id.yellowUpMove1);
+            downMove1 = findViewById(R.id.yellowDownMove1);
+            rightMove1 = findViewById(R.id.yellowRightMove1);
+            leftMove2 = findViewById(R.id.yellowLeftMove2);
+            upMove2 = findViewById(R.id.yellowUpMove2);
+            downMove2 = findViewById(R.id.yellowDownMove2);
+            rightMove2 = findViewById(R.id.yellowRightMove2);
         }
         if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
@@ -143,7 +165,7 @@ public class GameActivity extends AppCompatActivity {
         rightMove.setVisibility(View.VISIBLE);
         rightMove.bringToFront();
 
-        box.setVisibility(View.VISIBLE);
+        box.setVisibility(View.GONE);
         box.bringToFront();
 
         leftOutline.setVisibility(View.VISIBLE);
@@ -185,7 +207,14 @@ public class GameActivity extends AppCompatActivity {
         quit.setEnabled(true);
         quit.setOnClickListener((v) -> nextScreen());
 
-        currentlyPlaying.start();
+        final Handler delayHandler = new Handler();
+        delayHandler.postDelayed(new Runnable() {
+            public void run() {
+                currentlyPlaying.start();
+                current = getCurrent();
+                move(current);
+            }
+        }, 1000);
 
         // it changes screens after a small delay
         final Handler handler = new Handler();
@@ -206,5 +235,86 @@ public class GameActivity extends AppCompatActivity {
         Intent setupIntent = new Intent(this, ResultActivity.class);
         startActivity(setupIntent);
         finish();
+    }
+    ImageView current;
+    ArrayList<String> direction = ChartProperties.direction;
+    ArrayList<Double> beat = ChartProperties.beat;
+
+    public void move (ImageView toMove) {
+        Animation animation1 =
+                AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
+        toMove.startAnimation(animation1);
+    }
+
+    /**
+     * determine which copy to use among three copies of each arrows.
+     */
+    int leftCount = 0;
+    int downCount = 0;
+    int upCount = 0;
+    int rightCount = 0;
+    public ImageView getCurrent() {
+        for (int i = 0; i < direction.size(); i++) {
+            if (direction.get(i).equals("left")) {
+                if (leftCount == 0) {
+                    leftCount++;
+                    return leftMove;
+                }
+                if (leftCount == 1) {
+                    leftCount++;
+                    return leftMove1;
+                }
+                if (leftCount == 2) {
+                    leftCount = 0;
+                    return leftMove2;
+                }
+            }
+
+            if (direction.get(i).equals("down")) {
+                if (downCount == 0) {
+                    downCount++;
+                    return downMove;
+                }
+                if (downCount == 1) {
+                    downCount++;
+                    return downMove1;
+                }
+                if (downCount == 2) {
+                    downCount = 0;
+                    return downMove2;
+                }
+            }
+
+            if (direction.get(i).equals("up")) {
+                if (upCount == 0) {
+                    upCount++;
+                    return upMove;
+                }
+                if (upCount == 1) {
+                    upCount++;
+                    return upMove1;
+                }
+                if (upCount == 2) {
+                    upCount = 0;
+                    return upMove2;
+                }
+            }
+
+            if (direction.get(i).equals("right")) {
+                if (rightCount == 0) {
+                    rightCount++;
+                    return rightMove;
+                }
+                if (rightCount == 1) {
+                    rightCount++;
+                    return rightMove1;
+                }
+                if (rightCount == 2) {
+                    rightCount = 0;
+                    return rightMove2;
+                }
+            }
+        }
+        return null;
     }
 }

@@ -64,7 +64,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
@@ -77,7 +77,7 @@
         android:layout_height="97dp"
         android:layout_marginBottom="200dp"
         android:background="@null"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/blue_left_arrow" />
@@ -91,7 +91,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
@@ -103,7 +103,7 @@
         android:layout_width="103dp"
         android:layout_height="97dp"
         android:layout_marginBottom="200dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/blue_right_arrow" />
@@ -570,11 +570,99 @@
         app:srcCompat="@drawable/greyish_up_arrow" />
 
     <ImageView
+        android:id="@+id/yellowLeftMove2"
+        android:layout_width="103dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_left_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowDownMove2"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_down_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowRightMove2"
+        android:layout_width="108dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_right_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowUpMove2"
+        android:layout_width="109dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_up_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowLeftMove1"
+        android:layout_width="103dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_left_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowDownMove1"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_down_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowRightMove1"
+        android:layout_width="108dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_right_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowUpMove1"
+        android:layout_width="109dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_up_arrow" />
+
+    <ImageView
         android:id="@+id/yellowLeftMove"
         android:layout_width="103dp"
         android:layout_height="102dp"
         android:layout_marginBottom="200dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/yellow_left_arrow" />
@@ -586,7 +674,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginBottom="200dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/yellow_down_arrow" />
@@ -596,7 +684,7 @@
         android:layout_width="108dp"
         android:layout_height="107dp"
         android:layout_marginBottom="200dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/yellow_right_arrow" />
@@ -608,7 +696,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="200dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/yellow_up_arrow" />
