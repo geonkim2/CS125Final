@@ -21,6 +21,11 @@ import android.widget.ImageView;
 public class GameActivity extends AppCompatActivity {
 
     Button quit;
+    ImageView box;
+    ImageView leftMove;
+    ImageView rightMove;
+    ImageView upMove;
+    ImageView downMove;
     ImageView leftArrow;
     ImageView upArrow;
     ImageView downArrow;
@@ -48,6 +53,7 @@ public class GameActivity extends AppCompatActivity {
         songName = TitleActivity.getSong();
         if (songName.equals("marionette")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
+            box = findViewById(R.id.marionetteBox);
             int yellow = getResources().getColor(R.color.yellow);
             quit.setBackgroundColor(yellow);
             background = findViewById(R.id.marionetteImage);
@@ -108,6 +114,18 @@ public class GameActivity extends AppCompatActivity {
         }
         onScreen = true;
         songLength = currentlyPlaying.getDuration();
+
+        leftMove = findViewById(R.id.moveLeft);
+        leftMove.bringToFront();
+        upMove = findViewById(R.id.moveUp);
+        upMove.bringToFront();
+        downMove = findViewById(R.id.moveDown);
+        downMove.bringToFront();
+        rightMove = findViewById(R.id.moveRight);
+        rightMove.bringToFront();
+
+        box.setVisibility(View.VISIBLE);
+        box.bringToFront();
 
         leftOutline.setVisibility(View.VISIBLE);
         leftOutline.bringToFront();

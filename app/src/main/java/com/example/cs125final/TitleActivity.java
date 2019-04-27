@@ -44,6 +44,8 @@ public class TitleActivity extends AppCompatActivity {
         quaoarBanner.bringToFront();
         queenBeeBanner = findViewById(R.id.queenBeeBanner);
         queenBeeBanner.bringToFront();
+        metamorphosisBanner = findViewById(R.id.metamorphosisBanner);
+        metamorphosisBanner.bringToFront();
 
         /** at this point, you may have to change something in your settings
          * go to file -> project structure -> app
