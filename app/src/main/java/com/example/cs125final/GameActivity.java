@@ -114,17 +114,21 @@ public class GameActivity extends AppCompatActivity {
             upOutline = findViewById(R.id.blackUpOutline);
             downOutline = findViewById(R.id.blackDownOutline);
             rightOutline = findViewById(R.id.blackRightOutline);
+            leftMove = findViewById(R.id.metaLeftMove);
+            upMove = findViewById(R.id.metaUpMove);
+            downMove = findViewById(R.id.metaDownMove);
+            rightMove = findViewById(R.id.metaRightMove);
         }
         onScreen = true;
         songLength = currentlyPlaying.getDuration();
 
-        leftMove = findViewById(R.id.moveLeft);
+        leftMove.setVisibility(View.VISIBLE);
         leftMove.bringToFront();
-        upMove = findViewById(R.id.moveUp);
+        upMove.setVisibility(View.VISIBLE);
         upMove.bringToFront();
-        downMove = findViewById(R.id.moveDown);
+        downMove.setVisibility(View.VISIBLE);
         downMove.bringToFront();
-        rightMove = findViewById(R.id.moveRight);
+        rightMove.setVisibility(View.VISIBLE);
         rightMove.bringToFront();
 
         box.setVisibility(View.VISIBLE);
