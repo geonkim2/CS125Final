@@ -11,10 +11,9 @@ import java.util.ArrayList;
 public class ChartProperties extends AppCompatActivity {
 
     String file;
-    String deletethisstring;
     ArrayList<String> direction;
     ArrayList<Double> beat;
-    String songName = MainActivity.getSong();
+    String songName = TitleActivity.getSong();
     double offset;
     double BPM;
 
@@ -29,6 +28,12 @@ public class ChartProperties extends AppCompatActivity {
             BPM = 165;
         }
         return this.BPM;
+    }
+    public ArrayList<String> getDirection() {
+        return this.direction;
+    }
+    public ArrayList<Double> getBeat() {
+        return this.beat;
     }
     public String convert(InputStream inputStream) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();

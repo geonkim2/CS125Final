@@ -1,7 +1,6 @@
 package com.example.cs125final;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +46,7 @@ public class ResultActivity extends AppCompatActivity {
         isNice();
     }
     public void returnToTitle() {
-        Intent setupIntent = new Intent(this, MainActivity.class);
+        Intent setupIntent = new Intent(this, TitleActivity.class);
         startActivity(setupIntent);
         finish();
     }

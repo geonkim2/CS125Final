@@ -1,24 +1,23 @@
 package com.example.cs125final;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 // TODO: create banners for each of the songs
 
-public class MainActivity extends AppCompatActivity {
+public class TitleActivity extends AppCompatActivity {
 
 
     TextView titleText;
     ImageView marionetteBanner;
     ImageView quaoarBanner;
     ImageView queenBeeBanner;
+    ImageView metamorphosisBanner;
     Button song1;
     Button song2;
     Button song3;
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_title);
 
         titleText = findViewById(R.id.title);
         titleText.bringToFront();
@@ -78,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             songName = "queen bee";
         }
         if (song.equals(fourth)) {
-            songName = "???";
+            songName = "metamorphosis";
         }
         Intent setupIntent = new Intent(this, GameActivity.class);
         startActivity(setupIntent);

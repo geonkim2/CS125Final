@@ -45,7 +45,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         quit = findViewById(R.id.quit);
-        songName = MainActivity.getSong();
+        songName = TitleActivity.getSong();
         if (songName.equals("marionette")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
             int yellow = getResources().getColor(R.color.yellow);
@@ -91,7 +91,7 @@ public class GameActivity extends AppCompatActivity {
             downOutline = findViewById(R.id.whiteDownOutline);
             rightOutline = findViewById(R.id.whiteRightOutline);
         }
-        if (songName.equals("???")) {
+        if (songName.equals("metamorphosis")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);
             int green = getResources().getColor(R.color.green);
             quit.setBackgroundColor(green);
