@@ -93,12 +93,14 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("metamorphosis")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);
-            int green = getResources().getColor(R.color.green);
+            background = findViewById(R.id.metamorphosisBackground);
+            background.setVisibility(View.VISIBLE);
+            int green = getResources().getColor(R.color.colorPrimary);
             quit.setBackgroundColor(green);
-            downArrow = findViewById(R.id.down_image);
-            rightArrow = findViewById(R.id.right_image);
-            upArrow = findViewById(R.id.up_image);
-            leftArrow = findViewById(R.id.left_image);
+            downArrow = findViewById(R.id.metaDown);
+            rightArrow = findViewById(R.id.metaRight);
+            upArrow = findViewById(R.id.metaUp);
+            leftArrow = findViewById(R.id.metaLeft);
             leftOutline = findViewById(R.id.blackLeftOutline);
             upOutline = findViewById(R.id.blackUpOutline);
             downOutline = findViewById(R.id.blackDownOutline);
