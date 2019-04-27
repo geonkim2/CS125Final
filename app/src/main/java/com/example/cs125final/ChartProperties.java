@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class ChartProperties extends AppCompatActivity {
 
     String file;
+    String deletethisstring;
     ArrayList<String> direction;
     ArrayList<Double> beat;
     String songName = MainActivity.getSong();
