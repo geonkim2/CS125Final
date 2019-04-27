@@ -102,6 +102,7 @@ public class GameActivity extends AppCompatActivity {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);
             background = findViewById(R.id.metamorphosisBackground);
             background.setVisibility(View.VISIBLE);
+            box = findViewById(R.id.metaBox);
             int green = getResources().getColor(R.color.colorPrimary);
             quit.setBackgroundColor(green);
             downArrow = findViewById(R.id.metaDown);

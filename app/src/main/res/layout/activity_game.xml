@@ -458,8 +458,17 @@
         android:id="@+id/queenBeeBox"
         android:layout_width="421dp"
         android:layout_height="277dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/queenbeebox" />
+
+    <ImageView
+        android:id="@+id/metaBox"
+        android:layout_width="417dp"
+        android:layout_height="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/metamorphosisbox" />
 
 </android.support.constraint.ConstraintLayout>

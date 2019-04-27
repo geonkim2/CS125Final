@@ -76,7 +76,7 @@
         android:adjustViewBounds="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/maybe_background_idek_yet" />
+        app:srcCompat="@drawable/title_background" />
 
     <ImageView
         android:id="@+id/marionetteBanner"
