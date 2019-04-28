@@ -60,10 +60,10 @@ public class ChartProperties {
         }
         String[] measures = toParse.split(",");
         double currentBeat = 0;
-        for (int i = 1; i < measures.length; i++) {
+        for (int i = 0; i < measures.length; i++) {
             String notes[] = measures[i].split("\n");
             for (int j = 1; j < notes.length; j++) {
-                currentBeat = 4 * (i + ((double) j / notes.length));
+                currentBeat = 4 * (i + (j - 1) * (1.0 / (notes.length - 1)));
                 if (notes[j].length() != 4) {
                     continue;
                 }
@@ -110,8 +110,8 @@ public class ChartProperties {
         for (int i = 0; i < direction.size(); i++) {
             double print = getDelay(beat.get(i));
             System.out.println(print);
-//            System.out.println(direction);
-            System.out.println(beat.get(i));
+            System.out.println(direction);
+            System.out.println(beat);
         }
     }
 }
