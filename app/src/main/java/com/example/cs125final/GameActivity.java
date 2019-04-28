@@ -13,6 +13,8 @@ import android.app.Activity;
 import android.view.animation.AnimationUtils;
 import java.util.ArrayList;
 import android.view.animation.Animation;
+import android.widget.TextView;
+
 import java.lang.Cloneable;
 
 import static com.example.cs125final.ChartProperties.getBPM;
@@ -66,6 +68,10 @@ public class GameActivity extends AppCompatActivity {
     ImageView current;
     ArrayList<String> direction;
     ArrayList<Double> beat;
+    TextView fantastic;
+    TextView excellent;
+    TextView great;
+    TextView miss;
 
     /** this is everything that happens when the app loads*/
     @Override
@@ -258,6 +264,33 @@ public class GameActivity extends AppCompatActivity {
         downMove3.bringToFront();
         rightMove3.setVisibility(View.VISIBLE);
         rightMove3.bringToFront();
+
+        /** I'm initializing the judgements
+         * and im making them each specific color
+         * and making them visible using shadow
+         */
+        int black = getResources().getColor(R.color.black);
+        int blue = getResources().getColor(R.color.blue);
+        fantastic = findViewById(R.id.fantasticText);
+        fantastic.setTextColor(blue);
+        fantastic.setTextSize(35);
+        fantastic.setShadowLayer(0.02f, -4, 4, black);
+        int yellow = getResources().getColor(R.color.yellow);
+        excellent = findViewById(R.id.excellentText);
+        excellent.setTextColor(yellow);
+        excellent.setTextSize(35);
+        excellent.setShadowLayer(0.02f, -4, 4, black);
+        int green = getResources().getColor(R.color.green);
+        great = findViewById(R.id.greatText);
+        great.setTextColor(green);
+        great.setTextSize(35);
+        great.setShadowLayer(0.02f, -4, 4, black);
+        int red = getResources().getColor(R.color.red);
+        miss = findViewById(R.id.missText);
+        miss.setTextColor(red);
+        miss.setTextSize(35);
+        miss.setShadowLayer(0.02f, -4, 4, black);
+
 
         /** now i set the box to the front so that the arrows are covered up*/
         box.setVisibility(View.VISIBLE);

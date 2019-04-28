@@ -98,6 +98,10 @@ public class ResultActivity extends AppCompatActivity {
      */
     public void makeWhite() {
         int white = getResources().getColor(R.color.white);
+//        int blue = getResources().getColor(R.color.blue);
+//        int yellow = getResources().getColor(R.color.yellow);
+//        int green = getResources().getColor(R.color.green);
+//        int red = getResources().getColor(R.color.red);
         score.setTextColor(white);
         nice.setTextColor(white);
         wordFantastic.setTextColor(white);
