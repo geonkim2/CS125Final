@@ -229,6 +229,18 @@ public class GameActivity extends AppCompatActivity {
         beat = ChartProperties.beat;
         direction = ChartProperties.direction;
 
+        /** i set the arrow "outlines" to visible
+         * this is what tells you when to hit the arrows
+         */
+        leftOutline.setVisibility(View.VISIBLE);
+        leftOutline.bringToFront();
+        upOutline.setVisibility(View.VISIBLE);
+        upOutline.bringToFront();
+        downOutline.setVisibility(View.VISIBLE);
+        downOutline.bringToFront();
+        rightOutline.setVisibility(View.VISIBLE);
+        rightOutline.bringToFront();
+
         /** this brings literally every moving arrow to the front
          * this must be done before bringing the box of the arrows to the front
          */
@@ -296,17 +308,7 @@ public class GameActivity extends AppCompatActivity {
         box.setVisibility(View.VISIBLE);
         box.bringToFront();
 
-        /** i set the arrow "outlines" to visible
-         * this is what tells you when to hit the arrows
-         */
-        leftOutline.setVisibility(View.VISIBLE);
-        leftOutline.bringToFront();
-        upOutline.setVisibility(View.VISIBLE);
-        upOutline.bringToFront();
-        downOutline.setVisibility(View.VISIBLE);
-        downOutline.bringToFront();
-        rightOutline.setVisibility(View.VISIBLE);
-        rightOutline.bringToFront();
+        /** this is where the outline bring front was*/
 
         /** this sets the visibility of the ImageViews */
         upArrow.setVisibility(View.VISIBLE);
@@ -481,6 +483,6 @@ public class GameActivity extends AppCompatActivity {
         double BPM = ChartProperties.getBPM();
         double offset = ChartProperties.getOffset();
         //3000 is the delay in move
-        return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1200;
+        return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1178.57143;
     }
 }

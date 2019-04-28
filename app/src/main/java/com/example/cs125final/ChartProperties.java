@@ -7,8 +7,9 @@ public class ChartProperties {
     static double BPM;
     static ArrayList<String> direction = new ArrayList<>();
     static ArrayList<Double> beat = new ArrayList<>();
-//    static String songName = TitleActivity.getSong();
-    static String songName = "marionette";
+    static String songName = TitleActivity.getSong();
+
+    //TODO: make marionette a lv 5 chart, add difficulty warnings to the title activity
 
     /** this determines the offset of the song
      * it MUST BE CALLED, even if the offset and BPM are static
@@ -16,13 +17,13 @@ public class ChartProperties {
      */
     public static double getOffset() {
         if (songName.equals("marionette")) {
-            offset = 0.411182;
+            offset = -0.411182;
         }
         if (songName.equals("quaoar")) {
-            offset = 0.011;
+            offset = -0.011;
         }
         if (songName.equals("queen bee")) {
-            offset = 0.751;
+            offset = -0.751;
         }
         if (songName.equals("metamorphosis")) {
             offset = 0;
@@ -110,8 +111,8 @@ public class ChartProperties {
         for (int i = 0; i < direction.size(); i++) {
             double print = getDelay(beat.get(i));
             System.out.println(print);
-            System.out.println(direction);
-            System.out.println(beat);
+            //System.out.println(direction);
+            //System.out.println(beat);
         }
     }
 }
