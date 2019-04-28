@@ -2,20 +2,13 @@ package com.example.cs125final;
 
 import android.support.v7.app.AppCompatActivity;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
 public class ChartProperties extends AppCompatActivity {
-
-    String file;
-    static ArrayList<String> direction;
-    static ArrayList<Double> beat;
-    static String songName = TitleActivity.getSong();
+    static String file;
     static double offset;
     static double BPM;
+    static String[] direction;
+    static Double[] beat;
+    static String songName = TitleActivity.getSong();
 
     public static double getOffset() {
         if (songName.equals("marionette")) {
@@ -29,54 +22,49 @@ public class ChartProperties extends AppCompatActivity {
         }
         return BPM;
     }
-    public String convert(InputStream inputStream) throws IOException {
-        StringBuilder stringBuilder = new StringBuilder();
-        String line;
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
-            while ((line = bufferedReader.readLine()) != null) {
-                stringBuilder.append(line);
-            }
+    public static String getFile() {
+        if (songName.equals("marionette")) {
+            file = ",  // measure 0\n" +
+                    "1000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    ",  // measure 1\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000";
         }
-        return stringBuilder.toString();
-    }
-    public void setFile() {
-        InputStream chart = getResources().openRawResource(R.raw.marionettechart);
-        try {
-            file = convert(chart);
-        } catch (IOException a) {
-            throw new NullPointerException();
-        }
-    }
-    public String getFile() {
-        setFile();
         return file;
     }
-    public void parseNotes() {
+    public static void parseNotes() {
         String toParse = getFile();
         String[] measures = toParse.split(",");
-        double currentBeat;
+        double currentBeat = 0;
+        int kl = -1;
         for (int i = 0; i < measures.length; i++) {
-            String notes[] = measures[i].split(".");
+            String notes[] = measures[i].split("\n");
             for (int j = 0; j < notes.length; j++) {
                 currentBeat = 4 * (i + ((double) j / notes.length));
-                if (notes[j].length() != 4) {
+                kl++;
+                if (notes[j].length() > 6) {
                     continue;
                 }
                 if (notes[j].charAt(0) != '0') {
-                    direction.add("left");
-                    beat.add(currentBeat);
+                    direction[kl] = "left";
+                    beat[kl] = currentBeat;
                 }
                 if (notes[j].charAt(1) != '0') {
-                    direction.add("down");
-                    beat.add(currentBeat);
+                    direction[kl] = "down";
+                    beat[kl] = currentBeat;
                 }
                 if (notes[j].charAt(2) != '0') {
-                    direction.add("up");
-                    beat.add(currentBeat);
+                    direction[kl] = "up";
+                    beat[kl] = currentBeat;
                 }
                 if (notes[j].charAt(3) != '0') {
-                    direction.add("right");
-                    beat.add(currentBeat);
+                    direction[kl] = "right";
+                    beat[kl] = currentBeat;
                 }
             }
         }

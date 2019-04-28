@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import android.view.animation.Animation;
 import java.lang.Cloneable;
 
+import static com.example.cs125final.ChartProperties.getBPM;
+
 // TODO: animate the arrows
 // TODO: add parsing classes for the other three songs
 
@@ -28,18 +30,18 @@ public class GameActivity extends AppCompatActivity {
 
     Button quit;
     ImageView box;
-    static ImageView leftMove;
-    static ImageView rightMove;
-    static ImageView upMove;
-    static ImageView downMove;
-    static ImageView leftMove1;
-    static ImageView rightMove1;
-    static ImageView upMove1;
-    static ImageView downMove1;
-    static ImageView leftMove2;
-    static ImageView rightMove2;
-    static ImageView upMove2;
-    static ImageView downMove2;
+    ImageView leftMove;
+    ImageView rightMove;
+    ImageView upMove;
+    ImageView downMove;
+    ImageView leftMove1;
+    ImageView rightMove1;
+    ImageView upMove1;
+    ImageView downMove1;
+    ImageView leftMove2;
+    ImageView rightMove2;
+    ImageView upMove2;
+    ImageView downMove2;
     ImageView leftArrow;
     ImageView upArrow;
     ImageView downArrow;
@@ -113,6 +115,14 @@ public class GameActivity extends AppCompatActivity {
             upMove = findViewById(R.id.qbUpMove);
             downMove = findViewById(R.id.qbDownMove);
             rightMove = findViewById(R.id.qbRightMove);
+            leftMove1 = findViewById(R.id.qbLeftMove1);
+            upMove1 = findViewById(R.id.qbUpMove1);
+            downMove1 = findViewById(R.id.qbDownMove1);
+            rightMove1 = findViewById(R.id.qbRightMove1);
+            leftMove2 = findViewById(R.id.qbLeftMove2);
+            upMove2 = findViewById(R.id.qbUpMove2);
+            downMove2 = findViewById(R.id.qbDownMove2);
+            rightMove2 = findViewById(R.id.qbRightMove2);
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
@@ -161,6 +171,14 @@ public class GameActivity extends AppCompatActivity {
             upMove = findViewById(R.id.metaUpMove);
             downMove = findViewById(R.id.metaDownMove);
             rightMove = findViewById(R.id.metaRightMove);
+            leftMove1 = findViewById(R.id.metaLeftMove1);
+            upMove1 = findViewById(R.id.metaUpMove1);
+            downMove1 = findViewById(R.id.metaDownMove1);
+            rightMove1 = findViewById(R.id.metaRightMove1);
+            leftMove2 = findViewById(R.id.metaLeftMove2);
+            upMove2 = findViewById(R.id.metaUpMove2);
+            downMove2 = findViewById(R.id.metaDownMove2);
+            rightMove2= findViewById(R.id.metaRightMove2);
         }
         onScreen = true;
         songLength = currentlyPlaying.getDuration();
@@ -238,18 +256,18 @@ public class GameActivity extends AppCompatActivity {
                 currentlyPlaying.start();
             }
         }, 1000);
-
-        final Handler animateHandler = new Handler();
+         final Handler animateHandler = new Handler();
 //        for (int i = 0; i < direction.size(); i++) {
 //            current = getCurrent(direction.get(i));
 //            delayLength = (long) getDelay(beat.get(i));
 //        }
         animateHandler.postDelayed(new Runnable() {
             public void run() {
-                if (direction.get(0).equals("left") || direction.get(0).equals("down")
-                    || direction.get(0).equals("up") || direction.get(0).equals("right")) {
-                    move(leftMove);
+                ChartProperties.parseNotes();
+                if (direction != null && direction[0].equals("left")) {
+                    move(rightMove);
                 }
+                move(leftMove);
             }
         }, 1000);
 
@@ -274,8 +292,8 @@ public class GameActivity extends AppCompatActivity {
         finish();
     }
     ImageView current;
-    ArrayList<String> direction = ChartProperties.direction;
-    ArrayList<Double> beat = ChartProperties.beat;
+    String[] direction;
+    double[] beat;
 
     public void move (ImageView toMove) {
         Animation animation1 =
