@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
+    /** this initializes each of the variables*/
     Button titleReturn;
     TextView nice;
     TextView score;
@@ -26,9 +27,14 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        /** this lets you return to the title when you click the button that says
+         * return to title*/
         titleReturn = findViewById(R.id.return_to_title);
         titleReturn.setOnClickListener((v -> returnToTitle()));
 
+        /** this sets the id's of each text
+         * so you can change the text, and it shows up on screen
+         */
         nice = findViewById(R.id.nice);
         score = findViewById(R.id.grade);
         wordFantastic = findViewById(R.id.fantastic_word);
@@ -40,16 +46,25 @@ public class ResultActivity extends AppCompatActivity {
         wordMiss = findViewById(R.id.miss_word);
         missNumber = findViewById(R.id.miss_number);
 
+        /** this calls each of the functions*/
         bringToFront();
         makeWhite();
         textSize();
         isNice();
     }
+
+    /** this returns you to the title screen when you click
+     * "return to title"
+     */
     public void returnToTitle() {
         Intent setupIntent = new Intent(this, TitleActivity.class);
         startActivity(setupIntent);
         finish();
     }
+
+    /** this brings each of the texts in front of the background
+     * it's called by onCreate
+     */
     public void bringToFront() {
         score.bringToFront();
         nice.bringToFront();
@@ -62,6 +77,10 @@ public class ResultActivity extends AppCompatActivity {
         wordMiss.bringToFront();
         missNumber.bringToFront();
     }
+
+    /**
+     * this sets the size of each textView
+     */
     public void textSize() {
         score.setTextSize(60);
         wordFantastic.setTextSize(20);
@@ -73,6 +92,10 @@ public class ResultActivity extends AppCompatActivity {
         wordMiss.setTextSize(20);
         missNumber.setTextSize(20);
     }
+
+    /**
+     * this makes each text view white
+     */
     public void makeWhite() {
         int white = getResources().getColor(R.color.white);
         score.setTextColor(white);
@@ -86,6 +109,11 @@ public class ResultActivity extends AppCompatActivity {
         wordMiss.setTextColor(white);
         missNumber.setTextColor(white);
     }
+
+    /**
+     * this determines if something has the number "69"
+     * if it does, there's a word that says "nice" which shows up
+     */
     public void isNice() {
         CharSequence first = fantasticNumber.getText();
         CharSequence second = excellentNumber.getText();

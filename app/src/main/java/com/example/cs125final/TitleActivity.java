@@ -7,12 +7,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-// TODO: create banners for each of the songs
-
 public class TitleActivity extends AppCompatActivity {
 
-
+    /** this states all teh variables*/
     TextView titleText;
     ImageView marionetteBanner;
     ImageView quaoarBanner;
@@ -33,11 +30,18 @@ public class TitleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title);
 
+        /** this sets the title
+         * it becomes white
+         * and is brought to the front
+         */
         titleText = findViewById(R.id.title);
         titleText.bringToFront();
         int white = getResources().getColor(R.color.white);
         titleText.setTextColor(white);
 
+        /** this determines each of the banners
+         * it also brings them in front of the background
+         */
         marionetteBanner = findViewById(R.id.marionetteBanner);
         marionetteBanner.bringToFront();
         quaoarBanner = findViewById(R.id.quaoarBanner);
@@ -47,9 +51,15 @@ public class TitleActivity extends AppCompatActivity {
         metamorphosisBanner = findViewById(R.id.metamorphosisBanner);
         metamorphosisBanner.bringToFront();
 
-        /** at this point, you may have to change something in your settings
+        /* at this point, you may have to change something in your settings
          * go to file -> project structure -> app
          * then set both the target and source compatability to 1.8
+         */
+        /** this initializes each of the buttons
+         * they're all invisible
+         * but they're brought in front of the imageViews
+         * it also allows you to determine which song is chosen
+         * this will be used later on
          */
         song1 = findViewById(R.id.song_1);
         song1.bringToFront();
@@ -66,8 +76,10 @@ public class TitleActivity extends AppCompatActivity {
     }
 
 
-    /** eventually, this will play the music that the person chose
-     * for now, it just brings people to the game activity screen */
+    /** this brings you to the next screen
+     * it also determines which song is played
+     * and makes a variable called songName
+     */
     protected void playMusic(String song) {
         if (song.equals(first)) {
             songName = "marionette";
@@ -85,6 +97,7 @@ public class TitleActivity extends AppCompatActivity {
         startActivity(setupIntent);
         finish();
     }
+    /** this just gets the song name*/
     public static String getSong() {
         return songName;
     }
