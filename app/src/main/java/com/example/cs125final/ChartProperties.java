@@ -1,6 +1,5 @@
-package com.example.cs125final.;
+package com.example.cs125final;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ChartProperties {
