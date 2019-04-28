@@ -412,6 +412,6 @@ public class GameActivity extends AppCompatActivity {
         double BPM = ChartProperties.getBPM();
         double offset = ChartProperties.getOffset();
         //3000 is the delay in move
-        return 1000 * ((1 / BPM) + offset + 1) * currentBeat - 3000;
+        return (1000 * ((1 / BPM) + offset + 1) * currentBeat) - 2000;
     }
 }
