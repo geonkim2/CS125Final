@@ -265,11 +265,66 @@ public class GameActivity extends AppCompatActivity {
 
         final Handler animateHandler = new Handler();
         for (int i = 0; i < beat.size(); i++) {
-            current = getCurrent(direction.get(i));
+            String currentDirection = direction.get(i);
             delayLength = (long) getDelay(beat.get(i));
             animateHandler.postDelayed(new Runnable() {
                 public void run() {
-                    move(current);
+                    if (currentDirection.equals("left")) {
+                        if (leftCount == 0) {
+                            leftCount++;
+                            move(leftMove);
+                        }
+                        if (leftCount == 1) {
+                            leftCount++;
+                            move(leftMove1);
+                        }
+                        if (leftCount == 2) {
+                            leftCount = 0;
+                            move(leftMove2);
+                        }
+                    }
+                    if (currentDirection.equals("down")) {
+                        if (downCount == 0) {
+                            downCount++;
+                            move(downMove);
+                        }
+                        if (downCount == 1) {
+                            downCount++;
+                            move(downMove1);
+                        }
+                        if (downCount == 2) {
+                            downCount = 0;
+                            move(downMove2);
+                        }
+                    }
+                    if (currentDirection.equals("up")) {
+                        if (upCount == 0) {
+                            upCount++;
+                            move(upMove);
+                        }
+                        if (upCount == 1) {
+                            upCount++;
+                            move(upMove1);
+                        }
+                        if (upCount == 2) {
+                            upCount = 0;
+                            move(upMove2);
+                        }
+                    }
+                    if (currentDirection.equals("right")) {
+                        if (rightCount == 0) {
+                            rightCount++;
+                            move(rightMove);
+                        }
+                        if (rightCount == 1) {
+                            rightCount++;
+                            move(rightMove1);
+                        }
+                        if (rightCount == 2) {
+                            rightCount = 0;
+                            move(rightMove2);
+                        }
+                    }
                 }
             }, delayLength);
         }
@@ -309,70 +364,10 @@ public class GameActivity extends AppCompatActivity {
     int downCount = 0;
     int upCount = 0;
     int rightCount = 0;
-
-    public ImageView getCurrent(String currentDirection) {
-        if (currentDirection.equals("left")) {
-            if (leftCount == 0) {
-                leftCount++;
-                return leftMove;
-            }
-            if (leftCount == 1) {
-                leftCount++;
-                return leftMove1;
-            }
-            if (leftCount == 2) {
-                leftCount = 0;
-                return leftMove2;
-            }
-        }
-        if (currentDirection.equals("down")) {
-            if (downCount == 0) {
-                downCount++;
-                return downMove;
-            }
-            if (downCount == 1) {
-                downCount++;
-                return downMove1;
-            }
-            if (downCount == 2) {
-                downCount = 0;
-                return downMove2;
-            }
-        }
-        if (currentDirection.equals("up")) {
-            if (upCount == 0) {
-                upCount++;
-                return upMove;
-            }
-            if (upCount == 1) {
-                upCount++;
-                return upMove1;
-            }
-            if (upCount == 2) {
-                upCount = 0;
-                return upMove2;
-            }
-        }
-        if (currentDirection.equals("right")) {
-            if (rightCount == 0) {
-                rightCount++;
-                return rightMove;
-            }
-            if (rightCount == 1) {
-                rightCount++;
-                return rightMove1;
-            }
-            if (rightCount == 2) {
-                rightCount = 0;
-                return rightMove2;
-            }
-        }
-        return null;
-    }
-
     public double getDelay(double currentBeat) {
         double BPM = ChartProperties.getBPM();
         double offset = ChartProperties.getOffset();
-        return 1000 * ((1 / BPM) + offset + 1) * currentBeat;
+        //3000 is the delay in move
+        return 1000 * ((1 / BPM) + offset + 1) * currentBeat - 3000;
     }
 }

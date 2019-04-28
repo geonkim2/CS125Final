@@ -14,14 +14,33 @@ public class ChartProperties {
         if (songName.equals("marionette")) {
             offset = 0.411182;
         }
+        if (songName.equals("quaoar")) {
+            offset = 0.011;
+        }
+        if (songName.equals("queen bee")) {
+            offset = 0.751;
+        }
+        if (songName.equals("metamorphosis")) {
+            offset = 0;
+        }
         return offset;
     }
     public static double getBPM() {
         if (songName.equals("marionette")) {
             BPM = 165;
         }
+        if (songName.equals("quaoar")) {
+            BPM = 174;
+        }
+        if (songName.equals("queen bee")) {
+            BPM = 159.985;
+        }
+        if (songName.equals("metamorphosis")) {
+            BPM = 125;
+        }
         return BPM;
     }
+
     public static void parseNotes() {
         String toParse = File.getFile();
         if (toParse == null) {
