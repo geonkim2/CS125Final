@@ -214,7 +214,7 @@ public class GameActivity extends AppCompatActivity {
         rightMove2.setVisibility(View.VISIBLE);
         rightMove2.bringToFront();
 
-        box.setVisibility(View.GONE);
+        box.setVisibility(View.VISIBLE);
         box.bringToFront();
 
         leftOutline.setVisibility(View.VISIBLE);
@@ -270,12 +270,14 @@ public class GameActivity extends AppCompatActivity {
             animateHandler.postDelayed(new Runnable() {
                 public void run() {
                     if (currentDirection.equals("left")) {
+                        leftCount++;
+                        if (leftCount == 3) {
+                            leftCount = 0;
+                        }
                         if (leftCount == 0) {
-                            leftCount++;
                             move(leftMove);
                         }
                         if (leftCount == 1) {
-                            leftCount++;
                             move(leftMove1);
                         }
                         if (leftCount == 2) {
@@ -284,44 +286,47 @@ public class GameActivity extends AppCompatActivity {
                         }
                     }
                     if (currentDirection.equals("down")) {
+                        downCount++;
+                        if (downCount == 3) {
+                            downCount = 0;
+                        }
                         if (downCount == 0) {
-                            downCount++;
                             move(downMove);
                         }
                         if (downCount == 1) {
-                            downCount++;
                             move(downMove1);
                         }
                         if (downCount == 2) {
-                            downCount = 0;
                             move(downMove2);
                         }
                     }
                     if (currentDirection.equals("up")) {
+                        upCount++;
+                        if (upCount == 3) {
+                            upCount = 0;
+                        }
                         if (upCount == 0) {
-                            upCount++;
                             move(upMove);
                         }
                         if (upCount == 1) {
-                            upCount++;
                             move(upMove1);
                         }
                         if (upCount == 2) {
-                            upCount = 0;
                             move(upMove2);
                         }
                     }
                     if (currentDirection.equals("right")) {
+                        rightCount++;
+                        if (rightCount == 3) {
+                            rightCount = 0;
+                        }
                         if (rightCount == 0) {
-                            rightCount++;
                             move(rightMove);
                         }
                         if (rightCount == 1) {
-                            rightCount++;
                             move(rightMove1);
                         }
                         if (rightCount == 2) {
-                            rightCount = 0;
                             move(rightMove2);
                         }
                     }
