@@ -3,7 +3,6 @@ package com.example.cs125final;
 import java.util.ArrayList;
 
 public class ChartProperties {
-    static String file;
     static double offset;
     static double BPM;
     static ArrayList<String> direction = new ArrayList<>();
@@ -23,48 +22,16 @@ public class ChartProperties {
         }
         return BPM;
     }
-    public static String getFile() {
-        if (songName.equals("marionette")) {
-            file = ",  // measure 0\n" +
-                    "1000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    ",  // measure 1\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    ",  // measure 2\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    ",  // measure 3\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    ",  // measure 4\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0000\n" +
-                    "0001";
-        }
-        return file;
-    }
     public static void parseNotes() {
-        String toParse = getFile();
+        String toParse = File.getFile();
+        if (toParse == null) {
+            return;
+        }
         String[] measures = toParse.split(",");
         double currentBeat = 0;
         for (int i = 1; i < measures.length; i++) {
             String notes[] = measures[i].split("\n");
-            System.out.println(notes[0]);
-            for (int j = 0; j < notes.length; j++) {
+            for (int j = 1; j < notes.length; j++) {
                 currentBeat = 4 * (i + ((double) j / notes.length));
                 if (notes[j].length() > 6) {
                     continue;
@@ -92,7 +59,6 @@ public class ChartProperties {
     public static void main(String[] args) {
         getOffset();
         getBPM();
-        getFile();
         parseNotes();
         for (int i = 0; i < direction.size(); i++) {
             System.out.println(direction);
