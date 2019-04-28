@@ -7,7 +7,8 @@ public class ChartProperties {
     static double BPM;
     static ArrayList<String> direction = new ArrayList<>();
     static ArrayList<Double> beat = new ArrayList<>();
-    static String songName = TitleActivity.getSong();
+//    static String songName = TitleActivity.getSong();
+    static String songName = "marionette";
 
     /** this determines the offset of the song
      * it MUST BE CALLED, even if the offset and BPM are static
@@ -66,25 +67,32 @@ public class ChartProperties {
                 if (notes[j].length() != 4) {
                     continue;
                 }
-                if (notes[j].charAt(0) != '0') {
+                if (notes[j].charAt(0) == '1' || notes[j].charAt(0) == '2') {
                     direction.add("left");
                     beat.add(currentBeat);
                 }
-                if (notes[j].charAt(1) != '0') {
+                if (notes[j].charAt(1) == '1' || notes[j].charAt(1) == '2') {
                     direction.add("down");
                     beat.add(currentBeat);
                 }
-                if (notes[j].charAt(2) != '0') {
+                if (notes[j].charAt(2) == '1' || notes[j].charAt(2) == '2') {
                     direction.add("up");
                     beat.add(currentBeat);
                 }
-                if (notes[j].charAt(3) != '0') {
+                if (notes[j].charAt(3) == '1' || notes[j].charAt(3) == '2') {
                     direction.add("right");
                     beat.add(currentBeat);
                 }
             }
 
         }
+    }
+
+    public static double getDelay(double currentBeat) {
+        double BPM = ChartProperties.getBPM();
+        double offset = ChartProperties.getOffset();
+        //3000 is the delay in move
+        return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1500;
     }
 
     /** this is here for debugging
@@ -100,8 +108,10 @@ public class ChartProperties {
         getBPM();
         parseNotes();
         for (int i = 0; i < direction.size(); i++) {
-            System.out.println(direction);
-            System.out.println(beat);
+            double print = getDelay(beat.get(i));
+            System.out.println(print);
+//            System.out.println(direction);
+            System.out.println(beat.get(i));
         }
     }
 }

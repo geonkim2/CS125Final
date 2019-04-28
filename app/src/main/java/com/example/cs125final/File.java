@@ -6,7 +6,8 @@ package com.example.cs125final;
  * you also must remember to change it bakc
  */
 public class File {
-    static String songName = TitleActivity.getSong();
+//    static String songName = TitleActivity.getSong();
+    static String songName = "marionette";
 
     public static String getFile() {
         if (songName == null) {
@@ -71,7 +72,7 @@ public class File {
                     "0000\n" +
                     "0000\n" +
                     ",  // measure 9\n" +
-                    "3001\n" +
+                    "0001\n" +
                     "0010\n" +
                     "0001\n" +
                     "1000\n" +
