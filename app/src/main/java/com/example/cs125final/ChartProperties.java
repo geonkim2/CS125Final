@@ -1,14 +1,16 @@
-package com.example.cs125final;
+package com.example.cs125final.;
 
-import android.support.v7.app.AppCompatActivity;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-public class ChartProperties extends AppCompatActivity {
+public class ChartProperties {
     static String file;
     static double offset;
     static double BPM;
-    static String[] direction;
-    static Double[] beat;
-    static String songName = TitleActivity.getSong();
+    static ArrayList<String> direction = new ArrayList<>();
+    static ArrayList<Double> beat = new ArrayList<>();
+    static String songName = "marionette";
+
 
     public static double getOffset() {
         if (songName.equals("marionette")) {
@@ -33,7 +35,26 @@ public class ChartProperties extends AppCompatActivity {
                     "0000\n" +
                     "0000\n" +
                     "0000\n" +
-                    "0000";
+                    "0000\n" +
+                    ",  // measure 2\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    ",  // measure 3\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    ",  // measure 4\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0000\n" +
+                    "0001";
         }
         return file;
     }
@@ -41,32 +62,42 @@ public class ChartProperties extends AppCompatActivity {
         String toParse = getFile();
         String[] measures = toParse.split(",");
         double currentBeat = 0;
-        int kl = -1;
-        for (int i = 0; i < measures.length; i++) {
+        for (int i = 1; i < measures.length; i++) {
             String notes[] = measures[i].split("\n");
+            System.out.println(notes[0]);
             for (int j = 0; j < notes.length; j++) {
                 currentBeat = 4 * (i + ((double) j / notes.length));
-                kl++;
                 if (notes[j].length() > 6) {
                     continue;
                 }
                 if (notes[j].charAt(0) != '0') {
-                    direction[kl] = "left";
-                    beat[kl] = currentBeat;
+                    direction.add("left");
+                    beat.add(currentBeat);
                 }
                 if (notes[j].charAt(1) != '0') {
-                    direction[kl] = "down";
-                    beat[kl] = currentBeat;
+                    direction.add("down");
+                    beat.add(currentBeat);
                 }
                 if (notes[j].charAt(2) != '0') {
-                    direction[kl] = "up";
-                    beat[kl] = currentBeat;
+                    direction.add("up");
+                    beat.add(currentBeat);
                 }
                 if (notes[j].charAt(3) != '0') {
-                    direction[kl] = "right";
-                    beat[kl] = currentBeat;
+                    direction.add("right");
+                    beat.add(currentBeat);
                 }
             }
+
+        }
+    }
+    public static void main(String[] args) {
+        getOffset();
+        getBPM();
+        getFile();
+        parseNotes();
+        for (int i = 0; i < direction.size(); i++) {
+            System.out.println(direction);
+            System.out.println(beat);
         }
     }
 }

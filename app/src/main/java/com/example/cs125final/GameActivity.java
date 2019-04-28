@@ -261,9 +261,9 @@ public class GameActivity extends AppCompatActivity {
 //            current = getCurrent(direction.get(i));
 //            delayLength = (long) getDelay(beat.get(i));
 //        }
+        ChartProperties.parseNotes();
         animateHandler.postDelayed(new Runnable() {
             public void run() {
-                ChartProperties.parseNotes();
                 if (direction != null && direction[0].equals("left")) {
                     move(rightMove);
                 }
