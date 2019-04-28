@@ -41,6 +41,10 @@ public class GameActivity extends AppCompatActivity {
     ImageView rightMove2;
     ImageView upMove2;
     ImageView downMove2;
+    ImageView leftMove3;
+    ImageView rightMove3;
+    ImageView upMove3;
+    ImageView downMove3;
     ImageView leftArrow;
     ImageView upArrow;
     ImageView downArrow;
@@ -97,6 +101,10 @@ public class GameActivity extends AppCompatActivity {
             upMove2 = findViewById(R.id.yellowUpMove2);
             downMove2 = findViewById(R.id.yellowDownMove2);
             rightMove2 = findViewById(R.id.yellowRightMove2);
+            leftMove3 = findViewById(R.id.yellowLeftMove3);
+            upMove3 = findViewById(R.id.yellowUpMove3);
+            downMove3 = findViewById(R.id.yellowDownMove3);
+            rightMove3 = findViewById(R.id.yellowRightMove3);
         }
         if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
@@ -125,6 +133,10 @@ public class GameActivity extends AppCompatActivity {
             upMove2 = findViewById(R.id.qbUpMove2);
             downMove2 = findViewById(R.id.qbDownMove2);
             rightMove2 = findViewById(R.id.qbRightMove2);
+            leftMove3 = findViewById(R.id.qbLeftMove3);
+            upMove3 = findViewById(R.id.qbUpMove3);
+            downMove3 = findViewById(R.id.qbDownMove3);
+            rightMove3 = findViewById(R.id.qbRightMove3);
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
@@ -153,6 +165,10 @@ public class GameActivity extends AppCompatActivity {
             upMove2 = findViewById(R.id.quaoarUpMove2);
             downMove2 = findViewById(R.id.quaoarDownMove2);
             rightMove2 = findViewById(R.id.quaoarRightMove2);
+            leftMove3 = findViewById(R.id.quaoarLeftMove3);
+            upMove3 = findViewById(R.id.quaoarUpMove3);
+            downMove3 = findViewById(R.id.quaoarDownMove3);
+            rightMove3 = findViewById(R.id.quaoarRightMove3);
         }
         if (songName.equals("metamorphosis")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);
@@ -181,6 +197,10 @@ public class GameActivity extends AppCompatActivity {
             upMove2 = findViewById(R.id.metaUpMove2);
             downMove2 = findViewById(R.id.metaDownMove2);
             rightMove2 = findViewById(R.id.metaRightMove2);
+            leftMove3 = findViewById(R.id.metaLeftMove3);
+            upMove3 = findViewById(R.id.metaUpMove3);
+            downMove3 = findViewById(R.id.metaDownMove3);
+            rightMove3 = findViewById(R.id.metaRightMove3);
         }
         onScreen = true;
         songLength = currentlyPlaying.getDuration();
@@ -213,6 +233,14 @@ public class GameActivity extends AppCompatActivity {
         downMove2.bringToFront();
         rightMove2.setVisibility(View.VISIBLE);
         rightMove2.bringToFront();
+        leftMove3.setVisibility(View.VISIBLE);
+        leftMove3.bringToFront();
+        upMove3.setVisibility(View.VISIBLE);
+        upMove3.bringToFront();
+        downMove3.setVisibility(View.VISIBLE);
+        downMove3.bringToFront();
+        rightMove3.setVisibility(View.VISIBLE);
+        rightMove3.bringToFront();
 
         box.setVisibility(View.VISIBLE);
         box.bringToFront();
@@ -271,7 +299,7 @@ public class GameActivity extends AppCompatActivity {
                 public void run() {
                     if (currentDirection.equals("left")) {
                         leftCount++;
-                        if (leftCount == 3) {
+                        if (leftCount == 4) {
                             leftCount = 0;
                         }
                         if (leftCount == 0) {
@@ -281,13 +309,15 @@ public class GameActivity extends AppCompatActivity {
                             move(leftMove1);
                         }
                         if (leftCount == 2) {
-                            leftCount = 0;
                             move(leftMove2);
+                        }
+                        if (leftCount == 3) {
+                            move(leftMove3);
                         }
                     }
                     if (currentDirection.equals("down")) {
                         downCount++;
-                        if (downCount == 3) {
+                        if (downCount == 4) {
                             downCount = 0;
                         }
                         if (downCount == 0) {
@@ -299,10 +329,13 @@ public class GameActivity extends AppCompatActivity {
                         if (downCount == 2) {
                             move(downMove2);
                         }
+                        if (downCount == 3) {
+                            move(downMove3);
+                        }
                     }
                     if (currentDirection.equals("up")) {
                         upCount++;
-                        if (upCount == 3) {
+                        if (upCount == 4) {
                             upCount = 0;
                         }
                         if (upCount == 0) {
@@ -314,10 +347,13 @@ public class GameActivity extends AppCompatActivity {
                         if (upCount == 2) {
                             move(upMove2);
                         }
+                        if (upCount == 3) {
+                            move(upMove3);
+                        }
                     }
                     if (currentDirection.equals("right")) {
                         rightCount++;
-                        if (rightCount == 3) {
+                        if (rightCount == 4) {
                             rightCount = 0;
                         }
                         if (rightCount == 0) {
@@ -328,6 +364,9 @@ public class GameActivity extends AppCompatActivity {
                         }
                         if (rightCount == 2) {
                             move(rightMove2);
+                        }
+                        if (rightCount == 3) {
+                            move(rightMove3);
                         }
                     }
                 }
