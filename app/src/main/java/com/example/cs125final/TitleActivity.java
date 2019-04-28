@@ -88,4 +88,5 @@ public class TitleActivity extends AppCompatActivity {
     public static String getSong() {
         return songName;
     }
+
 }

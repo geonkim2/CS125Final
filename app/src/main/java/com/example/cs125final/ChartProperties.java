@@ -7,7 +7,7 @@ public class ChartProperties {
     static double BPM;
     static ArrayList<String> direction = new ArrayList<>();
     static ArrayList<Double> beat = new ArrayList<>();
-    static String songName = "marionette";
+    static String songName = TitleActivity.getSong();
 
 
     public static double getOffset() {
@@ -33,7 +33,7 @@ public class ChartProperties {
             String notes[] = measures[i].split("\n");
             for (int j = 1; j < notes.length; j++) {
                 currentBeat = 4 * (i + ((double) j / notes.length));
-                if (notes[j].length() > 6) {
+                if (notes[j].length() != 4) {
                     continue;
                 }
                 if (notes[j].charAt(0) != '0') {

@@ -17,8 +17,7 @@ import java.lang.Cloneable;
 
 import static com.example.cs125final.ChartProperties.getBPM;
 
-// TODO: animate the arrows
-// TODO: add parsing classes for the other three songs
+// TODO: fix the song title in GameActivity, CharProperties, and File
 
 /** we'll want to use MEDIAPLAYER and use OBJECTANIMATOR
  * MediaPlayer allows you to mess with audio
@@ -56,10 +55,13 @@ public class GameActivity extends AppCompatActivity {
     Button right;
     String songName;
     MediaPlayer currentlyPlaying;
-    static ImageView background;
+    ImageView background;
     public boolean onScreen;
     int songLength;
     long delayLength;
+    ImageView current;
+    ArrayList<String> direction;
+    ArrayList<Double> beat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,10 +180,14 @@ public class GameActivity extends AppCompatActivity {
             leftMove2 = findViewById(R.id.metaLeftMove2);
             upMove2 = findViewById(R.id.metaUpMove2);
             downMove2 = findViewById(R.id.metaDownMove2);
-            rightMove2= findViewById(R.id.metaRightMove2);
+            rightMove2 = findViewById(R.id.metaRightMove2);
         }
         onScreen = true;
         songLength = currentlyPlaying.getDuration();
+
+        ChartProperties.parseNotes();
+        beat = ChartProperties.beat;
+        direction = ChartProperties.direction;
 
         leftMove.setVisibility(View.VISIBLE);
         leftMove.bringToFront();
@@ -256,20 +262,17 @@ public class GameActivity extends AppCompatActivity {
                 currentlyPlaying.start();
             }
         }, 1000);
-         final Handler animateHandler = new Handler();
-//        for (int i = 0; i < direction.size(); i++) {
-//            current = getCurrent(direction.get(i));
-//            delayLength = (long) getDelay(beat.get(i));
-//        }
-        ChartProperties.parseNotes();
-        animateHandler.postDelayed(new Runnable() {
-            public void run() {
-                if (direction != null && direction[0].equals("left")) {
-                    move(rightMove);
+
+        final Handler animateHandler = new Handler();
+        for (int i = 0; i < beat.size(); i++) {
+            current = getCurrent(direction.get(i));
+            delayLength = (long) getDelay(beat.get(i));
+            animateHandler.postDelayed(new Runnable() {
+                public void run() {
+                    move(current);
                 }
-                move(leftMove);
-            }
-        }, 1000);
+            }, delayLength);
+        }
 
         // it changes screens after a small delay
         final Handler handler = new Handler();
@@ -284,6 +287,7 @@ public class GameActivity extends AppCompatActivity {
             }
         }, songLength);
     }
+
     public void nextScreen() {
         onScreen = false;
         currentlyPlaying.stop();
@@ -291,11 +295,8 @@ public class GameActivity extends AppCompatActivity {
         startActivity(setupIntent);
         finish();
     }
-    ImageView current;
-    String[] direction;
-    double[] beat;
 
-    public void move (ImageView toMove) {
+    public void move(ImageView toMove) {
         Animation animation1 =
                 AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
         toMove.startAnimation(animation1);
@@ -308,8 +309,9 @@ public class GameActivity extends AppCompatActivity {
     int downCount = 0;
     int upCount = 0;
     int rightCount = 0;
-    public ImageView getCurrent(String which) {
-        if (which.equals("left")) {
+
+    public ImageView getCurrent(String currentDirection) {
+        if (currentDirection.equals("left")) {
             if (leftCount == 0) {
                 leftCount++;
                 return leftMove;
@@ -323,7 +325,7 @@ public class GameActivity extends AppCompatActivity {
                 return leftMove2;
             }
         }
-        if (which.equals("down")) {
+        if (currentDirection.equals("down")) {
             if (downCount == 0) {
                 downCount++;
                 return downMove;
@@ -337,7 +339,7 @@ public class GameActivity extends AppCompatActivity {
                 return downMove2;
             }
         }
-        if (which.equals("up")) {
+        if (currentDirection.equals("up")) {
             if (upCount == 0) {
                 upCount++;
                 return upMove;
@@ -351,7 +353,7 @@ public class GameActivity extends AppCompatActivity {
                 return upMove2;
             }
         }
-        if (which.equals("right")) {
+        if (currentDirection.equals("right")) {
             if (rightCount == 0) {
                 rightCount++;
                 return rightMove;
@@ -367,9 +369,10 @@ public class GameActivity extends AppCompatActivity {
         }
         return null;
     }
+
     public double getDelay(double currentBeat) {
         double BPM = ChartProperties.getBPM();
         double offset = ChartProperties.getOffset();
-        return 1000*((1/BPM) + offset + 1) * currentBeat;
+        return 1000 * ((1 / BPM) + offset + 1) * currentBeat;
     }
 }
