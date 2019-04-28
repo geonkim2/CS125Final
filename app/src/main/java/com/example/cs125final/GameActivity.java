@@ -19,11 +19,10 @@ import static com.example.cs125final.ChartProperties.getBPM;
 
 // TODO: fix the song title in GameActivity, CharProperties, and File
 
-/** we'll want to use MEDIAPLAYER and use OBJECTANIMATOR
- * MediaPlayer allows you to mess with audio
- * includes a nice function called isPlaying()
- * ObjectAnimator allwos you to move an object a specific amount per second
- * doesn't blind from place to place
+/** fantastic = blue
+ *  excellent = yellow
+ *  great = green
+ *  miss = red
  */
 public class GameActivity extends AppCompatActivity {
 

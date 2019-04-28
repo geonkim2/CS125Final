@@ -5,8 +5,10 @@
     <color name="colorAccent">#700F70</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="blue">#2ED3FE</color>
     <color name="green">#32CD32</color>
     <color name="yellow">#FCD116</color>
+    <color name="red">#FF001B</color>
     <color name="greyish">#778899</color>
     <color name="quaoarBrown">#d8927a</color>
 </resources>
