@@ -9,7 +9,10 @@ public class ChartProperties {
     static ArrayList<Double> beat = new ArrayList<>();
     static String songName = TitleActivity.getSong();
 
-
+    /** this determines the offset of the song
+     * it MUST BE CALLED, even if the offset and BPM are static
+     * this is because it initializes the offset
+     */
     public static double getOffset() {
         if (songName.equals("marionette")) {
             offset = 0.411182;
@@ -25,6 +28,11 @@ public class ChartProperties {
         }
         return offset;
     }
+
+    /** this determines the BPM of the song
+     * it MUST BE CALLED, even if the offset and BPM are static
+     * this is because it initializes the BPM
+     */
     public static double getBPM() {
         if (songName.equals("marionette")) {
             BPM = 165;
@@ -41,6 +49,9 @@ public class ChartProperties {
         return BPM;
     }
 
+    /** this parses the chart
+     * basically, it determines the beat and direction of each note
+     */
     public static void parseNotes() {
         String toParse = File.getFile();
         if (toParse == null) {
@@ -75,6 +86,15 @@ public class ChartProperties {
 
         }
     }
+
+    /** this is here for debugging
+     * by pressing play, you can call all of the functions
+     * it doesn't work in actual activity classes, though
+     * you need to use the actual app to debug
+     * for this to work, you need to set the song in ChartProperties
+     * AND in File to something
+     * otherwise, you get a null pointer exception
+     */
     public static void main(String[] args) {
         getOffset();
         getBPM();

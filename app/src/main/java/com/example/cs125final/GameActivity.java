@@ -26,6 +26,7 @@ import static com.example.cs125final.ChartProperties.getBPM;
  */
 public class GameActivity extends AppCompatActivity {
 
+    /** this declares each of the variable names*/
     Button quit;
     ImageView box;
     ImageView leftMove;
@@ -52,10 +53,10 @@ public class GameActivity extends AppCompatActivity {
     ImageView upOutline;
     ImageView downOutline;
     ImageView rightOutline;
-    Button left;
-    Button up;
-    Button down;
-    Button right;
+    Button leftButton;
+    Button upButton;
+    Button downButton;
+    Button rightButton;
     String songName;
     MediaPlayer currentlyPlaying;
     ImageView background;
@@ -66,13 +67,18 @@ public class GameActivity extends AppCompatActivity {
     ArrayList<String> direction;
     ArrayList<Double> beat;
 
+    /** this is everything that happens when the app loads*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
         quit = findViewById(R.id.quit);
+        /** this declares the string of what song it is*/
         songName = TitleActivity.getSong();
+        /** each of these declare what to make each variable equal to
+         * since the layout of each song is different, we need to do this.
+         */
         if (songName.equals("marionette")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
             box = findViewById(R.id.marionetteBox);
@@ -201,13 +207,25 @@ public class GameActivity extends AppCompatActivity {
             downMove3 = findViewById(R.id.metaDownMove3);
             rightMove3 = findViewById(R.id.metaRightMove3);
         }
+        /**this says I'm still on the screen
+         * this prevents double screen changing
+         * the app is set up so that it automatically changes screens when the song is finished
+         * it's on a timer, so we need ths variable to do that
+         */
         onScreen = true;
         songLength = currentlyPlaying.getDuration();
 
+        /** this is where we get the chart
+         * beat is the current beat that we're on
+         * direction is which arrow we want to move
+         */
         ChartProperties.parseNotes();
         beat = ChartProperties.beat;
         direction = ChartProperties.direction;
 
+        /** this brings literally every moving arrow to the front
+         * this must be done before bringing the box of the arrows to the front
+         */
         leftMove.setVisibility(View.VISIBLE);
         leftMove.bringToFront();
         upMove.setVisibility(View.VISIBLE);
@@ -241,9 +259,13 @@ public class GameActivity extends AppCompatActivity {
         rightMove3.setVisibility(View.VISIBLE);
         rightMove3.bringToFront();
 
+        /** now i set the box to the front so that the arrows are covered up*/
         box.setVisibility(View.VISIBLE);
         box.bringToFront();
 
+        /** i set the arrow "outlines" to visible
+         * this is what tells you when to hit the arrows
+         */
         leftOutline.setVisibility(View.VISIBLE);
         leftOutline.bringToFront();
         upOutline.setVisibility(View.VISIBLE);
@@ -253,36 +275,45 @@ public class GameActivity extends AppCompatActivity {
         rightOutline.setVisibility(View.VISIBLE);
         rightOutline.bringToFront();
 
+        /** this sets the visibility of the ImageViews */
         upArrow.setVisibility(View.VISIBLE);
         leftArrow.setVisibility(View.VISIBLE);
         rightArrow.setVisibility(View.VISIBLE);
         downArrow.setVisibility(View.VISIBLE);
 
+        /** now, i bring each of the buttons to the front
+         * they're invisible, so you can't see them
+         * but if they're not in front, you cant click them
+         */
         leftArrow.bringToFront();
-        left = findViewById(R.id.left_button);
-        left.setEnabled(true);
-        left.bringToFront();
-
+        leftButton = findViewById(R.id.left_button);
+        leftButton.setEnabled(true);
+        leftButton.bringToFront();
         upArrow.bringToFront();
-        up = findViewById(R.id.up_button);
-        up.setEnabled(true);
-        up.bringToFront();
-
-        right = findViewById(R.id.right_button);
-        right.setEnabled(true);
-        right.bringToFront();
+        upButton = findViewById(R.id.up_button);
+        upButton.setEnabled(true);
+        upButton.bringToFront();
+        rightButton = findViewById(R.id.right_button);
+        rightButton.setEnabled(true);
+        rightButton.bringToFront();
         rightArrow.bringToFront();
 
-        /** this is here for DEBUGGING PURPOSES*/
-        down = findViewById(R.id.down_button);
-        down.setEnabled(true);
-        down.bringToFront();
-        down.setOnClickListener((v) -> nextScreen());
+        /** this is here for DEBUGGING PURPOSES
+         * basically, by making the button do something, you prove it works
+         */
+        downButton = findViewById(R.id.down_button);
+        downButton.setEnabled(true);
+        downButton.bringToFront();
+        downButton.setOnClickListener((v) -> nextScreen());
         downArrow.bringToFront();
 
+        /** now, i set the quit button to quit*/
         quit.setEnabled(true);
         quit.setOnClickListener((v) -> nextScreen());
 
+        /** this delays the song start by one second
+         * as per Geon's request
+         */
         final Handler delayHandler = new Handler();
         delayHandler.postDelayed(new Runnable() {
             public void run() {
@@ -290,6 +321,9 @@ public class GameActivity extends AppCompatActivity {
             }
         }, 1000);
 
+        /** this actually animates the arrows
+         * it's on a timer
+         */
         final Handler animateHandler = new Handler();
         for (int i = 0; i < beat.size(); i++) {
             String currentDirection = direction.get(i);
@@ -372,7 +406,7 @@ public class GameActivity extends AppCompatActivity {
             }, delayLength);
         }
 
-        // it changes screens after a small delay
+        /** the changes screens after the song is over*/
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
@@ -386,6 +420,7 @@ public class GameActivity extends AppCompatActivity {
         }, songLength);
     }
 
+    /** this is the function called by the green button*/
     public void nextScreen() {
         onScreen = false;
         currentlyPlaying.stop();
@@ -394,19 +429,21 @@ public class GameActivity extends AppCompatActivity {
         finish();
     }
 
+    /** this is the functioned called by the animation*/
     public void move(ImageView toMove) {
         Animation animation1 =
                 AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
         toMove.startAnimation(animation1);
     }
 
-    /**
-     * determine which copy to use among three copies of each arrows.
-     */
     int leftCount = 0;
     int downCount = 0;
     int upCount = 0;
     int rightCount = 0;
+
+    /** this is the delay put into the animation
+     * each arrow has its own delay
+     */
     public double getDelay(double currentBeat) {
         double BPM = ChartProperties.getBPM();
         double offset = ChartProperties.getOffset();
