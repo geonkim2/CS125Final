@@ -24,7 +24,7 @@ public class ChartProperties {
             offset = -0.751;
         }
         if (songName.equals("peacock")) {
-            offset = 0.018;
+            offset = 0.005428;
         }
         return offset;
     }
@@ -44,7 +44,7 @@ public class ChartProperties {
             BPM = 159.985;
         }
         if (songName.equals("peacock")) {
-            BPM = 110;
+            BPM = 105;
         }
         return BPM;
     }

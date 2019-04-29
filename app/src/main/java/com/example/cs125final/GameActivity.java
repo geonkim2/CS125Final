@@ -245,11 +245,11 @@ public class GameActivity extends AppCompatActivity {
             rightMove6 = findViewById(R.id.quaoarRightMove6);
         }
         if (songName.equals("peacock")) {
-            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.peacock);
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.peackock);
             background = findViewById(R.id.peacockBackground);
             background.setVisibility(View.VISIBLE);
             box = findViewById(R.id.peacockBox);
-            int green = getResources().getColor(R.color.peacock);
+            int green = getResources().getColor(R.color.white);
             quit.setBackgroundColor(green);
             downArrow = findViewById(R.id.peacockDown);
             rightArrow = findViewById(R.id.peacockRight);
