@@ -470,7 +470,6 @@ public class GameActivity extends AppCompatActivity {
                 AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
         toMove.startAnimation(animation1);
     }
-
     int leftCount = 0;
     int downCount = 0;
     int upCount = 0;
@@ -485,4 +484,37 @@ public class GameActivity extends AppCompatActivity {
         //3000 is the delay in move
         return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1178.57143;
     }
+    static int fantasticcount;
+    static int excellentcount;
+    static int greatcount;
+    static int misscount;
+    public void hit(String direction, double delay, double currentPosition) {
+        if ((currentPosition < (delay + 50)) && currentPosition > (delay - 50)) {
+            fantasticcount++;
+            fantastic.setVisibility(View.VISIBLE);
+            excellent.setVisibility(View.INVISIBLE);
+            great.setVisibility(View.INVISIBLE);
+            miss.setVisibility(View.INVISIBLE);
+        } else if ((currentPosition < (delay + 100)) && currentPosition > (delay - 100)) {
+            excellentcount++;
+            fantastic.setVisibility(View.INVISIBLE);
+            excellent.setVisibility(View.VISIBLE);
+            great.setVisibility(View.INVISIBLE);
+            miss.setVisibility(View.INVISIBLE);
+        } else if ((currentPosition < (delay + 150)) && currentPosition > (delay - 150)) {
+            greatcount++;
+            fantastic.setVisibility(View.INVISIBLE);
+            excellent.setVisibility(View.INVISIBLE);
+            great.setVisibility(View.VISIBLE);
+            miss.setVisibility(View.INVISIBLE);
+        } else {
+            misscount++;
+            fantastic.setVisibility(View.INVISIBLE);
+            excellent.setVisibility(View.INVISIBLE);
+            great.setVisibility(View.INVISIBLE);
+            miss.setVisibility(View.VISIBLE);
+        }
+
+    }
+
 }

@@ -51,6 +51,11 @@ public class ResultActivity extends AppCompatActivity {
         makeWhite();
         textSize();
         isNice();
+
+        fantasticNumber.setText(GameActivity.fantasticcount);
+        excellentNumber.setText(GameActivity.excellentcount);
+        greatNumber.setText(GameActivity.greatcount);
+        missNumber.setText(GameActivity.misscount)
     }
 
     /** this returns you to the title screen when you click

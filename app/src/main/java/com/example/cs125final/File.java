@@ -8,6 +8,17 @@ package com.example.cs125final;
 public class File {
     static String songName = TitleActivity.getSong();
 
+    public static void main(String[] args) {
+        songName = "marionette";
+        System.out.println(getFile());
+        songName = "queen bee";
+        System.out.println(getFile());
+        songName = "quaoar";
+        System.out.println(getFile());
+        songName = "metamorphosis";
+        System.out.println(getFile());
+    }
+
     public static String getFile() {
         if (songName == null) {
             return null;

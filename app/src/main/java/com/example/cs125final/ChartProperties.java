@@ -46,7 +46,16 @@ public class ChartProperties {
             BPM = 159.985;
         }
         if (songName.equals("metamorphosis")) {
-            BPM = 125;
+            parseNotes();
+            for (int i = 0; i < beat.size(); i++) {
+                if (beat.get(i) < 176) {
+                    BPM = 124;
+                } else if (beat.get(i) < 180) {
+                    BPM = 124.5;
+                } else {
+                    BPM = 124.9;
+                }
+            }
         }
         return BPM;
     }
@@ -58,6 +67,12 @@ public class ChartProperties {
         String toParse = File.getFile();
         if (toParse == null) {
             return;
+        }
+        if (!direction.isEmpty()) {
+            direction = new ArrayList<String>();
+        }
+        if (!beat.isEmpty()) {
+            beat = new ArrayList<Double>();
         }
         String[] measures = toParse.split(",");
         double currentBeat = 0;
@@ -109,9 +124,9 @@ public class ChartProperties {
         getBPM();
         parseNotes();
         for (int i = 0; i < direction.size(); i++) {
-            double print = getDelay(beat.get(i));
-            System.out.println(print);
-            //System.out.println(direction);
+//            double print = getDelay(beat.get(i));
+//            System.out.println(print);
+            System.out.println(direction);
             //System.out.println(beat);
         }
     }
