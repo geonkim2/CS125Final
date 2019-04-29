@@ -9,8 +9,6 @@ public class ChartProperties {
     static ArrayList<Double> beat = new ArrayList<>();
     static String songName = TitleActivity.getSong();
 
-    //TODO: make marionette a lv 5 chart, add difficulty warnings to the title activity
-
     /** this determines the offset of the song
      * it MUST BE CALLED, even if the offset and BPM are static
      * this is because it initializes the offset
@@ -35,7 +33,7 @@ public class ChartProperties {
      * it MUST BE CALLED, even if the offset and BPM are static
      * this is because it initializes the BPM
      */
-    public static double getBPM(int i) {
+    public static double getBPM() {
         if (songName.equals("marionette")) {
             BPM = 165;
         }
@@ -59,12 +57,8 @@ public class ChartProperties {
         if (toParse == null) {
             return;
         }
-        if (!direction.isEmpty()) {
-            direction = new ArrayList<>();
-        }
-        if (!beat.isEmpty()) {
-            beat = new ArrayList<>();
-        }
+        direction.clear();
+        beat.clear();
         String[] measures = toParse.split(",");
         double currentBeat = 0;
         for (int i = 0; i < measures.length; i++) {
@@ -111,14 +105,10 @@ public class ChartProperties {
      * otherwise, you get a null pointer exception
      */
     public static void main(String[] args) {
-        getOffset();
-//        getBPM();
+        songName = "marionette";
         parseNotes();
-        for (int i = 0; i < direction.size(); i++) {
-//            double print = getDelay(beat.get(i));
-//            System.out.println(print);
-            System.out.println(direction);
-            //System.out.println(beat);
-        }
+        System.out.println(direction);
+        songName = "queen bee";
+        System.out.println(direction);
     }
 }

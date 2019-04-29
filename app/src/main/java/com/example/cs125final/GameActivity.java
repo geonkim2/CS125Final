@@ -60,8 +60,8 @@ public class GameActivity extends AppCompatActivity {
     int songLength;
     long delayLength;
     ImageView current;
-    ArrayList<String> direction;
-    ArrayList<Double> beat;
+    static ArrayList<String> thisDirection;
+    static ArrayList<Double> thisBeat;
     TextView fantastic;
     TextView excellent;
     TextView great;
@@ -76,6 +76,7 @@ public class GameActivity extends AppCompatActivity {
         quit = findViewById(R.id.quit);
         /** this declares the string of what song it is*/
         songName = TitleActivity.getSong();
+
         /** each of these declare what to make each variable equal to
          * since the layout of each song is different, we need to do this.
          */
@@ -220,8 +221,8 @@ public class GameActivity extends AppCompatActivity {
          * direction is which arrow we want to move
          */
         ChartProperties.parseNotes();
-        beat = ChartProperties.beat;
-        direction = ChartProperties.direction;
+        thisBeat = ChartProperties.beat;
+        thisDirection = ChartProperties.direction;
 
         /** i set the arrow "outlines" to visible
          * this is what tells you when to hit the arrows
@@ -354,9 +355,9 @@ public class GameActivity extends AppCompatActivity {
          * it's on a timer
          */
         final Handler animateHandler = new Handler();
-        for (int i = 0; i < beat.size(); i++) {
-            String currentDirection = direction.get(i);
-            delayLength = (long) getDelay(i, beat.get(i));
+        for (int i = 0; i < thisBeat.size(); i++) {
+            String currentDirection = thisDirection.get(i);
+            delayLength = (long) getDelay(thisBeat.get(i));
 //            double songPosition = currentlyPlaying.getCurrentPosition();
             animateHandler.postDelayed(new Runnable() {
                 public void run() {
@@ -473,10 +474,9 @@ public class GameActivity extends AppCompatActivity {
     /** this is the delay put into the animation
      * each arrow has its own delay
      */
-    public double getDelay(int fgIndex, double currentBeat) {
-        double BPM = ChartProperties.getBPM(fgIndex);
+    public double getDelay(double currentBeat) {
+        double BPM = ChartProperties.getBPM();
         double offset = ChartProperties.getOffset();
-        //3000 is the delay in move
         return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1178.57143;
     }
     static int fantasticCount = 0;

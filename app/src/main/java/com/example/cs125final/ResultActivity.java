@@ -121,6 +121,10 @@ public class ResultActivity extends AppCompatActivity {
         greatNumber.setTextColor(white);
         wordMiss.setTextColor(white);
         missNumber.setTextColor(white);
+
+        /** im going to try to clear the list in game activity now*/
+        GameActivity.thisBeat.clear();
+        GameActivity.thisDirection.clear();
     }
 
     /**
