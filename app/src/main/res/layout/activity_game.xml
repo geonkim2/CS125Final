@@ -338,7 +338,7 @@
         tools:layout_editor_absoluteX="411dp" />
 
     <ImageView
-        android:id="@+id/metamorphosisBackground"
+        android:id="@+id/fuckgravityBackground"
         android:layout_width="413dp"
         android:layout_height="733dp"
         android:visibility="gone"
@@ -347,7 +347,7 @@
         app:srcCompat="@drawable/fuckgravity" />
 
     <ImageView
-        android:id="@+id/metaDown"
+        android:id="@+id/fgDown"
         android:layout_width="101dp"
         android:layout_height="102dp"
         android:layout_marginEnd="156dp"
@@ -359,7 +359,7 @@
         app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
-        android:id="@+id/metaLeft"
+        android:id="@+id/fgLeft"
         android:layout_width="101dp"
         android:layout_height="101dp"
         android:layout_marginStart="88dp"
@@ -371,7 +371,7 @@
         app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
-        android:id="@+id/metaRight"
+        android:id="@+id/fgRight"
         android:layout_width="101dp"
         android:layout_height="101dp"
         android:layout_marginEnd="88dp"
@@ -383,7 +383,7 @@
         app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
-        android:id="@+id/metaUp"
+        android:id="@+id/fgUp"
         android:layout_width="105dp"
         android:layout_height="100dp"
         android:layout_marginEnd="156dp"
@@ -413,7 +413,7 @@
         app:srcCompat="@drawable/queenbeebox" />
 
     <ImageView
-        android:id="@+id/metaBox"
+        android:id="@+id/fgBox"
         android:layout_width="417dp"
         android:layout_height="280dp"
         android:visibility="gone"
@@ -431,7 +431,7 @@
         app:srcCompat="@drawable/quaoarbox" />
 
     <ImageView
-        android:id="@+id/metaLeftMove1"
+        android:id="@+id/fgLeftMove1"
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_marginBottom="200dp"
@@ -441,7 +441,7 @@
         app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
-        android:id="@+id/metaDownMove1"
+        android:id="@+id/fgDownMove1"
         android:layout_width="103dp"
         android:layout_height="100dp"
         android:layout_marginStart="100dp"
@@ -453,7 +453,7 @@
         app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
-        android:id="@+id/metaRightMove1"
+        android:id="@+id/fgRightMove1"
         android:layout_width="105dp"
         android:layout_height="103dp"
         android:layout_marginBottom="200dp"
@@ -463,7 +463,7 @@
         app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
-        android:id="@+id/metaUpMove1"
+        android:id="@+id/fgUpMove1"
         android:layout_width="103dp"
         android:layout_height="101dp"
         android:layout_marginEnd="104dp"
@@ -474,7 +474,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/fg_up_arrow" />
     <ImageView
-        android:id="@+id/metaLeftMove3"
+        android:id="@+id/fgLeftMove3"
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_marginBottom="200dp"
@@ -484,7 +484,7 @@
         app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
-        android:id="@+id/metaDownMove3"
+        android:id="@+id/fgDownMove3"
         android:layout_width="103dp"
         android:layout_height="100dp"
         android:layout_marginStart="100dp"
@@ -496,7 +496,7 @@
         app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
-        android:id="@+id/metaRightMove3"
+        android:id="@+id/fgRightMove3"
         android:layout_width="105dp"
         android:layout_height="103dp"
         android:layout_marginBottom="200dp"
@@ -506,7 +506,7 @@
         app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
-        android:id="@+id/metaUpMove3"
+        android:id="@+id/fgUpMove3"
         android:layout_width="103dp"
         android:layout_height="101dp"
         android:layout_marginEnd="104dp"
@@ -517,7 +517,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/fg_up_arrow" />
     <ImageView
-        android:id="@+id/metaLeftMove2"
+        android:id="@+id/fgLeftMove2"
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_marginBottom="200dp"
@@ -527,7 +527,7 @@
         app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
-        android:id="@+id/metaDownMove2"
+        android:id="@+id/fgDownMove2"
         android:layout_width="103dp"
         android:layout_height="100dp"
         android:layout_marginStart="100dp"
@@ -539,7 +539,7 @@
         app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
-        android:id="@+id/metaRightMove2"
+        android:id="@+id/fgRightMove2"
         android:layout_width="105dp"
         android:layout_height="103dp"
         android:layout_marginBottom="200dp"
@@ -549,7 +549,7 @@
         app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
-        android:id="@+id/metaUpMove2"
+        android:id="@+id/fgUpMove2"
         android:layout_width="103dp"
         android:layout_height="101dp"
         android:layout_marginEnd="104dp"
@@ -561,7 +561,7 @@
         app:srcCompat="@drawable/fg_up_arrow" />
 
     <ImageView
-        android:id="@+id/metaLeftMove"
+        android:id="@+id/fgLeftMove"
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_marginBottom="200dp"
@@ -571,7 +571,7 @@
         app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
-        android:id="@+id/metaDownMove"
+        android:id="@+id/fgDownMove"
         android:layout_width="103dp"
         android:layout_height="100dp"
         android:layout_marginStart="100dp"
@@ -583,7 +583,7 @@
         app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
-        android:id="@+id/metaRightMove"
+        android:id="@+id/fgRightMove"
         android:layout_width="105dp"
         android:layout_height="103dp"
         android:layout_marginBottom="200dp"
@@ -593,7 +593,7 @@
         app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
-        android:id="@+id/metaUpMove"
+        android:id="@+id/fgUpMove"
         android:layout_width="103dp"
         android:layout_height="101dp"
         android:layout_marginEnd="104dp"

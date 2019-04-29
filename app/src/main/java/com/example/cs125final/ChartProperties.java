@@ -60,10 +60,10 @@ public class ChartProperties {
             return;
         }
         if (!direction.isEmpty()) {
-            direction = new ArrayList<String>();
+            direction = new ArrayList<>();
         }
         if (!beat.isEmpty()) {
-            beat = new ArrayList<Double>();
+            beat = new ArrayList<>();
         }
         String[] measures = toParse.split(",");
         double currentBeat = 0;

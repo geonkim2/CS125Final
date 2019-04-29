@@ -112,7 +112,7 @@
         app:srcCompat="@drawable/quaoarbanner" />
 
     <ImageView
-        android:id="@+id/metamorphosisBanner"
+        android:id="@+id/fuckgravityBanner"
         android:layout_width="156dp"
         android:layout_height="63dp"
         android:layout_marginEnd="35dp"

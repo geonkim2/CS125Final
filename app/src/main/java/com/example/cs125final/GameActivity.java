@@ -177,35 +177,35 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("fuck gravity")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.fuckgravity);
-            background = findViewById(R.id.metamorphosisBackground);
+            background = findViewById(R.id.fuckgravityBackground);
             background.setVisibility(View.VISIBLE);
-            box = findViewById(R.id.metaBox);
-            int green = getResources().getColor(R.color.colorPrimary);
+            box = findViewById(R.id.fgBox);
+            int green = getResources().getColor(R.color.fuckGravity);
             quit.setBackgroundColor(green);
-            downArrow = findViewById(R.id.metaDown);
-            rightArrow = findViewById(R.id.metaRight);
-            upArrow = findViewById(R.id.metaUp);
-            leftArrow = findViewById(R.id.metaLeft);
+            downArrow = findViewById(R.id.fgDown);
+            rightArrow = findViewById(R.id.fgRight);
+            upArrow = findViewById(R.id.fgUp);
+            leftArrow = findViewById(R.id.fgLeft);
             leftOutline = findViewById(R.id.blackLeftOutline);
             upOutline = findViewById(R.id.blackUpOutline);
             downOutline = findViewById(R.id.blackDownOutline);
             rightOutline = findViewById(R.id.blackRightOutline);
-            leftMove = findViewById(R.id.metaLeftMove);
-            upMove = findViewById(R.id.metaUpMove);
-            downMove = findViewById(R.id.metaDownMove);
-            rightMove = findViewById(R.id.metaRightMove);
-            leftMove1 = findViewById(R.id.metaLeftMove1);
-            upMove1 = findViewById(R.id.metaUpMove1);
-            downMove1 = findViewById(R.id.metaDownMove1);
-            rightMove1 = findViewById(R.id.metaRightMove1);
-            leftMove2 = findViewById(R.id.metaLeftMove2);
-            upMove2 = findViewById(R.id.metaUpMove2);
-            downMove2 = findViewById(R.id.metaDownMove2);
-            rightMove2 = findViewById(R.id.metaRightMove2);
-            leftMove3 = findViewById(R.id.metaLeftMove3);
-            upMove3 = findViewById(R.id.metaUpMove3);
-            downMove3 = findViewById(R.id.metaDownMove3);
-            rightMove3 = findViewById(R.id.metaRightMove3);
+            leftMove = findViewById(R.id.fgLeftMove);
+            upMove = findViewById(R.id.fgUpMove);
+            downMove = findViewById(R.id.fgDownMove);
+            rightMove = findViewById(R.id.fgRightMove);
+            leftMove1 = findViewById(R.id.fgLeftMove1);
+            upMove1 = findViewById(R.id.fgUpMove1);
+            downMove1 = findViewById(R.id.fgDownMove1);
+            rightMove1 = findViewById(R.id.fgRightMove1);
+            leftMove2 = findViewById(R.id.fgLeftMove2);
+            upMove2 = findViewById(R.id.fgUpMove2);
+            downMove2 = findViewById(R.id.fgDownMove2);
+            rightMove2 = findViewById(R.id.fgRightMove2);
+            leftMove3 = findViewById(R.id.fgLeftMove3);
+            upMove3 = findViewById(R.id.fgUpMove3);
+            downMove3 = findViewById(R.id.fgDownMove3);
+            rightMove3 = findViewById(R.id.fgRightMove3);
         }
         /**this says I'm still on the screen
          * this prevents double screen changing
@@ -473,8 +473,8 @@ public class GameActivity extends AppCompatActivity {
     /** this is the delay put into the animation
      * each arrow has its own delay
      */
-    public double getDelay(int metaIndex, double currentBeat) {
-        double BPM = ChartProperties.getBPM(metaIndex);
+    public double getDelay(int fgIndex, double currentBeat) {
+        double BPM = ChartProperties.getBPM(fgIndex);
         double offset = ChartProperties.getOffset();
         //3000 is the delay in move
         return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1178.57143;

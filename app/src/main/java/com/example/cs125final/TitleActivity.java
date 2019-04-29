@@ -14,7 +14,7 @@ public class TitleActivity extends AppCompatActivity {
     ImageView marionetteBanner;
     ImageView quaoarBanner;
     ImageView queenBeeBanner;
-    ImageView metamorphosisBanner;
+    ImageView fuckgravityBanner;
     Button song1;
     Button song2;
     Button song3;
@@ -48,8 +48,8 @@ public class TitleActivity extends AppCompatActivity {
         quaoarBanner.bringToFront();
         queenBeeBanner = findViewById(R.id.queenBeeBanner);
         queenBeeBanner.bringToFront();
-        metamorphosisBanner = findViewById(R.id.metamorphosisBanner);
-        metamorphosisBanner.bringToFront();
+        fuckgravityBanner = findViewById(R.id.fuckgravityBanner);
+        fuckgravityBanner.bringToFront();
 
         /* at this point, you may have to change something in your settings
          * go to file -> project structure -> app
