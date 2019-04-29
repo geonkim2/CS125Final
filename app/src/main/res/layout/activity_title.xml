@@ -8,6 +8,39 @@
     tools:context=".TitleActivity">
 
     <TextView
+        android:id="@+id/hard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Hard"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/fuckgravityBanner"
+        app:layout_constraintEnd_toEndOf="@+id/fuckgravityBanner"
+        app:layout_constraintStart_toStartOf="@+id/fuckgravityBanner" />
+
+    <TextView
+        android:id="@+id/demonic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Demonic"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/queenBeeBanner"
+        app:layout_constraintEnd_toEndOf="@+id/queenBeeBanner"
+        app:layout_constraintStart_toStartOf="@+id/queenBeeBanner" />
+
+    <TextView
+        android:id="@+id/medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Medium"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/quaoarBanner"
+        app:layout_constraintEnd_toEndOf="@+id/quaoarBanner"
+        app:layout_constraintStart_toStartOf="@+id/quaoarBanner" />
+
+    <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="89dp"
@@ -40,17 +73,6 @@
         android:id="@+id/song_2"
         android:layout_width="149dp"
         android:layout_height="58dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginBottom="336dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/song_3"
-        android:layout_width="145dp"
-        android:layout_height="55dp"
         android:layout_marginTop="130dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
@@ -59,15 +81,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/song_4"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:id="@+id/song_3"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
         android:layout_marginBottom="336dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/song_4"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginBottom="336dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -93,33 +126,44 @@
         android:id="@+id/queenBeeBanner"
         android:layout_width="151dp"
         android:layout_height="59dp"
-        android:layout_marginTop="130dp"
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
+        android:layout_marginBottom="336dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/queenbeebanner" />
 
     <ImageView
         android:id="@+id/quaoarBanner"
         android:layout_width="152dp"
         android:layout_height="63dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginBottom="336dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/quaoarbanner" />
 
     <ImageView
         android:id="@+id/fuckgravityBanner"
         android:layout_width="156dp"
         android:layout_height="63dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
         android:layout_marginBottom="336dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/fuckgravitybanner" />
+
+    <TextView
+        android:id="@+id/easy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Easy"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/marionetteBanner"
+        app:layout_constraintEnd_toEndOf="@+id/marionetteBanner"
+        app:layout_constraintStart_toStartOf="@+id/marionetteBanner" />
 
 </android.support.constraint.ConstraintLayout>

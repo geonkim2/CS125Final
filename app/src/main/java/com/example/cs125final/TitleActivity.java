@@ -24,6 +24,10 @@ public class TitleActivity extends AppCompatActivity {
     String third = "third";
     String fourth = "fourth";
     static String songName;
+    TextView easy;
+    TextView medium;
+    TextView hard;
+    TextView demonic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,24 @@ public class TitleActivity extends AppCompatActivity {
         queenBeeBanner.bringToFront();
         fuckgravityBanner = findViewById(R.id.fuckgravityBanner);
         fuckgravityBanner.bringToFront();
+
+        /** this sets the difficulty texts*/
+        easy = findViewById(R.id.easy);
+        easy.setTextColor(white);
+        easy.bringToFront();
+        easy.setTextSize(25);
+        medium = findViewById(R.id.medium);
+        medium.setTextColor(white);
+        medium.bringToFront();
+        medium.setTextSize(25);
+        hard = findViewById(R.id.hard);
+        hard.setTextColor(white);
+        hard.bringToFront();
+        hard.setTextSize(25);
+        demonic = findViewById(R.id.demonic);
+        demonic.setTextColor(white);
+        demonic.bringToFront();
+        demonic.setTextSize(25);
 
         /* at this point, you may have to change something in your settings
          * go to file -> project structure -> app
