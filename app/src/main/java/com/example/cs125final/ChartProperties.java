@@ -23,8 +23,8 @@ public class ChartProperties {
         if (songName.equals("queen bee")) {
             offset = -0.751;
         }
-        if (songName.equals("fuck gravity")) {
-            offset = -0.018;
+        if (songName.equals("peacock")) {
+            offset = 0.018;
         }
         return offset;
     }
@@ -43,7 +43,7 @@ public class ChartProperties {
         if (songName.equals("queen bee")) {
             BPM = 159.985;
         }
-        if (songName.equals("fuck gravity")) {
+        if (songName.equals("peacock")) {
             BPM = 110;
         }
         return BPM;

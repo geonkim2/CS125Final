@@ -41,6 +41,18 @@ public class GameActivity extends AppCompatActivity {
     ImageView rightMove3;
     ImageView upMove3;
     ImageView downMove3;
+    ImageView leftMove4;
+    ImageView rightMove4;
+    ImageView upMove4;
+    ImageView downMove4;
+    ImageView leftMove5;
+    ImageView rightMove5;
+    ImageView upMove5;
+    ImageView downMove5;
+    ImageView leftMove6;
+    ImageView rightMove6;
+    ImageView upMove6;
+    ImageView downMove6;
     ImageView leftArrow;
     ImageView upArrow;
     ImageView downArrow;
@@ -66,8 +78,8 @@ public class GameActivity extends AppCompatActivity {
     ArrayList<Double> queenBeeBeat;
     ArrayList<String> quaoarDirection;
     ArrayList<Double> quaoarBeat;
-    ArrayList<String> fuckGravityDirection;
-    ArrayList<Double> fuckGravityBeat;
+    ArrayList<String> peacockDirection;
+    ArrayList<Double> peacockBeat;
     TextView fantastic;
     TextView excellent;
     TextView great;
@@ -83,6 +95,9 @@ public class GameActivity extends AppCompatActivity {
         /** this declares the string of what song it is*/
         songName = TitleActivity.getSong();
 
+        ChartProperties.parseNotes("peacock");
+        peacockBeat = new ArrayList<>(ChartProperties.beat);
+        peacockDirection = new ArrayList<>(ChartProperties.direction);
         ChartProperties.parseNotes("marionette");
         marionetteBeat = new ArrayList<>(ChartProperties.beat);
         marionetteDirection = new ArrayList<>(ChartProperties.direction);
@@ -92,9 +107,7 @@ public class GameActivity extends AppCompatActivity {
         ChartProperties.parseNotes("quaoar");
         quaoarBeat = new ArrayList<>(ChartProperties.beat);
         quaoarDirection = new ArrayList<>(ChartProperties.direction);
-        ChartProperties.parseNotes("fuck gravity");
-        fuckGravityBeat = new ArrayList<>(ChartProperties.beat);
-        fuckGravityDirection = new ArrayList<>(ChartProperties.direction);
+
 
         /** each of these declare what to make each variable equal to
          * since the layout of each song is different, we need to do this.
@@ -130,6 +143,18 @@ public class GameActivity extends AppCompatActivity {
             upMove3 = findViewById(R.id.yellowUpMove3);
             downMove3 = findViewById(R.id.yellowDownMove3);
             rightMove3 = findViewById(R.id.yellowRightMove3);
+            leftMove4 = findViewById(R.id.yellowLeftMove4);
+            upMove4 = findViewById(R.id.yellowUpMove4);
+            downMove4 = findViewById(R.id.yellowDownMove4);
+            rightMove4 = findViewById(R.id.yellowRightMove4);
+            leftMove5 = findViewById(R.id.yellowLeftMove5);
+            upMove5 = findViewById(R.id.yellowUpMove5);
+            downMove5 = findViewById(R.id.yellowDownMove5);
+            rightMove5 = findViewById(R.id.yellowRightMove5);
+            leftMove6 = findViewById(R.id.yellowLeftMove6);
+            upMove6 = findViewById(R.id.yellowUpMove6);
+            downMove6 = findViewById(R.id.yellowDownMove6);
+            rightMove6 = findViewById(R.id.yellowRightMove6);
         }
         if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
@@ -162,6 +187,18 @@ public class GameActivity extends AppCompatActivity {
             upMove3 = findViewById(R.id.qbUpMove3);
             downMove3 = findViewById(R.id.qbDownMove3);
             rightMove3 = findViewById(R.id.qbRightMove3);
+            leftMove4 = findViewById(R.id.qbLeftMove4);
+            upMove4 = findViewById(R.id.qbUpMove4);
+            downMove4 = findViewById(R.id.qbDownMove4);
+            rightMove4 = findViewById(R.id.qbRightMove4);
+            leftMove5 = findViewById(R.id.qbLeftMove5);
+            upMove5 = findViewById(R.id.qbUpMove5);
+            downMove5 = findViewById(R.id.qbDownMove5);
+            rightMove5 = findViewById(R.id.qbRightMove5);
+            leftMove6 = findViewById(R.id.qbLeftMove6);
+            upMove6 = findViewById(R.id.qbUpMove6);
+            downMove6 = findViewById(R.id.qbDownMove6);
+            rightMove6 = findViewById(R.id.qbRightMove6);
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
@@ -194,38 +231,62 @@ public class GameActivity extends AppCompatActivity {
             upMove3 = findViewById(R.id.quaoarUpMove3);
             downMove3 = findViewById(R.id.quaoarDownMove3);
             rightMove3 = findViewById(R.id.quaoarRightMove3);
+            leftMove4 = findViewById(R.id.quaoarLeftMove4);
+            upMove4 = findViewById(R.id.quaoarUpMove4);
+            downMove4 = findViewById(R.id.quaoarDownMove4);
+            rightMove4 = findViewById(R.id.quaoarRightMove4);
+            leftMove5 = findViewById(R.id.quaoarLeftMove5);
+            upMove5 = findViewById(R.id.quaoarUpMove5);
+            downMove5 = findViewById(R.id.quaoarDownMove5);
+            rightMove5 = findViewById(R.id.quaoarRightMove5);
+            leftMove6 = findViewById(R.id.quaoarLeftMove6);
+            upMove6 = findViewById(R.id.quaoarUpMove6);
+            downMove6 = findViewById(R.id.quaoarDownMove6);
+            rightMove6 = findViewById(R.id.quaoarRightMove6);
         }
-        if (songName.equals("fuck gravity")) {
-            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.fuckgravity);
-            background = findViewById(R.id.fuckgravityBackground);
+        if (songName.equals("peacock")) {
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.peacock);
+            background = findViewById(R.id.peacockBackground);
             background.setVisibility(View.VISIBLE);
-            box = findViewById(R.id.fgBox);
-            int green = getResources().getColor(R.color.fuckGravity);
+            box = findViewById(R.id.peacockBox);
+            int green = getResources().getColor(R.color.peacock);
             quit.setBackgroundColor(green);
-            downArrow = findViewById(R.id.fgDown);
-            rightArrow = findViewById(R.id.fgRight);
-            upArrow = findViewById(R.id.fgUp);
-            leftArrow = findViewById(R.id.fgLeft);
+            downArrow = findViewById(R.id.peacockDown);
+            rightArrow = findViewById(R.id.peacockRight);
+            upArrow = findViewById(R.id.peacockUp);
+            leftArrow = findViewById(R.id.peacockLeft);
             leftOutline = findViewById(R.id.blackLeftOutline);
             upOutline = findViewById(R.id.blackUpOutline);
             downOutline = findViewById(R.id.blackDownOutline);
             rightOutline = findViewById(R.id.blackRightOutline);
-            leftMove = findViewById(R.id.fgLeftMove);
-            upMove = findViewById(R.id.fgUpMove);
-            downMove = findViewById(R.id.fgDownMove);
-            rightMove = findViewById(R.id.fgRightMove);
-            leftMove1 = findViewById(R.id.fgLeftMove1);
-            upMove1 = findViewById(R.id.fgUpMove1);
-            downMove1 = findViewById(R.id.fgDownMove1);
-            rightMove1 = findViewById(R.id.fgRightMove1);
-            leftMove2 = findViewById(R.id.fgLeftMove2);
-            upMove2 = findViewById(R.id.fgUpMove2);
-            downMove2 = findViewById(R.id.fgDownMove2);
-            rightMove2 = findViewById(R.id.fgRightMove2);
-            leftMove3 = findViewById(R.id.fgLeftMove3);
-            upMove3 = findViewById(R.id.fgUpMove3);
-            downMove3 = findViewById(R.id.fgDownMove3);
-            rightMove3 = findViewById(R.id.fgRightMove3);
+            leftMove = findViewById(R.id.peacockLeftMove);
+            upMove = findViewById(R.id.peacockUpMove);
+            downMove = findViewById(R.id.peacockDownMove);
+            rightMove = findViewById(R.id.peacockRightMove);
+            leftMove1 = findViewById(R.id.peacockLeftMove1);
+            upMove1 = findViewById(R.id.peacockUpMove1);
+            downMove1 = findViewById(R.id.peacockDownMove1);
+            rightMove1 = findViewById(R.id.peacockRightMove1);
+            leftMove2 = findViewById(R.id.peacockLeftMove2);
+            upMove2 = findViewById(R.id.peacockUpMove2);
+            downMove2 = findViewById(R.id.peacockDownMove2);
+            rightMove2 = findViewById(R.id.peacockRightMove2);
+            leftMove3 = findViewById(R.id.peacockLeftMove3);
+            upMove3 = findViewById(R.id.peacockUpMove3);
+            downMove3 = findViewById(R.id.peacockDownMove3);
+            rightMove3 = findViewById(R.id.peacockRightMove3);
+            leftMove4 = findViewById(R.id.peacockLeftMove4);
+            upMove4 = findViewById(R.id.peacockUpMove4);
+            downMove4 = findViewById(R.id.peacockDownMove4);
+            rightMove4 = findViewById(R.id.peacockRightMove4);
+            leftMove5 = findViewById(R.id.peacockLeftMove5);
+            upMove5 = findViewById(R.id.peacockUpMove5);
+            downMove5 = findViewById(R.id.peacockDownMove5);
+            rightMove5 = findViewById(R.id.peacockRightMove5);
+            leftMove6 = findViewById(R.id.peacockLeftMove6);
+            upMove6 = findViewById(R.id.peacockUpMove6);
+            downMove6 = findViewById(R.id.peacockDownMove6);
+            rightMove6 = findViewById(R.id.peacockRightMove6);
         }
         /**this says I'm still on the screen
          * this prevents double screen changing
@@ -282,6 +343,30 @@ public class GameActivity extends AppCompatActivity {
         downMove3.bringToFront();
         rightMove3.setVisibility(View.VISIBLE);
         rightMove3.bringToFront();
+        leftMove4.setVisibility(View.VISIBLE);
+        leftMove4.bringToFront();
+        upMove4.setVisibility(View.VISIBLE);
+        upMove4.bringToFront();
+        downMove4.setVisibility(View.VISIBLE);
+        downMove4.bringToFront();
+        rightMove4.setVisibility(View.VISIBLE);
+        rightMove4.bringToFront();
+        leftMove5.setVisibility(View.VISIBLE);
+        leftMove5.bringToFront();
+        upMove5.setVisibility(View.VISIBLE);
+        upMove5.bringToFront();
+        downMove5.setVisibility(View.VISIBLE);
+        downMove5.bringToFront();
+        rightMove5.setVisibility(View.VISIBLE);
+        rightMove5.bringToFront();
+        leftMove6.setVisibility(View.VISIBLE);
+        leftMove6.bringToFront();
+        upMove6.setVisibility(View.VISIBLE);
+        upMove6.bringToFront();
+        downMove6.setVisibility(View.VISIBLE);
+        downMove6.bringToFront();
+        rightMove6.setVisibility(View.VISIBLE);
+        rightMove6.bringToFront();
 
         /** I'm initializing the judgements
          * and im making them each specific color
@@ -380,9 +465,9 @@ public class GameActivity extends AppCompatActivity {
             direction = queenBeeDirection;
             beat = queenBeeBeat;
         }
-        if (songName.equals("fuck gravity")) {
-            direction = fuckGravityDirection;
-            beat = fuckGravityBeat;
+        if (songName.equals("peacock")) {
+            direction = peacockDirection;
+            beat = peacockBeat;
         }
         for (int i = 0; i < beat.size(); i++) {
             String currentDirection = direction.get(i);
@@ -392,7 +477,7 @@ public class GameActivity extends AppCompatActivity {
                 public void run() {
                     if (currentDirection.equals("left")) {
                         leftCount++;
-                        if (leftCount == 4) {
+                        if (leftCount == 7) {
                             leftCount = 0;
                         }
                         if (leftCount == 0) {
@@ -407,10 +492,19 @@ public class GameActivity extends AppCompatActivity {
                         if (leftCount == 3) {
                             move(leftMove3);
                         }
+                        if (leftCount == 4) {
+                            move(leftMove4);
+                        }
+                        if (leftCount == 5) {
+                            move(leftMove5);
+                        }
+                        if (leftCount == 6) {
+                            move(leftMove6);
+                        }
                     }
                     if (currentDirection.equals("down")) {
                         downCount++;
-                        if (downCount == 4) {
+                        if (downCount == 7) {
                             downCount = 0;
                         }
                         if (downCount == 0) {
@@ -425,10 +519,19 @@ public class GameActivity extends AppCompatActivity {
                         if (downCount == 3) {
                             move(downMove3);
                         }
+                        if (downCount == 4) {
+                            move(downMove4);
+                        }
+                        if (downCount == 5) {
+                            move(downMove5);
+                        }
+                        if (downCount == 6) {
+                            move(downMove6);
+                        }
                     }
                     if (currentDirection.equals("up")) {
                         upCount++;
-                        if (upCount == 4) {
+                        if (upCount == 7) {
                             upCount = 0;
                         }
                         if (upCount == 0) {
@@ -443,10 +546,19 @@ public class GameActivity extends AppCompatActivity {
                         if (upCount == 3) {
                             move(upMove3);
                         }
+                        if (upCount == 4) {
+                            move(upMove4);
+                        }
+                        if (upCount == 5) {
+                            move(upMove5);
+                        }
+                        if (upCount == 6) {
+                            move(upMove6);
+                        }
                     }
                     if (currentDirection.equals("right")) {
                         rightCount++;
-                        if (rightCount == 4) {
+                        if (rightCount == 7) {
                             rightCount = 0;
                         }
                         if (rightCount == 0) {
@@ -460,6 +572,15 @@ public class GameActivity extends AppCompatActivity {
                         }
                         if (rightCount == 3) {
                             move(rightMove3);
+                        }
+                        if (rightCount == 4) {
+                            move(rightMove4);
+                        }
+                        if (rightCount == 5) {
+                            move(rightMove5);
+                        }
+                        if (rightCount == 6) {
+                            move(rightMove6);
                         }
                     }
                 }

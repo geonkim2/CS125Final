@@ -14,7 +14,7 @@ public class TitleActivity extends AppCompatActivity {
     ImageView marionetteBanner;
     ImageView quaoarBanner;
     ImageView queenBeeBanner;
-    ImageView fuckgravityBanner;
+    ImageView peacockBanner;
     Button song1;
     Button song2;
     Button song3;
@@ -52,8 +52,8 @@ public class TitleActivity extends AppCompatActivity {
         quaoarBanner.bringToFront();
         queenBeeBanner = findViewById(R.id.queenBeeBanner);
         queenBeeBanner.bringToFront();
-        fuckgravityBanner = findViewById(R.id.fuckgravityBanner);
-        fuckgravityBanner.bringToFront();
+        peacockBanner = findViewById(R.id.peacockBanner);
+        peacockBanner.bringToFront();
 
         /** this sets the difficulty texts*/
         easy = findViewById(R.id.easy);
@@ -113,7 +113,7 @@ public class TitleActivity extends AppCompatActivity {
             songName = "queen bee";
         }
         if (song.equals(fourth)) {
-            songName = "fuck gravity";
+            songName = "peacock";
         }
         Intent setupIntent = new Intent(this, GameActivity.class);
         startActivity(setupIntent);

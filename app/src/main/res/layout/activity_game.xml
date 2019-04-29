@@ -338,16 +338,16 @@
         tools:layout_editor_absoluteX="411dp" />
 
     <ImageView
-        android:id="@+id/fuckgravityBackground"
+        android:id="@+id/peacockBackground"
         android:layout_width="413dp"
         android:layout_height="733dp"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fuckgravity" />
+        app:srcCompat="@drawable/peacock" />
 
     <ImageView
-        android:id="@+id/fgDown"
+        android:id="@+id/peacockDown"
         android:layout_width="101dp"
         android:layout_height="102dp"
         android:layout_marginEnd="156dp"
@@ -356,10 +356,10 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_down_arrow" />
+        app:srcCompat="@drawable/peacock_down_arrow" />
 
     <ImageView
-        android:id="@+id/fgLeft"
+        android:id="@+id/peacockLeft"
         android:layout_width="101dp"
         android:layout_height="101dp"
         android:layout_marginStart="88dp"
@@ -368,10 +368,10 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fg_left_arrow" />
+        app:srcCompat="@drawable/peacock_left_arrow" />
 
     <ImageView
-        android:id="@+id/fgRight"
+        android:id="@+id/peacockRight"
         android:layout_width="101dp"
         android:layout_height="101dp"
         android:layout_marginEnd="88dp"
@@ -380,10 +380,10 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_right_arrow" />
+        app:srcCompat="@drawable/peacock_right_arrow" />
 
     <ImageView
-        android:id="@+id/fgUp"
+        android:id="@+id/peacockUp"
         android:layout_width="105dp"
         android:layout_height="100dp"
         android:layout_marginEnd="156dp"
@@ -392,7 +392,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_up_arrow" />
+        app:srcCompat="@drawable/peacock_up_arrow" />
 
     <ImageView
         android:id="@+id/marionetteBox"
@@ -413,13 +413,13 @@
         app:srcCompat="@drawable/queenbeebox" />
 
     <ImageView
-        android:id="@+id/fgBox"
+        android:id="@+id/peacockBox"
         android:layout_width="417dp"
         android:layout_height="280dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fuckgravitybox" />
+        app:srcCompat="@drawable/peacockbox" />
 
     <ImageView
         android:id="@+id/quaoarBox"
@@ -431,17 +431,17 @@
         app:srcCompat="@drawable/quaoarbox" />
 
     <ImageView
-        android:id="@+id/fgLeftMove1"
+        android:id="@+id/peacockLeftMove1"
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_marginBottom="200dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fg_left_arrow" />
+        app:srcCompat="@drawable/peacock_left_arrow" />
 
     <ImageView
-        android:id="@+id/fgDownMove1"
+        android:id="@+id/peacockDownMove1"
         android:layout_width="103dp"
         android:layout_height="100dp"
         android:layout_marginStart="100dp"
@@ -450,20 +450,20 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fg_down_arrow" />
+        app:srcCompat="@drawable/peacock_down_arrow" />
 
     <ImageView
-        android:id="@+id/fgRightMove1"
+        android:id="@+id/peacockRightMove1"
         android:layout_width="105dp"
         android:layout_height="103dp"
         android:layout_marginBottom="200dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_right_arrow" />
+        app:srcCompat="@drawable/peacock_right_arrow" />
 
     <ImageView
-        android:id="@+id/fgUpMove1"
+        android:id="@+id/peacockUpMove1"
         android:layout_width="103dp"
         android:layout_height="101dp"
         android:layout_marginEnd="104dp"
@@ -472,19 +472,19 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_up_arrow" />
+        app:srcCompat="@drawable/peacock_up_arrow" />
     <ImageView
-        android:id="@+id/fgLeftMove3"
+        android:id="@+id/peacockLeftMove6"
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_marginBottom="200dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fg_left_arrow" />
+        app:srcCompat="@drawable/peacock_left_arrow" />
 
     <ImageView
-        android:id="@+id/fgDownMove3"
+        android:id="@+id/peacockDownMove6"
         android:layout_width="103dp"
         android:layout_height="100dp"
         android:layout_marginStart="100dp"
@@ -493,20 +493,20 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fg_down_arrow" />
+        app:srcCompat="@drawable/peacock_down_arrow" />
 
     <ImageView
-        android:id="@+id/fgRightMove3"
+        android:id="@+id/peacockRightMove6"
         android:layout_width="105dp"
         android:layout_height="103dp"
         android:layout_marginBottom="200dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_right_arrow" />
+        app:srcCompat="@drawable/peacock_right_arrow" />
 
     <ImageView
-        android:id="@+id/fgUpMove3"
+        android:id="@+id/peacockUpMove6"
         android:layout_width="103dp"
         android:layout_height="101dp"
         android:layout_marginEnd="104dp"
@@ -515,19 +515,19 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_up_arrow" />
+        app:srcCompat="@drawable/peacock_up_arrow" />
     <ImageView
-        android:id="@+id/fgLeftMove2"
+        android:id="@+id/peacockLeftMove5"
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_marginBottom="200dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fg_left_arrow" />
+        app:srcCompat="@drawable/peacock_left_arrow" />
 
     <ImageView
-        android:id="@+id/fgDownMove2"
+        android:id="@+id/peacockDownMove5"
         android:layout_width="103dp"
         android:layout_height="100dp"
         android:layout_marginStart="100dp"
@@ -536,20 +536,20 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fg_down_arrow" />
+        app:srcCompat="@drawable/peacock_down_arrow" />
 
     <ImageView
-        android:id="@+id/fgRightMove2"
+        android:id="@+id/peacockRightMove5"
         android:layout_width="105dp"
         android:layout_height="103dp"
         android:layout_marginBottom="200dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_right_arrow" />
+        app:srcCompat="@drawable/peacock_right_arrow" />
 
     <ImageView
-        android:id="@+id/fgUpMove2"
+        android:id="@+id/peacockUpMove5"
         android:layout_width="103dp"
         android:layout_height="101dp"
         android:layout_marginEnd="104dp"
@@ -558,20 +558,19 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_up_arrow" />
-
+        app:srcCompat="@drawable/peacock_up_arrow" />
     <ImageView
-        android:id="@+id/fgLeftMove"
+        android:id="@+id/peacockLeftMove4"
         android:layout_width="99dp"
         android:layout_height="98dp"
         android:layout_marginBottom="200dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fg_left_arrow" />
+        app:srcCompat="@drawable/peacock_left_arrow" />
 
     <ImageView
-        android:id="@+id/fgDownMove"
+        android:id="@+id/peacockDownMove4"
         android:layout_width="103dp"
         android:layout_height="100dp"
         android:layout_marginStart="100dp"
@@ -580,20 +579,20 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/fg_down_arrow" />
+        app:srcCompat="@drawable/peacock_down_arrow" />
 
     <ImageView
-        android:id="@+id/fgRightMove"
+        android:id="@+id/peacockRightMove4"
         android:layout_width="105dp"
         android:layout_height="103dp"
         android:layout_marginBottom="200dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_right_arrow" />
+        app:srcCompat="@drawable/peacock_right_arrow" />
 
     <ImageView
-        android:id="@+id/fgUpMove"
+        android:id="@+id/peacockUpMove4"
         android:layout_width="103dp"
         android:layout_height="101dp"
         android:layout_marginEnd="104dp"
@@ -602,7 +601,137 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fg_up_arrow" />
+        app:srcCompat="@drawable/peacock_up_arrow" />
+    <ImageView
+        android:id="@+id/peacockLeftMove3"
+        android:layout_width="99dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/peacock_left_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockDownMove3"
+        android:layout_width="103dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/peacock_down_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockRightMove3"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/peacock_right_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockUpMove3"
+        android:layout_width="103dp"
+        android:layout_height="101dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginRight="104dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/peacock_up_arrow" />
+    <ImageView
+        android:id="@+id/peacockLeftMove2"
+        android:layout_width="99dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/peacock_left_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockDownMove2"
+        android:layout_width="103dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/peacock_down_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockRightMove2"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/peacock_right_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockUpMove2"
+        android:layout_width="103dp"
+        android:layout_height="101dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginRight="104dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/peacock_up_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockLeftMove"
+        android:layout_width="99dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/peacock_left_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockDownMove"
+        android:layout_width="103dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/peacock_down_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockRightMove"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/peacock_right_arrow" />
+
+    <ImageView
+        android:id="@+id/peacockUpMove"
+        android:layout_width="103dp"
+        android:layout_height="101dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginRight="104dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/peacock_up_arrow" />
 
     <ImageView
         android:id="@+id/qbLeftMove"
@@ -647,6 +776,136 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/greyish_up_arrow" />
+    <ImageView
+        android:id="@+id/qbLeftMove6"
+        android:layout_width="99dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/greyish_left_arrow" />
+
+    <ImageView
+        android:id="@+id/qbDownMove6"
+        android:layout_width="100dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/greyish_down_arrow" />
+
+    <ImageView
+        android:id="@+id/qbRightMove6"
+        android:layout_width="100dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/greyish_right_arrow" />
+
+    <ImageView
+        android:id="@+id/qbUpMove6"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/greyish_up_arrow" />
+    <ImageView
+        android:id="@+id/qbLeftMove5"
+        android:layout_width="99dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/greyish_left_arrow" />
+
+    <ImageView
+        android:id="@+id/qbDownMove5"
+        android:layout_width="100dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/greyish_down_arrow" />
+
+    <ImageView
+        android:id="@+id/qbRightMove5"
+        android:layout_width="100dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/greyish_right_arrow" />
+
+    <ImageView
+        android:id="@+id/qbUpMove5"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/greyish_up_arrow" />
+    <ImageView
+        android:id="@+id/qbLeftMove4"
+        android:layout_width="99dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/greyish_left_arrow" />
+
+    <ImageView
+        android:id="@+id/qbDownMove4"
+        android:layout_width="100dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/greyish_down_arrow" />
+
+    <ImageView
+        android:id="@+id/qbRightMove4"
+        android:layout_width="100dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/greyish_right_arrow" />
+
+    <ImageView
+        android:id="@+id/qbUpMove4"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/greyish_up_arrow" />
+
 
     <ImageView
         android:id="@+id/qbLeftMove3"
@@ -955,9 +1214,138 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/yellow_up_arrow" />
+    <ImageView
+        android:id="@+id/yellowLeftMove4"
+        android:layout_width="103dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_left_arrow" />
 
     <ImageView
-        android:id="@+id/quaoarLeftMove"
+        android:id="@+id/yellowDownMove4"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_down_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowRightMove4"
+        android:layout_width="108dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_right_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowUpMove4"
+        android:layout_width="109dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_up_arrow" />
+    <ImageView
+        android:id="@+id/yellowLeftMove5"
+        android:layout_width="103dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_left_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowDownMove5"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_down_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowRightMove5"
+        android:layout_width="108dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_right_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowUpMove5"
+        android:layout_width="109dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_up_arrow" />
+    <ImageView
+        android:id="@+id/yellowLeftMove6"
+        android:layout_width="103dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_left_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowDownMove6"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/yellow_down_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowRightMove6"
+        android:layout_width="108dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_right_arrow" />
+
+    <ImageView
+        android:id="@+id/yellowUpMove6"
+        android:layout_width="109dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/yellow_up_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarLeftMove6"
         android:layout_width="105dp"
         android:layout_height="99dp"
         android:layout_marginBottom="200dp"
@@ -992,6 +1380,135 @@
 
     <ImageView
         android:id="@+id/quaoarRightMove"
+        android:layout_width="104dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_right_arrow" />
+    <ImageView
+        android:id="@+id/quaoarLeftMove"
+        android:layout_width="105dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quaoar_left_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarDownMove6"
+        android:layout_width="103dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quoar_down_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarUpMove6"
+        android:layout_width="104dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_up_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarRightMove6"
+        android:layout_width="104dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_right_arrow" />
+    <ImageView
+        android:id="@+id/quaoarLeftMove5"
+        android:layout_width="105dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quaoar_left_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarDownMove5"
+        android:layout_width="103dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quoar_down_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarUpMove5"
+        android:layout_width="104dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_up_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarRightMove5"
+        android:layout_width="104dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_right_arrow" />
+    <ImageView
+        android:id="@+id/quaoarLeftMove4"
+        android:layout_width="105dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quaoar_left_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarDownMove4"
+        android:layout_width="103dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/quoar_down_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarUpMove4"
+        android:layout_width="104dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="200dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/quaoar_up_arrow" />
+
+    <ImageView
+        android:id="@+id/quaoarRightMove4"
         android:layout_width="104dp"
         android:layout_height="105dp"
         android:layout_marginBottom="200dp"
