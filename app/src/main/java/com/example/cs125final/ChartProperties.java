@@ -52,8 +52,8 @@ public class ChartProperties {
     /** this parses the chart
      * basically, it determines the beat and direction of each note
      */
-    public static void parseNotes() {
-        String toParse = File.getFile();
+    public static void parseNotes(String song) {
+        String toParse = File.getFile(song);
         if (toParse == null) {
             return;
         }
@@ -106,7 +106,6 @@ public class ChartProperties {
      */
     public static void main(String[] args) {
         songName = "marionette";
-        parseNotes();
         System.out.println(direction);
         songName = "queen bee";
         System.out.println(direction);

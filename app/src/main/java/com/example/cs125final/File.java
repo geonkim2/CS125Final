@@ -6,9 +6,7 @@ package com.example.cs125final;
  * you also must remember to change it bakc
  */
 public class File {
-    static String songName = TitleActivity.getSong();
-
-    public static String getFile() {
+    public static String getFile(String songName) {
         if (songName == null) {
             return null;
         }

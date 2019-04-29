@@ -60,8 +60,14 @@ public class GameActivity extends AppCompatActivity {
     int songLength;
     long delayLength;
     ImageView current;
-    static ArrayList<String> thisDirection;
-    static ArrayList<Double> thisBeat;
+    ArrayList<String> marionetteDirection;
+    ArrayList<Double> marionetteBeat;
+    ArrayList<String> queenBeeDirection;
+    ArrayList<Double> queenBeeBeat;
+    ArrayList<String> quaoarDirection;
+    ArrayList<Double> quaoarBeat;
+    ArrayList<String> fuckGravityDirection;
+    ArrayList<Double> fuckGravityBeat;
     TextView fantastic;
     TextView excellent;
     TextView great;
@@ -76,6 +82,19 @@ public class GameActivity extends AppCompatActivity {
         quit = findViewById(R.id.quit);
         /** this declares the string of what song it is*/
         songName = TitleActivity.getSong();
+
+        ChartProperties.parseNotes("marionette");
+        marionetteBeat = new ArrayList<>(ChartProperties.beat);
+        marionetteDirection = new ArrayList<>(ChartProperties.direction);
+        ChartProperties.parseNotes("queen bee");
+        queenBeeBeat = new ArrayList<>(ChartProperties.beat);
+        queenBeeDirection = new ArrayList<>(ChartProperties.direction);
+        ChartProperties.parseNotes("quaoar");
+        quaoarBeat = new ArrayList<>(ChartProperties.beat);
+        quaoarDirection = new ArrayList<>(ChartProperties.direction);
+        ChartProperties.parseNotes("fuck gravity");
+        fuckGravityBeat = new ArrayList<>(ChartProperties.beat);
+        fuckGravityDirection = new ArrayList<>(ChartProperties.direction);
 
         /** each of these declare what to make each variable equal to
          * since the layout of each song is different, we need to do this.
@@ -216,14 +235,6 @@ public class GameActivity extends AppCompatActivity {
         onScreen = true;
         songLength = currentlyPlaying.getDuration();
 
-        /** this is where we get the chart
-         * beat is the current beat that we're on
-         * direction is which arrow we want to move
-         */
-        ChartProperties.parseNotes();
-        thisBeat = ChartProperties.beat;
-        thisDirection = ChartProperties.direction;
-
         /** i set the arrow "outlines" to visible
          * this is what tells you when to hit the arrows
          */
@@ -355,9 +366,27 @@ public class GameActivity extends AppCompatActivity {
          * it's on a timer
          */
         final Handler animateHandler = new Handler();
-        for (int i = 0; i < thisBeat.size(); i++) {
-            String currentDirection = thisDirection.get(i);
-            delayLength = (long) getDelay(thisBeat.get(i));
+        ArrayList<String> direction = new ArrayList<>();
+        ArrayList<Double> beat = new ArrayList<>();
+        if (songName.equals("marionette")) {
+            direction = marionetteDirection;
+            beat = marionetteBeat;
+        }
+        if (songName.equals("quaoar")) {
+            direction = quaoarDirection;
+            beat = quaoarBeat;
+        }
+        if (songName.equals("queen bee")) {
+            direction = queenBeeDirection;
+            beat = queenBeeBeat;
+        }
+        if (songName.equals("fuck gravity")) {
+            direction = fuckGravityDirection;
+            beat = fuckGravityBeat;
+        }
+        for (int i = 0; i < beat.size(); i++) {
+            String currentDirection = direction.get(i);
+            delayLength = (long) getDelay(beat.get(i));
 //            double songPosition = currentlyPlaying.getCurrentPosition();
             animateHandler.postDelayed(new Runnable() {
                 public void run() {
