@@ -344,7 +344,7 @@
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/metamorphosis" />
+        app:srcCompat="@drawable/fuckgravity" />
 
     <ImageView
         android:id="@+id/metaDown"
@@ -356,7 +356,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_down_arrow" />
+        app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
         android:id="@+id/metaLeft"
@@ -368,7 +368,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/meta_left_arrow" />
+        app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
         android:id="@+id/metaRight"
@@ -380,7 +380,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_right_arrow" />
+        app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
         android:id="@+id/metaUp"
@@ -392,7 +392,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_up_arrow" />
+        app:srcCompat="@drawable/fg_up_arrow" />
 
     <ImageView
         android:id="@+id/marionetteBox"
@@ -419,7 +419,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/metamorphosisbox" />
+        app:srcCompat="@drawable/fuckgravitybox" />
 
     <ImageView
         android:id="@+id/quaoarBox"
@@ -438,7 +438,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/meta_left_arrow" />
+        app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
         android:id="@+id/metaDownMove1"
@@ -450,7 +450,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/meta_down_arrow" />
+        app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
         android:id="@+id/metaRightMove1"
@@ -460,7 +460,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_right_arrow" />
+        app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
         android:id="@+id/metaUpMove1"
@@ -472,7 +472,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_up_arrow" />
+        app:srcCompat="@drawable/fg_up_arrow" />
     <ImageView
         android:id="@+id/metaLeftMove3"
         android:layout_width="99dp"
@@ -481,7 +481,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/meta_left_arrow" />
+        app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
         android:id="@+id/metaDownMove3"
@@ -493,7 +493,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/meta_down_arrow" />
+        app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
         android:id="@+id/metaRightMove3"
@@ -503,7 +503,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_right_arrow" />
+        app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
         android:id="@+id/metaUpMove3"
@@ -515,7 +515,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_up_arrow" />
+        app:srcCompat="@drawable/fg_up_arrow" />
     <ImageView
         android:id="@+id/metaLeftMove2"
         android:layout_width="99dp"
@@ -524,7 +524,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/meta_left_arrow" />
+        app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
         android:id="@+id/metaDownMove2"
@@ -536,7 +536,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/meta_down_arrow" />
+        app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
         android:id="@+id/metaRightMove2"
@@ -546,7 +546,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_right_arrow" />
+        app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
         android:id="@+id/metaUpMove2"
@@ -558,7 +558,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_up_arrow" />
+        app:srcCompat="@drawable/fg_up_arrow" />
 
     <ImageView
         android:id="@+id/metaLeftMove"
@@ -568,7 +568,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/meta_left_arrow" />
+        app:srcCompat="@drawable/fg_left_arrow" />
 
     <ImageView
         android:id="@+id/metaDownMove"
@@ -580,7 +580,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/meta_down_arrow" />
+        app:srcCompat="@drawable/fg_down_arrow" />
 
     <ImageView
         android:id="@+id/metaRightMove"
@@ -590,7 +590,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_right_arrow" />
+        app:srcCompat="@drawable/fg_right_arrow" />
 
     <ImageView
         android:id="@+id/metaUpMove"
@@ -602,7 +602,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/meta_up_arrow" />
+        app:srcCompat="@drawable/fg_up_arrow" />
 
     <ImageView
         android:id="@+id/qbLeftMove"

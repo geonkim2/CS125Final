@@ -1,7 +1,6 @@
 package com.example.cs125final;
 
 import android.content.Intent;
-import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -9,15 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.app.Activity;
 import android.view.animation.AnimationUtils;
 import java.util.ArrayList;
 import android.view.animation.Animation;
 import android.widget.TextView;
-
-import java.lang.Cloneable;
-
-import static com.example.cs125final.ChartProperties.getBPM;
 
 // TODO: fix the song title in GameActivity, CharProperties, and File
 
@@ -182,7 +176,7 @@ public class GameActivity extends AppCompatActivity {
             rightMove3 = findViewById(R.id.quaoarRightMove3);
         }
         if (songName.equals("fuck gravity")) {
-            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);
+            currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.fuckgravity);
             background = findViewById(R.id.metamorphosisBackground);
             background.setVisibility(View.VISIBLE);
             box = findViewById(R.id.metaBox);
