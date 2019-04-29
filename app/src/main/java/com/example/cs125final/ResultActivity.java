@@ -52,10 +52,14 @@ public class ResultActivity extends AppCompatActivity {
         textSize();
         isNice();
 
-        fantasticNumber.setText(GameActivity.fantasticcount);
-        excellentNumber.setText(GameActivity.excellentcount);
-        greatNumber.setText(GameActivity.greatcount);
-        missNumber.setText(GameActivity.misscount)
+        String fantasticCount = Integer.toString(GameActivity.fantasticCount);
+        String excellentCount = Integer.toString(GameActivity.excellentCount);
+        String greatCount = Integer.toString(GameActivity.greatCount);
+        String missCount = Integer.toString(GameActivity.missCount);
+        fantasticNumber.setText(fantasticCount);
+        excellentNumber.setText(excellentCount);
+        greatNumber.setText(greatCount);
+        missNumber.setText(missCount);
     }
 
     /** this returns you to the title screen when you click

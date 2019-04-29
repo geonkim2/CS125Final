@@ -25,8 +25,8 @@ public class ChartProperties {
         if (songName.equals("queen bee")) {
             offset = -0.751;
         }
-        if (songName.equals("metamorphosis")) {
-            offset = 0;
+        if (songName.equals("fuck gravity")) {
+            offset = -0.018;
         }
         return offset;
     }
@@ -35,7 +35,7 @@ public class ChartProperties {
      * it MUST BE CALLED, even if the offset and BPM are static
      * this is because it initializes the BPM
      */
-    public static double getBPM() {
+    public static double getBPM(int i) {
         if (songName.equals("marionette")) {
             BPM = 165;
         }
@@ -45,17 +45,8 @@ public class ChartProperties {
         if (songName.equals("queen bee")) {
             BPM = 159.985;
         }
-        if (songName.equals("metamorphosis")) {
-            parseNotes();
-            for (int i = 0; i < beat.size(); i++) {
-                if (beat.get(i) < 176) {
-                    BPM = 124;
-                } else if (beat.get(i) < 180) {
-                    BPM = 124.5;
-                } else {
-                    BPM = 124.9;
-                }
-            }
+        if (songName.equals("fuck gravity")) {
+            BPM = 110;
         }
         return BPM;
     }
@@ -104,12 +95,12 @@ public class ChartProperties {
         }
     }
 
-    public static double getDelay(double currentBeat) {
-        double BPM = ChartProperties.getBPM();
-        double offset = ChartProperties.getOffset();
-        //3000 is the delay in move
-        return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1500;
-    }
+//    public static double getDelay(double currentBeat) {
+//        double BPM = ChartProperties.getBPM();
+//        double offset = ChartProperties.getOffset();
+//        //3000 is the delay in move
+//        return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1500;
+//    }
 
     /** this is here for debugging
      * by pressing play, you can call all of the functions
@@ -121,7 +112,7 @@ public class ChartProperties {
      */
     public static void main(String[] args) {
         getOffset();
-        getBPM();
+//        getBPM();
         parseNotes();
         for (int i = 0; i < direction.size(); i++) {
 //            double print = getDelay(beat.get(i));

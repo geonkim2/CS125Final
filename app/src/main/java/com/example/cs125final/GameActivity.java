@@ -181,7 +181,7 @@ public class GameActivity extends AppCompatActivity {
             downMove3 = findViewById(R.id.quaoarDownMove3);
             rightMove3 = findViewById(R.id.quaoarRightMove3);
         }
-        if (songName.equals("metamorphosis")) {
+        if (songName.equals("fuck gravity")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.metamorphosis);
             background = findViewById(R.id.metamorphosisBackground);
             background.setVisibility(View.VISIBLE);
@@ -362,7 +362,8 @@ public class GameActivity extends AppCompatActivity {
         final Handler animateHandler = new Handler();
         for (int i = 0; i < beat.size(); i++) {
             String currentDirection = direction.get(i);
-            delayLength = (long) getDelay(beat.get(i));
+            delayLength = (long) getDelay(i, beat.get(i));
+//            double songPosition = currentlyPlaying.getCurrentPosition();
             animateHandler.postDelayed(new Runnable() {
                 public void run() {
                     if (currentDirection.equals("left")) {
@@ -478,37 +479,37 @@ public class GameActivity extends AppCompatActivity {
     /** this is the delay put into the animation
      * each arrow has its own delay
      */
-    public double getDelay(double currentBeat) {
-        double BPM = ChartProperties.getBPM();
+    public double getDelay(int metaIndex, double currentBeat) {
+        double BPM = ChartProperties.getBPM(metaIndex);
         double offset = ChartProperties.getOffset();
         //3000 is the delay in move
         return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1178.57143;
     }
-    static int fantasticcount;
-    static int excellentcount;
-    static int greatcount;
-    static int misscount;
-    public void hit(String direction, double delay, double currentPosition) {
+    static int fantasticCount = 0;
+    static int excellentCount = 0;
+    static int greatCount = 0;
+    static int missCount = 0;
+    public void hit(double delay, double currentPosition) {
         if ((currentPosition < (delay + 50)) && currentPosition > (delay - 50)) {
-            fantasticcount++;
+            fantasticCount++;
             fantastic.setVisibility(View.VISIBLE);
             excellent.setVisibility(View.INVISIBLE);
             great.setVisibility(View.INVISIBLE);
             miss.setVisibility(View.INVISIBLE);
         } else if ((currentPosition < (delay + 100)) && currentPosition > (delay - 100)) {
-            excellentcount++;
+            excellentCount++;
             fantastic.setVisibility(View.INVISIBLE);
             excellent.setVisibility(View.VISIBLE);
             great.setVisibility(View.INVISIBLE);
             miss.setVisibility(View.INVISIBLE);
         } else if ((currentPosition < (delay + 150)) && currentPosition > (delay - 150)) {
-            greatcount++;
+            greatCount++;
             fantastic.setVisibility(View.INVISIBLE);
             excellent.setVisibility(View.INVISIBLE);
             great.setVisibility(View.VISIBLE);
             miss.setVisibility(View.INVISIBLE);
         } else {
-            misscount++;
+            missCount++;
             fantastic.setVisibility(View.INVISIBLE);
             excellent.setVisibility(View.INVISIBLE);
             great.setVisibility(View.INVISIBLE);
