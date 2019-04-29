@@ -24,7 +24,7 @@ public class ChartProperties {
             offset = -0.751;
         }
         if (songName.equals("peacock")) {
-            offset = 0.005428;
+            offset = -0.005428;
         }
         return offset;
     }
