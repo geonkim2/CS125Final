@@ -12,7 +12,8 @@ public class ResultActivity extends AppCompatActivity {
     /** this initializes each of the variables*/
     Button titleReturn;
     TextView nice;
-    TextView score;
+    TextView percentage;
+    TextView grade;
     TextView wordFantastic;
     TextView fantasticNumber;
     TextView wordExcellent;
@@ -36,7 +37,8 @@ public class ResultActivity extends AppCompatActivity {
          * so you can change the text, and it shows up on screen
          */
         nice = findViewById(R.id.nice);
-        score = findViewById(R.id.grade);
+        grade = findViewById(R.id.grade);
+        percentage = findViewById(R.id.percentage);
         wordFantastic = findViewById(R.id.fantastic_word);
         fantasticNumber = findViewById(R.id.fantastic_number);
         wordExcellent = findViewById(R.id.excellent_word);
@@ -56,10 +58,14 @@ public class ResultActivity extends AppCompatActivity {
         String excellentCount = Integer.toString(GameActivity.excellentCount);
         String greatCount = Integer.toString(GameActivity.greatCount);
         String missCount = Integer.toString(GameActivity.missCount);
+        String percentString = Integer.toString(getPercent()) + "%";
         fantasticNumber.setText(fantasticCount);
         excellentNumber.setText(excellentCount);
         greatNumber.setText(greatCount);
         missNumber.setText(missCount);
+        percentage.setText(percentString);
+        grade.setText(getGrade());
+        grade.bringToFront();
     }
 
     /** this returns you to the title screen when you click
@@ -75,7 +81,8 @@ public class ResultActivity extends AppCompatActivity {
      * it's called by onCreate
      */
     public void bringToFront() {
-        score.bringToFront();
+        percentage.bringToFront();
+        grade.bringToFront();
         nice.bringToFront();
         wordFantastic.bringToFront();
         fantasticNumber.bringToFront();
@@ -91,7 +98,8 @@ public class ResultActivity extends AppCompatActivity {
      * this sets the size of each textView
      */
     public void textSize() {
-        score.setTextSize(60);
+        percentage.setTextSize(60);
+        grade.setTextSize(60);
         wordFantastic.setTextSize(20);
         fantasticNumber.setTextSize(20);
         wordExcellent.setTextSize(20);
@@ -111,7 +119,8 @@ public class ResultActivity extends AppCompatActivity {
 //        int yellow = getResources().getColor(R.color.yellow);
 //        int green = getResources().getColor(R.color.green);
 //        int red = getResources().getColor(R.color.red);
-        score.setTextColor(white);
+        percentage.setTextColor(white);
+        grade.setTextColor(white);
         nice.setTextColor(white);
         wordFantastic.setTextColor(white);
         fantasticNumber.setTextColor(white);
@@ -137,6 +146,45 @@ public class ResultActivity extends AppCompatActivity {
             nice.setVisibility(View.VISIBLE);
         } else {
             nice.setVisibility(View.GONE);
+        }
+    }
+    public int getPercent() {
+        if (TitleActivity.getSong().equals("marionette")) {
+            return (int) ((GameActivity.fantasticCount) + (GameActivity.excellentCount * .85)
+                    + (GameActivity.greatCount * .7)) / GameActivity.marionetteDirection.size();
+        }
+        if (TitleActivity.getSong().equals("queen bee")) {
+            return (int) ((GameActivity.fantasticCount) + (GameActivity.excellentCount * .85)
+                    + (GameActivity.greatCount * .7)) / GameActivity.queenBeeDirection.size();
+        }
+        if (TitleActivity.getSong().equals("quaoar")) {
+            return (int) ((GameActivity.fantasticCount) + (GameActivity.excellentCount * .85)
+                    + (GameActivity.greatCount * .7)) / GameActivity.quaoarDirection.size();
+        }
+        if (TitleActivity.getSong().equals("peacock")) {
+            return (int) ((GameActivity.fantasticCount) + (GameActivity.excellentCount * .85)
+                    + (GameActivity.greatCount * .7)) / GameActivity.peacockDirection.size();
+        }
+        return -1;
+    }
+    public String getGrade() {
+        double percent = getPercent();
+        if (percent > 90) {
+            return "S";
+        }
+        if (percent > 80) {
+            return "A";
+        }
+        if (percent > 70) {
+            return "B";
+        }
+        if (percent > 60) {
+            return "C";
+        }
+        if (percent > 50) {
+            return "D";
+        } else {
+            return "F";
         }
     }
 }

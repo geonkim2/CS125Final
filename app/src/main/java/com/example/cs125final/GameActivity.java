@@ -71,13 +71,13 @@ public class GameActivity extends AppCompatActivity {
     public boolean onScreen;
     int songLength;
     long delayLength;
-    ArrayList<String> marionetteDirection;
+    static ArrayList<String> marionetteDirection;
     ArrayList<Double> marionetteBeat;
-    ArrayList<String> queenBeeDirection;
+    static ArrayList<String> queenBeeDirection;
     ArrayList<Double> queenBeeBeat;
-    ArrayList<String> quaoarDirection;
+    static ArrayList<String> quaoarDirection;
     ArrayList<Double> quaoarBeat;
-    ArrayList<String> peacockDirection;
+    static ArrayList<String> peacockDirection;
     ArrayList<Double> peacockBeat;
     TextView fantastic;
     TextView excellent;
@@ -413,17 +413,22 @@ public class GameActivity extends AppCompatActivity {
          * they're invisible, so you can't see them
          * but if they're not in front, you cant click them
          */
-        leftArrow.bringToFront();
         leftButton = findViewById(R.id.left_button);
         leftButton.setEnabled(true);
         leftButton.bringToFront();
-        upArrow.bringToFront();
+        leftButton.setOnClickListener((v) -> hit());
+        leftArrow.bringToFront();
+
         upButton = findViewById(R.id.up_button);
         upButton.setEnabled(true);
         upButton.bringToFront();
+        upButton.setOnClickListener((v) -> hit());
+        upArrow.bringToFront();
+
         rightButton = findViewById(R.id.right_button);
         rightButton.setEnabled(true);
         rightButton.bringToFront();
+        rightButton.setOnClickListener((v) -> hit());
         rightArrow.bringToFront();
 
         /** this is here for DEBUGGING PURPOSES
@@ -471,7 +476,7 @@ public class GameActivity extends AppCompatActivity {
             direction = peacockDirection;
             beat = peacockBeat;
         }
-        index = 0;
+        index = -1;
         for (int i = 0; i < beat.size(); i++) {
             String currentDirection = direction.get(i);
             delayLength = (long) getDelay(beat.get(i));
@@ -665,6 +670,9 @@ public class GameActivity extends AppCompatActivity {
 
     }
     public void hit() {
-        hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition());
+        if (index != -1) {
+            int position = currentlyPlaying.getCurrentPosition();
+            hit(delayLength + 1178.57143, position);
+        }
     }
 }
