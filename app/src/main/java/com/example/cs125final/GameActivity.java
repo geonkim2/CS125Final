@@ -83,6 +83,7 @@ public class GameActivity extends AppCompatActivity {
     TextView excellent;
     TextView great;
     TextView miss;
+    int index;
 
     /** this is everything that happens when the app loads*/
     @Override
@@ -107,12 +108,12 @@ public class GameActivity extends AppCompatActivity {
         quaoarBeat = new ArrayList<>(ChartProperties.beat);
         quaoarDirection = new ArrayList<>(ChartProperties.direction);
 
-
         /** each of these declare what to make each variable equal to
          * since the layout of each song is different, we need to do this.
          */
         if (songName.equals("marionette")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
+            songLength = 94000;
             box = findViewById(R.id.marionetteBox);
             int yellow = getResources().getColor(R.color.yellow);
             quit.setBackgroundColor(yellow);
@@ -157,6 +158,7 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
+            songLength = 125000;
             int greyish = getResources().getColor(R.color.greyish);
             quit.setBackgroundColor(greyish);
             background = findViewById(R.id.queenBeeBackground);
@@ -201,6 +203,7 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
+            songLength = 159000;
             background = findViewById(R.id.quaoarBackground);
             background.setVisibility(View.VISIBLE);
             box = findViewById(R.id.quaoarBox);
@@ -245,6 +248,7 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("peacock")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.peackock);
+            songLength = 136000;
             background = findViewById(R.id.peacockBackground);
             background.setVisibility(View.VISIBLE);
             box = findViewById(R.id.peacockBox);
@@ -293,7 +297,6 @@ public class GameActivity extends AppCompatActivity {
          * it's on a timer, so we need ths variable to do that
          */
         onScreen = true;
-        songLength = currentlyPlaying.getDuration();
 
         /** i set the arrow "outlines" to visible
          * this is what tells you when to hit the arrows
@@ -468,10 +471,11 @@ public class GameActivity extends AppCompatActivity {
             direction = peacockDirection;
             beat = peacockBeat;
         }
+        index = 0;
         for (int i = 0; i < beat.size(); i++) {
             String currentDirection = direction.get(i);
             delayLength = (long) getDelay(beat.get(i));
-//            double songPosition = currentlyPlaying.getCurrentPosition();
+            index++;
             animateHandler.postDelayed(new Runnable() {
                 public void run() {
                     if (currentDirection.equals("left")) {
