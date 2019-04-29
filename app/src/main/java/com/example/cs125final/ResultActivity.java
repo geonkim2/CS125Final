@@ -66,6 +66,10 @@ public class ResultActivity extends AppCompatActivity {
         percentage.setText(percentString);
         grade.setText(getGrade());
         grade.bringToFront();
+        GameActivity.fantasticCount = 0;
+        GameActivity.excellentCount = 0;
+        GameActivity.greatCount = 0;
+        GameActivity.missCount = 0;
     }
 
     /** this returns you to the title screen when you click

@@ -83,7 +83,6 @@ public class GameActivity extends AppCompatActivity {
     TextView excellent;
     TextView great;
     TextView miss;
-    int index;
 
     /** this is everything that happens when the app loads*/
     @Override
@@ -416,19 +415,16 @@ public class GameActivity extends AppCompatActivity {
         leftButton = findViewById(R.id.left_button);
         leftButton.setEnabled(true);
         leftButton.bringToFront();
-        leftButton.setOnClickListener((v) -> hit());
         leftArrow.bringToFront();
 
         upButton = findViewById(R.id.up_button);
         upButton.setEnabled(true);
         upButton.bringToFront();
-        upButton.setOnClickListener((v) -> hit());
         upArrow.bringToFront();
 
         rightButton = findViewById(R.id.right_button);
         rightButton.setEnabled(true);
         rightButton.bringToFront();
-        rightButton.setOnClickListener((v) -> hit());
         rightArrow.bringToFront();
 
         /** this is here for DEBUGGING PURPOSES
@@ -437,7 +433,6 @@ public class GameActivity extends AppCompatActivity {
         downButton = findViewById(R.id.down_button);
         downButton.setEnabled(true);
         downButton.bringToFront();
-        downButton.setOnClickListener((v) -> hit());
         downArrow.bringToFront();
 
         /** now, i set the quit button to quit*/
@@ -476,14 +471,13 @@ public class GameActivity extends AppCompatActivity {
             direction = peacockDirection;
             beat = peacockBeat;
         }
-        index = -1;
         for (int i = 0; i < beat.size(); i++) {
             String currentDirection = direction.get(i);
             delayLength = (long) getDelay(beat.get(i));
-            index++;
             animateHandler.postDelayed(new Runnable() {
                 public void run() {
                     if (currentDirection.equals("left")) {
+                        leftButton.setOnClickListener((v) -> hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition()));
                         leftCount++;
                         if (leftCount == 7) {
                             leftCount = 0;
@@ -511,6 +505,7 @@ public class GameActivity extends AppCompatActivity {
                         }
                     }
                     if (currentDirection.equals("down")) {
+                        downButton.setOnClickListener((v) -> hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition()));
                         downCount++;
                         if (downCount == 7) {
                             downCount = 0;
@@ -538,6 +533,7 @@ public class GameActivity extends AppCompatActivity {
                         }
                     }
                     if (currentDirection.equals("up")) {
+                        upButton.setOnClickListener((v) -> hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition()));
                         upCount++;
                         if (upCount == 7) {
                             upCount = 0;
@@ -565,6 +561,7 @@ public class GameActivity extends AppCompatActivity {
                         }
                     }
                     if (currentDirection.equals("right")) {
+                        rightButton.setOnClickListener((v) -> hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition()));
                         rightCount++;
                         if (rightCount == 7) {
                             rightCount = 0;
@@ -666,13 +663,6 @@ public class GameActivity extends AppCompatActivity {
             excellent.setVisibility(View.INVISIBLE);
             great.setVisibility(View.INVISIBLE);
             miss.setVisibility(View.VISIBLE);
-        }
-
-    }
-    public void hit() {
-        if (index != -1) {
-            int position = currentlyPlaying.getCurrentPosition();
-            hit(delayLength + 1178.57143, position);
         }
     }
 }
