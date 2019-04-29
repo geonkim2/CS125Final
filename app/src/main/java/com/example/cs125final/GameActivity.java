@@ -71,7 +71,6 @@ public class GameActivity extends AppCompatActivity {
     public boolean onScreen;
     int songLength;
     long delayLength;
-    ImageView current;
     ArrayList<String> marionetteDirection;
     ArrayList<Double> marionetteBeat;
     ArrayList<String> queenBeeDirection;
@@ -430,7 +429,7 @@ public class GameActivity extends AppCompatActivity {
         downButton = findViewById(R.id.down_button);
         downButton.setEnabled(true);
         downButton.bringToFront();
-        downButton.setOnClickListener((v) -> nextScreen());
+        downButton.setOnClickListener((v) -> hit());
         downArrow.bringToFront();
 
         /** now, i set the quit button to quit*/
@@ -634,19 +633,19 @@ public class GameActivity extends AppCompatActivity {
     static int greatCount = 0;
     static int missCount = 0;
     public void hit(double delay, double currentPosition) {
-        if ((currentPosition < (delay + 50)) && currentPosition > (delay - 50)) {
+        if ((currentPosition < (delay + 100)) && currentPosition > (delay - 100)) {
             fantasticCount++;
             fantastic.setVisibility(View.VISIBLE);
             excellent.setVisibility(View.INVISIBLE);
             great.setVisibility(View.INVISIBLE);
             miss.setVisibility(View.INVISIBLE);
-        } else if ((currentPosition < (delay + 100)) && currentPosition > (delay - 100)) {
+        } else if ((currentPosition < (delay + 500)) && currentPosition > (delay - 500)) {
             excellentCount++;
             fantastic.setVisibility(View.INVISIBLE);
             excellent.setVisibility(View.VISIBLE);
             great.setVisibility(View.INVISIBLE);
             miss.setVisibility(View.INVISIBLE);
-        } else if ((currentPosition < (delay + 150)) && currentPosition > (delay - 150)) {
+        } else if ((currentPosition < (delay + 1000)) && currentPosition > (delay - 1000)) {
             greatCount++;
             fantastic.setVisibility(View.INVISIBLE);
             excellent.setVisibility(View.INVISIBLE);
@@ -661,5 +660,7 @@ public class GameActivity extends AppCompatActivity {
         }
 
     }
-
+    public void hit() {
+        hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition());
+    }
 }
