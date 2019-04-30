@@ -69,7 +69,6 @@ public class GameActivity extends AppCompatActivity {
     MediaPlayer currentlyPlaying;
     ImageView background;
     public boolean onScreen;
-    int songLength;
     long delayLength;
     static ArrayList<String> marionetteDirection;
     ArrayList<Double> marionetteBeat;
@@ -110,7 +109,6 @@ public class GameActivity extends AppCompatActivity {
          */
         if (songName.equals("marionette")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.marionette);
-            songLength = 94000;
             box = findViewById(R.id.marionetteBox);
             int yellow = getResources().getColor(R.color.yellow);
             quit.setBackgroundColor(yellow);
@@ -155,7 +153,7 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
-            songLength = 125000;
+            //songLength = 125000;
             int greyish = getResources().getColor(R.color.greyish);
             quit.setBackgroundColor(greyish);
             background = findViewById(R.id.queenBeeBackground);
@@ -200,7 +198,7 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
-            songLength = 159000;
+            //songLength = 159000;
             background = findViewById(R.id.quaoarBackground);
             background.setVisibility(View.VISIBLE);
             box = findViewById(R.id.quaoarBox);
@@ -245,7 +243,6 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("peacock")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.peackock);
-            songLength = 136000;
             background = findViewById(R.id.peacockBackground);
             background.setVisibility(View.VISIBLE);
             box = findViewById(R.id.peacockBox);
@@ -426,10 +423,10 @@ public class GameActivity extends AppCompatActivity {
             }
         }, 1000);
 
-        leftButton.setOnClickListener((v) -> hit());
-        downButton.setOnClickListener((v) -> hit());
-        upButton.setOnClickListener((v) -> hit());
-        rightButton.setOnClickListener((v) -> hit());
+        leftButton.setOnClickListener((v) -> hit("left"));
+        downButton.setOnClickListener((v) -> hit("down"));
+        upButton.setOnClickListener((v) -> hit("up"));
+        rightButton.setOnClickListener((v) -> hit("right"));
 
         /** this actually animates the arrows
          * it's on a timer
@@ -452,6 +449,20 @@ public class GameActivity extends AppCompatActivity {
             beat = peacockBeat;
         }
 
+       for (int i = 0; i < beat.size(); i++) {
+           if (direction.get(i).equals("left")) {
+               leftSize++;
+           }
+           if (direction.get(i).equals("right")) {
+               rightSize++;
+           }
+           if (direction.get(i).equals("up")) {
+               upSize++;
+           }
+           if (direction.get(i).equals("down")) {
+               downSize++;
+           }
+       }
         for (int i = 0; i < beat.size(); i++) {
             String currentDirection = direction.get(i);
             delayLength = (long) getDelay(beat.get(i));
@@ -572,16 +583,29 @@ public class GameActivity extends AppCompatActivity {
 
         /** the changes screens after the song is over*/
         final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                Intent intent = new Intent(GameActivity.this, ResultActivity.class);
-                if (onScreen) {
-                    currentlyPlaying.stop();
-                    GameActivity.this.startActivity(intent);
-                    GameActivity.this.finish();
+        if (songName.equals("marionette")) {
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Intent intent = new Intent(GameActivity.this, ResultActivity.class);
+                    if (onScreen) {
+                        currentlyPlaying.stop();
+                        GameActivity.this.startActivity(intent);
+                        GameActivity.this.finish();
+                    }
                 }
-            }
-        }, songLength);
+            }, 110000);
+        } else if (songName.equals("peacock")) {
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Intent intent = new Intent(GameActivity.this, ResultActivity.class);
+                    if (onScreen) {
+                        currentlyPlaying.stop();
+                        GameActivity.this.startActivity(intent);
+                        GameActivity.this.finish();
+                    }
+                }
+            }, 200000);
+        }
     }
 
     /** this is the function called by the green button*/
@@ -599,10 +623,18 @@ public class GameActivity extends AppCompatActivity {
                 AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
         toMove.startAnimation(animation1);
     }
-    static int LeftCount = 0;
-    static int DownCount = 0;
-    static int UpCount = 0;
-    static int RightCount = 0;
+    static int leftCount = 0;
+    static int downCount = 0;
+    static int upCount = 0;
+    static int rightCount = 0;
+    static int leftSize = 0;
+    static int downSize = 0;
+    static int upSize = 0;
+    static int rightSize = 0;
+    static int leftRecord = 0;
+    static int downRecord = 0;
+    static int upRecord = 0;
+    static int rightRecord = 0;
 
     /** this is the delay put into the animation
      * each arrow has its own delay
@@ -612,13 +644,20 @@ public class GameActivity extends AppCompatActivity {
         double offset = ChartProperties.getOffset();
         return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1178.57143;
     }
-    static int hitCount = 0;
     public void hit(String direction) {
-        if (direction.equals("left")) {
-            LeftCount++;
+        double toAdd = 1.0 / beat.size();
+        if (direction.equals("left") && leftRecord < leftSize) {
+            leftRecord++;
         }
-        if (hitCount <= beat.size()) {
-            hitCount++;
+        if (direction.equals("up") && upRecord < upSize) {
+            upRecord++;
         }
+        if (direction.equals("down") && downRecord < downSize) {
+            downRecord++;
+        }
+        if (direction.equals("right") && rightRecord < rightSize) {
+            rightRecord++;
+        }
+
     }
 }
