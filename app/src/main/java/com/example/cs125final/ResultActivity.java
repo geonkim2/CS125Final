@@ -14,14 +14,14 @@ public class ResultActivity extends AppCompatActivity {
     TextView nice;
     TextView percentage;
     TextView grade;
-    TextView wordFantastic;
-    TextView fantasticNumber;
-    TextView wordExcellent;
-    TextView excellentNumber;
-    TextView wordGreat;
-    TextView greatNumber;
-    TextView wordMiss;
-    TextView missNumber;
+    TextView wordLeft;
+    TextView LeftNumber;
+    TextView wordDown;
+    TextView DownNumber;
+    TextView wordUp;
+    TextView UpNumber;
+    TextView wordRight;
+    TextView RightNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +39,14 @@ public class ResultActivity extends AppCompatActivity {
         nice = findViewById(R.id.nice);
         grade = findViewById(R.id.grade);
         percentage = findViewById(R.id.percentage);
-        wordFantastic = findViewById(R.id.fantastic_word);
-        fantasticNumber = findViewById(R.id.fantastic_number);
-        wordExcellent = findViewById(R.id.excellent_word);
-        excellentNumber = findViewById(R.id.excellent_number);
-        wordGreat = findViewById(R.id.great_word);
-        greatNumber = findViewById(R.id.great_number);
-        wordMiss = findViewById(R.id.miss_word);
-        missNumber = findViewById(R.id.miss_number);
+        wordLeft = findViewById(R.id.Left_word);
+        LeftNumber = findViewById(R.id.Left_number);
+        wordDown = findViewById(R.id.Down_word);
+        DownNumber = findViewById(R.id.Down_number);
+        wordUp = findViewById(R.id.Up_word);
+        UpNumber = findViewById(R.id.Up_number);
+        wordRight = findViewById(R.id.Right_word);
+        RightNumber = findViewById(R.id.Right_number);
 
         /** this calls each of the functions*/
         bringToFront();
@@ -54,22 +54,22 @@ public class ResultActivity extends AppCompatActivity {
         textSize();
         isNice();
 
-        String fantasticCount = Integer.toString(GameActivity.fantasticCount);
-        String excellentCount = Integer.toString(GameActivity.excellentCount);
-        String greatCount = Integer.toString(GameActivity.greatCount);
-        String missCount = Integer.toString(GameActivity.missCount);
+        String LeftCount = Integer.toString(GameActivity.LeftCount);
+        String DownCount = Integer.toString(GameActivity.DownCount);
+        String UpCount = Integer.toString(GameActivity.UpCount);
+        String RightCount = Integer.toString(GameActivity.RightCount);
         String percentString = Integer.toString(getPercent()) + "%";
-        fantasticNumber.setText(fantasticCount);
-        excellentNumber.setText(excellentCount);
-        greatNumber.setText(greatCount);
-        missNumber.setText(missCount);
+        LeftNumber.setText(LeftCount);
+        DownNumber.setText(DownCount);
+        UpNumber.setText(UpCount);
+        RightNumber.setText(RightCount);
         percentage.setText(percentString);
         grade.setText(getGrade());
         grade.bringToFront();
-        GameActivity.fantasticCount = 0;
-        GameActivity.excellentCount = 0;
-        GameActivity.greatCount = 0;
-        GameActivity.missCount = 0;
+        GameActivity.LeftCount = 0;
+        GameActivity.DownCount = 0;
+        GameActivity.UpCount = 0;
+        GameActivity.RightCount = 0;
     }
 
     /** this returns you to the title screen when you click
@@ -88,14 +88,14 @@ public class ResultActivity extends AppCompatActivity {
         percentage.bringToFront();
         grade.bringToFront();
         nice.bringToFront();
-        wordFantastic.bringToFront();
-        fantasticNumber.bringToFront();
-        wordExcellent.bringToFront();
-        excellentNumber.bringToFront();
-        wordGreat.bringToFront();
-        greatNumber.bringToFront();
-        wordMiss.bringToFront();
-        missNumber.bringToFront();
+        wordLeft.bringToFront();
+        LeftNumber.bringToFront();
+        wordDown.bringToFront();
+        DownNumber.bringToFront();
+        wordUp.bringToFront();
+        UpNumber.bringToFront();
+        wordRight.bringToFront();
+        RightNumber.bringToFront();
     }
 
     /**
@@ -104,14 +104,14 @@ public class ResultActivity extends AppCompatActivity {
     public void textSize() {
         percentage.setTextSize(60);
         grade.setTextSize(60);
-        wordFantastic.setTextSize(20);
-        fantasticNumber.setTextSize(20);
-        wordExcellent.setTextSize(20);
-        excellentNumber.setTextSize(20);
-        wordGreat.setTextSize(20);
-        greatNumber.setTextSize(20);
-        wordMiss.setTextSize(20);
-        missNumber.setTextSize(20);
+        wordLeft.setTextSize(20);
+        LeftNumber.setTextSize(20);
+        wordDown.setTextSize(20);
+        DownNumber.setTextSize(20);
+        wordUp.setTextSize(20);
+        UpNumber.setTextSize(20);
+        wordRight.setTextSize(20);
+        RightNumber.setTextSize(20);
     }
 
     /**
@@ -126,14 +126,14 @@ public class ResultActivity extends AppCompatActivity {
         percentage.setTextColor(white);
         grade.setTextColor(white);
         nice.setTextColor(white);
-        wordFantastic.setTextColor(white);
-        fantasticNumber.setTextColor(white);
-        wordExcellent.setTextColor(white);
-        excellentNumber.setTextColor(white);
-        wordGreat.setTextColor(white);
-        greatNumber.setTextColor(white);
-        wordMiss.setTextColor(white);
-        missNumber.setTextColor(white);
+        wordLeft.setTextColor(white);
+        LeftNumber.setTextColor(white);
+        wordDown.setTextColor(white);
+        DownNumber.setTextColor(white);
+        wordUp.setTextColor(white);
+        UpNumber.setTextColor(white);
+        wordRight.setTextColor(white);
+        RightNumber.setTextColor(white);
     }
 
     /**
@@ -141,10 +141,10 @@ public class ResultActivity extends AppCompatActivity {
      * if it does, there's a word that says "nice" which shows up
      */
     public void isNice() {
-        CharSequence first = fantasticNumber.getText();
-        CharSequence second = excellentNumber.getText();
-        CharSequence third = greatNumber.getText();
-        CharSequence fourth = missNumber.getText();
+        CharSequence first = LeftNumber.getText();
+        CharSequence second = DownNumber.getText();
+        CharSequence third = UpNumber.getText();
+        CharSequence fourth = RightNumber.getText();
         if (first.toString().contains("69") || second.toString().contains("69")
             || third.toString().contains("69") || fourth.toString().contains("69")){
             nice.setVisibility(View.VISIBLE);
@@ -154,20 +154,20 @@ public class ResultActivity extends AppCompatActivity {
     }
     public int getPercent() {
         if (TitleActivity.getSong().equals("marionette")) {
-            return (int) ((GameActivity.fantasticCount) + (GameActivity.excellentCount * .85)
-                    + (GameActivity.greatCount * .7)) / GameActivity.marionetteDirection.size();
+            return (int) (GameActivity.LeftCount + GameActivity.DownCount
+                    + GameActivity.UpCount + GameActivity.RightCount) / GameActivity.marionetteDirection.size();
         }
         if (TitleActivity.getSong().equals("queen bee")) {
-            return (int) ((GameActivity.fantasticCount) + (GameActivity.excellentCount * .85)
-                    + (GameActivity.greatCount * .7)) / GameActivity.queenBeeDirection.size();
+            return (int) (GameActivity.LeftCount + GameActivity.DownCount
+                    + GameActivity.UpCount + GameActivity.RightCount) / GameActivity.queenBeeDirection.size();
         }
         if (TitleActivity.getSong().equals("quaoar")) {
-            return (int) ((GameActivity.fantasticCount) + (GameActivity.excellentCount * .85)
-                    + (GameActivity.greatCount * .7)) / GameActivity.quaoarDirection.size();
+            return (int) (GameActivity.LeftCount + GameActivity.DownCount
+                    + GameActivity.UpCount + GameActivity.RightCount) / GameActivity.quaoarDirection.size();
         }
         if (TitleActivity.getSong().equals("peacock")) {
-            return (int) ((GameActivity.fantasticCount) + (GameActivity.excellentCount * .85)
-                    + (GameActivity.greatCount * .7)) / GameActivity.peacockDirection.size();
+            return (int) (GameActivity.LeftCount + GameActivity.DownCount
+                    + GameActivity.UpCount + GameActivity.RightCount) / GameActivity.peacockDirection.size();
         }
         return -1;
     }

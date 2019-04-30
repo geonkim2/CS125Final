@@ -15,10 +15,10 @@ import android.widget.TextView;
 
 // TODO: fix the song title in GameActivity, CharProperties, and File
 
-/** fantastic = blue
- *  excellent = yellow
- *  great = green
- *  miss = red
+/** Left = blue
+ *  Down = yellow
+ *  Up = green
+ *  Right = red
  */
 public class GameActivity extends AppCompatActivity {
 
@@ -79,10 +79,8 @@ public class GameActivity extends AppCompatActivity {
     ArrayList<Double> quaoarBeat;
     static ArrayList<String> peacockDirection;
     ArrayList<Double> peacockBeat;
-    TextView fantastic;
-    TextView excellent;
-    TextView great;
-    TextView miss;
+    ArrayList<String> direction = new ArrayList<>();
+    ArrayList<Double> beat = new ArrayList<>();
 
     /** this is everything that happens when the app loads*/
     @Override
@@ -373,27 +371,6 @@ public class GameActivity extends AppCompatActivity {
          * and im making them each specific color
          * and making them visible using shadow
          */
-        int black = getResources().getColor(R.color.black);
-        int blue = getResources().getColor(R.color.blue);
-        fantastic = findViewById(R.id.fantasticText);
-        fantastic.setTextColor(blue);
-        fantastic.setTextSize(35);
-        fantastic.setShadowLayer(0.02f, -4, 4, black);
-        int yellow = getResources().getColor(R.color.yellow);
-        excellent = findViewById(R.id.excellentText);
-        excellent.setTextColor(yellow);
-        excellent.setTextSize(35);
-        excellent.setShadowLayer(0.02f, -4, 4, black);
-        int green = getResources().getColor(R.color.green);
-        great = findViewById(R.id.greatText);
-        great.setTextColor(green);
-        great.setTextSize(35);
-        great.setShadowLayer(0.02f, -4, 4, black);
-        int red = getResources().getColor(R.color.red);
-        miss = findViewById(R.id.missText);
-        miss.setTextColor(red);
-        miss.setTextSize(35);
-        miss.setShadowLayer(0.02f, -4, 4, black);
 
 
         /** now i set the box to the front so that the arrows are covered up*/
@@ -449,12 +426,15 @@ public class GameActivity extends AppCompatActivity {
             }
         }, 1000);
 
+        leftButton.setOnClickListener((v) -> hit());
+        downButton.setOnClickListener((v) -> hit());
+        upButton.setOnClickListener((v) -> hit());
+        rightButton.setOnClickListener((v) -> hit());
+
         /** this actually animates the arrows
          * it's on a timer
          */
         final Handler animateHandler = new Handler();
-        ArrayList<String> direction = new ArrayList<>();
-        ArrayList<Double> beat = new ArrayList<>();
         if (songName.equals("marionette")) {
             direction = marionetteDirection;
             beat = marionetteBeat;
@@ -471,13 +451,14 @@ public class GameActivity extends AppCompatActivity {
             direction = peacockDirection;
             beat = peacockBeat;
         }
+
         for (int i = 0; i < beat.size(); i++) {
             String currentDirection = direction.get(i);
             delayLength = (long) getDelay(beat.get(i));
+            currentlyPlaying.getCurrentPosition();
             animateHandler.postDelayed(new Runnable() {
                 public void run() {
                     if (currentDirection.equals("left")) {
-                        leftButton.setOnClickListener((v) -> hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition()));
                         leftCount++;
                         if (leftCount == 7) {
                             leftCount = 0;
@@ -505,7 +486,6 @@ public class GameActivity extends AppCompatActivity {
                         }
                     }
                     if (currentDirection.equals("down")) {
-                        downButton.setOnClickListener((v) -> hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition()));
                         downCount++;
                         if (downCount == 7) {
                             downCount = 0;
@@ -533,7 +513,6 @@ public class GameActivity extends AppCompatActivity {
                         }
                     }
                     if (currentDirection.equals("up")) {
-                        upButton.setOnClickListener((v) -> hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition()));
                         upCount++;
                         if (upCount == 7) {
                             upCount = 0;
@@ -561,7 +540,6 @@ public class GameActivity extends AppCompatActivity {
                         }
                     }
                     if (currentDirection.equals("right")) {
-                        rightButton.setOnClickListener((v) -> hit(delayLength + 1178.57143, currentlyPlaying.getCurrentPosition()));
                         rightCount++;
                         if (rightCount == 7) {
                             rightCount = 0;
@@ -621,10 +599,10 @@ public class GameActivity extends AppCompatActivity {
                 AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
         toMove.startAnimation(animation1);
     }
-    int leftCount = 0;
-    int downCount = 0;
-    int upCount = 0;
-    int rightCount = 0;
+    static int LeftCount = 0;
+    static int DownCount = 0;
+    static int UpCount = 0;
+    static int RightCount = 0;
 
     /** this is the delay put into the animation
      * each arrow has its own delay
@@ -634,35 +612,13 @@ public class GameActivity extends AppCompatActivity {
         double offset = ChartProperties.getOffset();
         return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1178.57143;
     }
-    static int fantasticCount = 0;
-    static int excellentCount = 0;
-    static int greatCount = 0;
-    static int missCount = 0;
-    public void hit(double delay, double currentPosition) {
-        if ((currentPosition < (delay + 100)) && currentPosition > (delay - 100)) {
-            fantasticCount++;
-            fantastic.setVisibility(View.VISIBLE);
-            excellent.setVisibility(View.INVISIBLE);
-            great.setVisibility(View.INVISIBLE);
-            miss.setVisibility(View.INVISIBLE);
-        } else if ((currentPosition < (delay + 500)) && currentPosition > (delay - 500)) {
-            excellentCount++;
-            fantastic.setVisibility(View.INVISIBLE);
-            excellent.setVisibility(View.VISIBLE);
-            great.setVisibility(View.INVISIBLE);
-            miss.setVisibility(View.INVISIBLE);
-        } else if ((currentPosition < (delay + 1000)) && currentPosition > (delay - 1000)) {
-            greatCount++;
-            fantastic.setVisibility(View.INVISIBLE);
-            excellent.setVisibility(View.INVISIBLE);
-            great.setVisibility(View.VISIBLE);
-            miss.setVisibility(View.INVISIBLE);
-        } else {
-            missCount++;
-            fantastic.setVisibility(View.INVISIBLE);
-            excellent.setVisibility(View.INVISIBLE);
-            great.setVisibility(View.INVISIBLE);
-            miss.setVisibility(View.VISIBLE);
+    static int hitCount = 0;
+    public void hit(String direction) {
+        if (direction.equals("left")) {
+            LeftCount++;
+        }
+        if (hitCount <= beat.size()) {
+            hitCount++;
         }
     }
 }
