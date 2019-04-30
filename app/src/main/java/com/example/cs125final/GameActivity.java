@@ -153,7 +153,6 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("queen bee")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.queenbee);
-            //songLength = 125000;
             int greyish = getResources().getColor(R.color.greyish);
             quit.setBackgroundColor(greyish);
             background = findViewById(R.id.queenBeeBackground);
@@ -198,7 +197,6 @@ public class GameActivity extends AppCompatActivity {
         }
         if (songName.equals("quaoar")) {
             currentlyPlaying = MediaPlayer.create(GameActivity.this, R.raw.quaoar);
-            //songLength = 159000;
             background = findViewById(R.id.quaoarBackground);
             background.setVisibility(View.VISIBLE);
             box = findViewById(R.id.quaoarBox);
@@ -580,7 +578,6 @@ public class GameActivity extends AppCompatActivity {
                 }
             }, delayLength);
         }
-
         /** the changes screens after the song is over*/
         final Handler handler = new Handler();
         if (songName.equals("marionette")) {
@@ -604,7 +601,29 @@ public class GameActivity extends AppCompatActivity {
                         GameActivity.this.finish();
                     }
                 }
-            }, 200000);
+            }, 134000);
+        } else if (songName.equals("quaoar")) {
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Intent intent = new Intent(GameActivity.this, ResultActivity.class);
+                    if (onScreen) {
+                        currentlyPlaying.stop();
+                        GameActivity.this.startActivity(intent);
+                        GameActivity.this.finish();
+                    }
+                }
+            }, 148000);
+        } else if (songName.equals("queen bee")) {
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Intent intent = new Intent(GameActivity.this, ResultActivity.class);
+                    if (onScreen) {
+                        currentlyPlaying.stop();
+                        GameActivity.this.startActivity(intent);
+                        GameActivity.this.finish();
+                    }
+                }
+            }, 125000);
         }
     }
 
