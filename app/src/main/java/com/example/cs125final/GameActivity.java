@@ -80,6 +80,14 @@ public class GameActivity extends AppCompatActivity {
     ArrayList<Double> peacockBeat;
     ArrayList<String> direction = new ArrayList<>();
     ArrayList<Double> beat = new ArrayList<>();
+    static double marionetteBPM;
+    static double marionetteOffset;
+    static double queenBeeBPM;
+    static double queenBeeOffset;
+    static double quaoarBPM;
+    static double quaoarOffset;
+    static double peacockBPM;
+    static double peacockOffset;
 
     /** this is everything that happens when the app loads*/
     @Override
@@ -94,15 +102,23 @@ public class GameActivity extends AppCompatActivity {
         ChartProperties.parseNotes("peacock");
         peacockBeat = new ArrayList<>(ChartProperties.beat);
         peacockDirection = new ArrayList<>(ChartProperties.direction);
+        peacockBPM = ChartProperties.getBPM();
+        peacockOffset = ChartProperties.getOffset();
         ChartProperties.parseNotes("marionette");
         marionetteBeat = new ArrayList<>(ChartProperties.beat);
         marionetteDirection = new ArrayList<>(ChartProperties.direction);
+        marionetteBPM = ChartProperties.getBPM();
+        marionetteOffset = ChartProperties.getOffset();
         ChartProperties.parseNotes("queen bee");
         queenBeeBeat = new ArrayList<>(ChartProperties.beat);
         queenBeeDirection = new ArrayList<>(ChartProperties.direction);
+        queenBeeBPM = ChartProperties.getBPM();
+        queenBeeOffset = ChartProperties.getOffset();
         ChartProperties.parseNotes("quaoar");
         quaoarBeat = new ArrayList<>(ChartProperties.beat);
         quaoarDirection = new ArrayList<>(ChartProperties.direction);
+        quaoarBPM = ChartProperties.getBPM();
+        quaoarOffset = ChartProperties.getOffset();
 
         /** each of these declare what to make each variable equal to
          * since the layout of each song is different, we need to do this.
@@ -659,9 +675,26 @@ public class GameActivity extends AppCompatActivity {
      * each arrow has its own delay
      */
     public double getDelay(double currentBeat) {
-        double BPM = ChartProperties.getBPM();
-        double offset = ChartProperties.getOffset();
-        return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 1178.57143;
+        double BPM = 0;
+        double offset = 0;
+        if (songName.equals("marionette")) {
+            BPM = marionetteBPM;
+            offset = marionetteOffset;
+        }
+        if (songName.equals("quaoar")) {
+            BPM = quaoarBPM;
+            offset = quaoarOffset;
+
+        }
+        if (songName.equals("queen bee")) {
+            BPM = queenBeeBPM;
+            offset = queenBeeOffset;
+        }
+        if (songName.equals("peacock")) {
+            BPM = peacockBPM;
+            offset = peacockOffset;
+        }
+        return 1000 * ((60 / BPM)*currentBeat + offset + 1) - 785.714286;
     }
     public void hit(String direction) {
         double toAdd = 1.0 / beat.size();
